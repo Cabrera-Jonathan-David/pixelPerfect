@@ -1,0 +1,101 @@
+<div class="container register-container mt-5">
+  <h2 class="text-center">Registro de Usuario</h2>
+
+  <!-- Formulario de registro -->
+  <form (ngSubmit)="registerUser(confirmPasswordInput)" novalidate>
+
+    <!-- Información de cuenta -->
+    <h3 class="section-title mt-4">Información de cuenta</h3>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="username" class="form-label">Nombre de usuario</label>
+        <input type="text" id="username" class="form-control" [(ngModel)]="username" name="username" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="confirmPassword" class="form-label">Repetir Contraseña</label>
+        <input type="password" id="confirmPassword" class="form-control" #confirmPasswordInput required>
+      </div>
+    </div>
+
+    <!-- Información personal -->
+    <h3 class="section-title mt-4">Información personal</h3>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" class="form-control" [(ngModel)]="nombre" name="nombre" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" id="apellido" class="form-control" [(ngModel)]="apellido" name="apellido" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="dni" class="form-label">DNI</label>
+        <input type="text" id="dni" class="form-control" [(ngModel)]="dni" name="dni" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento" class="form-control" [(ngModel)]="fechaNacimiento" name="fechaNacimiento" required>
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <h3 class="section-title mt-4">Información de contacto</h3>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="codigoArea" class="form-label">Código de área</label>
+        <input type="text" id="codigoArea" class="form-control" [(ngModel)]="codigoArea" name="codigoArea" required>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label for="telefono" class="form-label">Número de teléfono</label>
+        <input type="text" id="telefono" class="form-control" [(ngModel)]="telefono" name="telefono" required>
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <h3 class="section-title mt-4">Información de dirección</h3>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input type="text" id="direccion" class="form-control" [(ngModel)]="direccion" name="direccion" required>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="altura" class="form-label">Altura</label>
+        <input type="text" id="altura" class="form-control" [(ngModel)]="altura" name="altura" required>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="piso" class="form-label">Piso</label>
+        <input type="text" id="piso" class="form-control" name="piso">
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="codigoPostal" class="form-label">Código Postal</label>
+        <input type="text" id="codigoPostal" class="form-control" [(ngModel)]="codigoPostal" name="codigoPostal" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="ciudad" class="form-label">Ciudad</label>
+        <input type="text" id="ciudad" class="form-control" [(ngModel)]="ciudad" name="ciudad" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="provincia" class="form-label">Provincia</label>
+        <input type="text" id="provincia" class="form-control" [(ngModel)]="provincia" name="provincia" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="pais" class="form-label">País</label>
+        <input type="text" id="pais" class="form-control" [(ngModel)]="pais" name="pais" required>
+      </div>
+    </div>
+
+    <!-- Botón de registrarse -->
+    <div class="text-center mt-4">
+      <button class="btn btn-primary btn-lg" type="submit">Registrarse</button>
+    </div>
+
+  </form>
+</div>
