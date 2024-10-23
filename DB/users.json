@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Admin",
+      "password": "AdminPass123",
+      "email": "admin@gmail.com",
+      "nombre": "Admin",
+      "apellido": "Admin",
+      "dni": "123456789",
+      "fechaNacimiento": "1994-11-20",
+      "codigoArea": "0223",
+      "telefono": "12345678",
+      "direccion": "Calle Falsa",
+      "altura": 123,
+      "piso": null,
+      "codigoPostal": "7600",
+      "ciudad": "Mar del Plata",
+      "provincia": "Buenos Aires",
+      "pais": "Argentina"
+    }
+  ]
+}
