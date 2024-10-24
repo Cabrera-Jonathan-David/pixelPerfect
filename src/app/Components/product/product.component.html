@@ -1,0 +1,10 @@
+<div *ngIf="product$ | async as product">
+    <h1>{{ product.nombre }}</h1>
+    <p>Marca: {{ product.marca }}</p>
+    <p>Precio: {{ product.precio }}</p>
+    <p>Descripción: {{ product.descripcion }}</p>
+  
+    <!-- Muestra la imagen utilizando la URL -->
+    <img src="product.url" alt="{{ product.nombre }}" style="max-width: 100%; height: auto;">
+  </div>
+  

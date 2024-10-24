@@ -1,0 +1,42 @@
+{
+    "products" : [
+    {   "id": 1,
+        "nombre": "Laptop Dell XPS 13",
+        "marca": "Dell",
+        "precio": 1200.99,
+        "stock": 10,
+        "descripcion": "Laptop ultraportátil de 13 pulgadas con pantalla táctil y procesador Intel Core i7.",
+        "categoria": "Laptops",
+        "imagen": "https://m.media-amazon.com/images/I/61hSHC1ClAL._AC_SL1500_.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Monitor Samsung 27\" QHD",
+        "marca": "Samsung",
+        "precio": 300.49,
+        "stock": 25,
+        "descripcion": "Monitor Samsung de 27 pulgadas con resolución QHD, ideal para trabajar y jugar.",
+        "categoria": "Monitores",
+        "imagen": "URL"
+    },
+    {
+        "id": 3,
+        "nombre": "Teclado Mecánico Logitech G PRO",
+        "marca": "Logitech",
+        "precio": 129.99,
+        "stock": 50,
+        "descripcion": "Teclado mecánico compacto con switches GX Blue para un rendimiento gaming superior.",
+        "categoria": "Teclados",
+        "imagen": "URL"
+    },
+    {
+        "id": 4,
+        "nombre": "Mouse Razer DeathAdder V2",
+        "marca": "Razer",
+        "precio": 59.99,
+        "stock": 30,
+        "descripcion": "Mouse ergonómico de alta precisión para gaming con sensor óptico de 20,000 DPI.",
+        "categoria": "Mouses",
+        "imagen": "URL"
+    }]
+}
