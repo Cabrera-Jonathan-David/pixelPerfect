@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http'; // Si estás haciendo p
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { LoginComponent } from './Components/Login/login.component';
 import { RegisterComponent } from './Components/Register/register.component';
+import { ProductComponent } from './Components/product/product.component';
 
 @NgModule({
-  declarations: [
+  declarations: 
+  [
     AppComponent,
     NavbarComponent,  // Declaración del Navbar
     LoginComponent,   // Declaración del componente de Login
-    RegisterComponent // Declaración del componente de Registro
+    RegisterComponent, ProductComponent // Declaración del componente de Registro
   ],
   imports: [
     BrowserModule,
