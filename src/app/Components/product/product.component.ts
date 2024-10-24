@@ -9,18 +9,15 @@ import { Observable } from 'rxjs';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'] // Corregido a styleUrls
 })
-export class ProductComponent implements OnInit { 
+export class ProductComponent { 
   product$!: Observable<Product>; // Declara una propiedad para almacenar el producto
-
+  selectedProductId: string = '';
   constructor(private productService: ProductService, private router: Router) {}
 
-  ngOnInit(): void { // El método que se ejecuta al inicializar el componente
-    this.loadProduct(); // Llama al método para cargar el producto
-  }
 
   loadProduct(): void {
-    const productId = '1'; // ID del producto que quieres obtener
-    this.product$ = this.productService.getProductById(productId); // Asigna directamente el Observable
+    
+    this.product$ = this.productService.getProductById(this.selectedProductId); // Asigna directamente el Observable
   }
 }
 
