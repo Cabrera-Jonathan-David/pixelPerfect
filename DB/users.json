@@ -1,22 +1,78 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Admin",
       "password": "AdminPass123",
-      "email": "admin@gmail.com",
+      "id_client": "1"
+    },
+    {
+      "id": "0535",
+      "username": "CrisRussito",
+      "password": "Cris1234!",
+      "id_cliente": "010f"
+    },
+    {
+      "id": "0f2d",
+      "username": "Joaquin",
+      "password": "Joaco1234!",
+      "id_cliente": "1eba"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "email": "admin@gmai.com",
       "nombre": "Admin",
       "apellido": "Admin",
-      "dni": "123456789",
-      "fechaNacimiento": "1994-11-20",
-      "codigoArea": "0223",
-      "telefono": "12345678",
-      "direccion": "Calle Falsa",
-      "altura": 123,
+      "dni": "12345678",
+      "fechaNacimiento": "2000-01-01",
+      "codigoArea": "54",
+      "telefono": 99999999,
+      "direccion": "Calle Admin",
+      "altura": "1234",
       "piso": null,
       "codigoPostal": "7600",
       "ciudad": "Mar del Plata",
       "provincia": "Buenos Aires",
+      "pais": "Argentina"
+    },
+    {
+      "id": "010f",
+      "username": "CrisRussito",
+      "password": "Cris1234!",
+      "email": "cris@gmail.com",
+      "nombre": "Cristian",
+      "apellido": "Telega",
+      "dni": "38619503",
+      "fechaNacimiento": "1994-11-20",
+      "codigoArea": "0223",
+      "telefono": "155478486",
+      "direccion": "Trinidad y Tobago",
+      "altura": "245",
+      "piso": "",
+      "codigoPostal": "7600",
+      "ciudad": "Mar del Plata",
+      "provincia": "Buenos Aires",
+      "pais": "Argentina"
+    },
+    {
+      "id": "1eba",
+      "username": "Joaquin",
+      "password": "Joaco1234!",
+      "email": "joaco@gmail.com",
+      "nombre": "joaquin",
+      "apellido": "mayor",
+      "dni": "38619504",
+      "fechaNacimiento": "2006-11-01",
+      "codigoArea": "5555",
+      "telefono": "11",
+      "direccion": "falsa",
+      "altura": "123",
+      "piso": "",
+      "codigoPostal": "7600",
+      "ciudad": "Mar del plata",
+      "provincia": "bs as",
       "pais": "Argentina"
     }
   ]

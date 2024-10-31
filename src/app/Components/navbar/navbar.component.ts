@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   searchQuery: string = '';
+
+  constructor(private authService: AuthenticationService) { }
 
   onFocus() {
     this.searchQuery = ''; 
@@ -21,5 +24,21 @@ export class NavbarComponent {
   search() {
     console.log('Buscando:', this.searchQuery);
   }
+
+  isLoggedIn(): boolean{
+    
+    return this.authService.isLoggedIn();
+  }
+
+  logout(){
+    this.authService.logout();
+  }
+
+
+
+
+
+
+
 
 }
