@@ -25,11 +25,19 @@
           <i class="fas fa-search"></i>
         </button>
       </form>
-      <a class="btn btn-outline-light ms-3" routerLink="/login">Iniciar sesión</a> 
 
-      <button class="btn btn-danger ms-3" type="button">
-        <i class="fas fa-door-open"></i> 
-      </button>
+      <a *ngIf="!isLoggedIn()" class="btn btn-outline-light ms-3" routerLink="/login">Iniciar sesión</a> 
+
+      <div *ngIf="isLoggedIn()" class="dropdown ms-3">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user-circle"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" routerLink="/modify-user">Modificar información personal</a></li>
+          <li><button class="dropdown-item" (click)="logout()">Cerrar sesión</button></li>
+        </ul>
+      </div>
+      
     </div>
   </div>
-</nav>
+</nav><a *ngIf="!isLoggedIn" class="btn btn-outline-light ms-3" routerLink="/login">Iniciar sesión</a> 

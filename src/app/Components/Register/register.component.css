@@ -1,5 +1,5 @@
 .form-container {
-  max-width: 400px; /* Ancho máximo del formulario */
+  max-width: 550px; /* Ancho máximo del formulario */
   margin: 0 auto; /* Centrar el formulario horizontalmente */
   padding: 20px; /* Espaciado interno */
   border: 1px solid #ccc; /* Borde del formulario */

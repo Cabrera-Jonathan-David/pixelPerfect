@@ -2,24 +2,26 @@
   <h2>Iniciar Sesión</h2>
   <div class="container bg-dark text-white p-4 mt-5 rounded">
     
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
-        <label for="email" class="form-label">Correo Electrónico:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <label for="username" class="form-label">Nombre de Usuario:</label>
+        <input type="text" class="form-control" id="username" formControlName="username" required>
       </div>
       
       <div class="mb-3">
         <label for="password" class="form-label">Contraseña:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
+        <input type="password" class="form-control" id="password" formControlName="password" required>
       </div>
+
+      <div *ngIf="loginError" class="text-danger">
+        Usuario y/o contraseña incorrectos.
+      </div>
+
   
       <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
   
     <p class="mt-3">¿Aún no tienes una cuenta? <a class="text-info" routerLink="/register">Créala aquí</a></p>
+
   </div>
-
 </div>
-
-
-

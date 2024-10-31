@@ -1,0 +1,128 @@
+<div class="container register-container mt-5">
+    <h2 class="text-center">Modificación de Usuario</h2>
+  
+    <form [formGroup]="modifyForm" (ngSubmit)="modifyUser()" class="form-container">
+        
+        <!-- Información Personal -->
+        <h3 class="section-title mt-4">Información personal</h3>
+        <div class="row">
+            <!-- Nombre -->
+            <div class="col-md-6 mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control" formControlName="nombre" />
+                <div *ngIf="modifyForm.get('nombre')?.invalid && modifyForm.get('nombre')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</span>
+                    <span *ngIf="modifyForm.get('nombre')?.errors?.['minlength']">Debe tener al menos 2 caracteres.</span>
+                    <span *ngIf="modifyForm.get('nombre')?.errors?.['maxlength']">No puede superar los 50 caracteres.</span>
+                    <span *ngIf="modifyForm.get('nombre')?.errors?.['pattern']">Solo letras y espacios permitidos.</span>
+                </div>
+            </div>
+
+            <!-- Apellido -->
+            <div class="col-md-6 mb-3">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" class="form-control" formControlName="apellido" />
+                <div *ngIf="modifyForm.get('apellido')?.invalid && modifyForm.get('apellido')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('apellido')?.errors?.['required']">El apellido es obligatorio.</span>
+                    <span *ngIf="modifyForm.get('apellido')?.errors?.['minlength']">Debe tener al menos 2 caracteres.</span>
+                    <span *ngIf="modifyForm.get('apellido')?.errors?.['maxlength']">No puede superar los 50 caracteres.</span>
+                    <span *ngIf="modifyForm.get('apellido')?.errors?.['pattern']">Solo letras y espacios permitidos.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información de Contacto -->
+        <h3 class="section-title mt-4">Información de contacto</h3>
+        <div class="row">
+            <!-- Código de Área -->
+            <div class="col-md-4 mb-3">
+                <label for="codigoArea">Cód. Área</label>
+                <input type="text" id="codigoArea" class="form-control" formControlName="codigoArea">
+                <div *ngIf="modifyForm.get('codigoArea')?.invalid && modifyForm.get('codigoArea')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('codigoArea')?.errors?.['required']">El código de área es obligatorio.</span>
+                    <span *ngIf="modifyForm.get('codigoArea')?.errors?.['pattern']">Solo se permiten números.</span>
+                </div>
+            </div>
+
+            <!-- Número de Teléfono -->
+            <div class="col-md-8 mb-3">
+                <label for="telefono">Número de teléfono</label>
+                <input type="text" id="telefono" class="form-control" formControlName="telefono">
+                <div *ngIf="modifyForm.get('telefono')?.invalid && modifyForm.get('telefono')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('telefono')?.errors?.['required']">El teléfono es obligatorio.</span>
+                    <span *ngIf="modifyForm.get('telefono')?.errors?.['pattern']">Solo se permiten números.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información de Dirección -->
+        <h3 class="section-title mt-4">Información de dirección</h3>
+        <div class="row">
+            <!-- Dirección -->
+            <div class="col-md-6 mb-3">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" class="form-control" formControlName="direccion">
+                <div *ngIf="modifyForm.get('direccion')?.invalid && modifyForm.get('direccion')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('direccion')?.errors?.['required']">La dirección es obligatoria.</span>
+                </div>
+            </div>
+
+            <!-- Altura -->
+            <div class="col-md-2 mb-3">
+                <label for="altura">Altura</label>
+                <input type="text" id="altura" class="form-control" formControlName="altura">
+                <div *ngIf="modifyForm.get('altura')?.invalid && modifyForm.get('altura')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('altura')?.errors?.['required']">La altura es obligatoria.</span>
+                    <span *ngIf="modifyForm.get('altura')?.errors?.['pattern']">Solo se permiten números.</span>
+                </div>
+            </div>
+
+            <!-- Piso -->
+            <div class="col-md-2 mb-3">
+                <label for="piso">Piso</label>
+                <input type="text" id="piso" class="form-control" formControlName="piso">
+            </div>
+
+            <!-- Código Postal -->
+            <div class="col-md-3 mb-3">
+                <label for="codigoPostal">Cód. Postal</label>
+                <input type="text" id="codigoPostal" class="form-control" formControlName="codigoPostal">
+                <div *ngIf="modifyForm.get('codigoPostal')?.invalid && modifyForm.get('codigoPostal')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('codigoPostal')?.errors?.['required']">El código postal es obligatorio.</span>
+                </div>
+            </div>
+
+            <!-- Ciudad -->
+            <div class="col-md-6 mb-3">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" class="form-control" formControlName="ciudad">
+                <div *ngIf="modifyForm.get('ciudad')?.invalid && modifyForm.get('ciudad')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('ciudad')?.errors?.['required']">La ciudad es obligatoria.</span>
+                </div>
+            </div>
+
+            <!-- Provincia -->
+            <div class="col-md-6 mb-3">
+                <label for="provincia">Provincia</label>
+                <input type="text" id="provincia" class="form-control" formControlName="provincia">
+                <div *ngIf="modifyForm.get('provincia')?.invalid && modifyForm.get('provincia')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('provincia')?.errors?.['required']">La provincia es obligatoria.</span>
+                </div>
+            </div>
+
+            <!-- País -->
+            <div class="col-md-6 mb-3">
+                <label for="pais">País</label>
+                <input type="text" id="pais" class="form-control" formControlName="pais">
+                <div *ngIf="modifyForm.get('pais')?.invalid && modifyForm.get('pais')?.touched" class="text-danger">
+                    <span *ngIf="modifyForm.get('pais')?.errors?.['required']">El país es obligatorio.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de Modificación -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary btn-lg" type="submit" [disabled]="modifyForm.invalid">Modificar</button>
+        </div>
+    </form>
+</div>
