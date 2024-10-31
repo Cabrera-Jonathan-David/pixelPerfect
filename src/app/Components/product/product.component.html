@@ -1,5 +1,5 @@
 <label for="productId">Introduce el ID del producto:</label>
-<input type="text" id="productId" [(ngModel)]="selectedProductId" placeholder="ID del producto">
+<input type="text" id="productId" [(ngModel)]="selectedProductId" name="productId" placeholder="ID del producto">
 <button (click)="loadProduct()">Cargar Producto</button>
 
 <div *ngIf="product$ | async as product">
