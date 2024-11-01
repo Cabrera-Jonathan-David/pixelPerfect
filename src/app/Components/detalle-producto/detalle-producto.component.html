@@ -1,0 +1,11 @@
+<div class="product-detail d-flex">
+  <img [src]="producto.image" alt="Imagen del producto" class="img-fluid" />
+  <div class="product-info ms-3">
+    <h2>{{ producto.name }}</h2>
+    <p>{{ producto.description }}</p>
+    <p>{{ producto.price | currency }}</p>
+    <button class="btn btn-primary" (click)="addToCart()">
+      Agregar al carrito
+    </button>
+  </div>
+</div>

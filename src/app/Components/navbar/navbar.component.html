@@ -1,7 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Navbar oscuro -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Perfect Pixel</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,25 +27,60 @@
           <a class="nav-link" routerLink="/sucursales">Sucursales</a>
         </li>
       </ul>
-      <form class="d-flex mx-auto"> 
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" (focus)="onFocus()" (blur)="onBlur()" [(ngModel)]="searchQuery" name="search" style="width: 300px;"> <!-- Input más grande -->
-        <button class="btn btn-outline-light" type="button" (click)="search()"> 
+      <!-- Barra de búsqueda -->
+      <form class="d-flex mx-auto">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar"
+          aria-label="Search"
+          (focus)="onFocus()"
+          (blur)="onBlur()"
+          [(ngModel)]="searchQuery"
+          name="search"
+          style="width: 300px"
+        />
+        <button class="btn btn-outline-light" type="button" (click)="search()">
           <i class="fas fa-search"></i>
         </button>
       </form>
 
-      <a *ngIf="!isLoggedIn()" class="btn btn-outline-light ms-3" routerLink="/login">Iniciar sesión</a> 
-
+      <!-- Botón Iniciar Sesión o Usuario Logueado -->
+      <a
+        *ngIf="!isLoggedIn()"
+        class="btn btn-outline-light ms-3"
+        routerLink="/login"
+        >Iniciar sesión</a
+      >
       <div *ngIf="isLoggedIn()" class="dropdown ms-3">
-        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <button
+          class="btn btn-outline-light dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           <i class="fas fa-user-circle"></i>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" routerLink="/modify-user">Modificar información personal</a></li>
-          <li><button class="dropdown-item" (click)="logout()">Cerrar sesión</button></li>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="dropdownMenuButton"
+        >
+          <li>
+            <a class="dropdown-item" routerLink="/modify-user"
+              >Modificar información personal</a
+            >
+          </li>
+          <li>
+            <button class="dropdown-item" (click)="logout()">
+              Cerrar sesión
+            </button>
+          </li>
         </ul>
       </div>
-      
+
+      <!-- Ícono del carrito con vista previa -->
+      <app-carrito></app-carrito>
     </div>
   </div>
-</nav><a *ngIf="!isLoggedIn" class="btn btn-outline-light ms-3" routerLink="/login">Iniciar sesión</a> 
+</nav>

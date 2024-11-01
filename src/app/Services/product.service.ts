@@ -3,17 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../Interface/products';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
   private apiProductUrl = 'http://localhost:3000/products';
-  
 
-
-constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) {}
 
   // GET - Obtener todos los productos
   getProducts(): Observable<Product[]> {
@@ -35,5 +31,3 @@ constructor(private http: HttpClient){}
     return this.http.delete<void>(`${this.apiProductUrl}/${id}`);
   }
 }
-
-

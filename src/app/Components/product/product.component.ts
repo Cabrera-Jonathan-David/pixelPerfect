@@ -1,26 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../Services/product.service';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Product } from '../../Interface/products';
-import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-producto',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'] // Corregido a styleUrls
+  styleUrls: ['./product.component.css'],
 })
-export class ProductComponent { 
-  product$!: Observable<Product>; // Declara una propiedad para almacenar el producto
-  selectedProductId: string = '';
-  constructor(private productService: ProductService, private router: Router) {}
+export class ProductComponent {
+  @Input() producto: any;
 
+  constructor(private router: Router) {}
 
-  loadProduct(): void {
-    
-    this.product$ = this.productService.getProductById(this.selectedProductId); // Asigna directamente el Observable
+  verDetalle(id: number) {
+    this.router.navigate(['/product', id]);
   }
 }
-
-
-
-
