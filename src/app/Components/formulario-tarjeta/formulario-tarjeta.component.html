@@ -1,0 +1,20 @@
+<div class="form-container">
+    <h2>Formulario de Pago</h2>
+    <form [formGroup]="tarjetaForm" (ngSubmit)="enviarFormulario()">
+      <label for="nombreTitular">Nombre del Titular</label>
+      <input id="nombreTitular" formControlName="nombreTitular" type="text" />
+      
+      <label for="numeroTarjeta">Número de Tarjeta</label>
+      <input id="numeroTarjeta" formControlName="numeroTarjeta" type="text" />
+      
+      <label for="fechaExpiracion">Fecha de Expiración (MM/YY)</label>
+      <input id="fechaExpiracion" formControlName="fechaExpiracion" type="text" />
+      
+      <label for="cvv">CVV</label>
+      <input id="cvv" formControlName="cvv" type="text" />
+      
+      <button type="submit" [disabled]="!tarjetaForm.valid">Pagar</button>
+    </form>
+    
+    <p *ngIf="mensajeExito" class="mensaje">{{ mensajeExito }}</p>
+  </div>
