@@ -33,4 +33,16 @@ export class FormularioTarjetaComponent {
       this.mensajeExito = 'Formulario inválido';
     }
   }
+
+  formatCardNumber(value: string): string {
+    if (!value) return '';
+    return value.replace(/\s/g, '').replace(/(.{4})/g, '$1-').trim().slice(0, -1); // Agregado: Formato con guiones
+  }
+
+
+  updateCardDisplay() {
+    this.tarjetaForm.get('numeroTarjeta')?.setValue(this.tarjetaForm.get('numeroTarjeta')?.value.replace(/-/g, '')); // Eliminar guiones al guardar
+  }
+
+
 }
