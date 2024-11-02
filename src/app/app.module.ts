@@ -10,6 +10,7 @@ import { RegisterComponent } from './Components/Register/register.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ModifyUserComponent } from './Components/modify-user/modify-user.component';
 import { ProductComponent } from './Components/product/product.component';
+import { FormularioTarjetaComponent } from './Components/formulario-tarjeta/formulario-tarjeta.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ProductComponent } from './Components/product/product.component';
     RegisterComponent,
     HomeComponent,
     ModifyUserComponent, 
-    ProductComponent // Declaración del componente de Registro
+    ProductComponent, 
+    FormularioTarjetaComponent
   ],
   imports: [
     BrowserModule,
