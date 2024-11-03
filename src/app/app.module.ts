@@ -11,7 +11,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { ModifyUserComponent } from './Components/modify-user/modify-user.component';
 import { ProductComponent } from './Components/product/product.component';
 import { PrePaymentComponent } from './Components/pre-payment/pre-payment.component';
-
+import { FormularioTarjetaComponent } from './Components/formulario-tarjeta/formulario-tarjeta.component';
 
 @NgModule({
   declarations: 
@@ -23,7 +23,8 @@ import { PrePaymentComponent } from './Components/pre-payment/pre-payment.compon
     HomeComponent,
     ModifyUserComponent, 
     ProductComponent,
-    PrePaymentComponent 
+    PrePaymentComponent,
+    FormularioTarjetaComponent
   ],
   imports: [
     BrowserModule,
