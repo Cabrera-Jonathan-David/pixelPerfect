@@ -1,0 +1,153 @@
+/* Estilos para el formulario */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+  
+h2 {
+    text-align: center;
+    color: #333; 
+}
+  
+label {
+    display: block;
+    margin-top: 10px;
+}
+  
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #007bff; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+button:disabled {
+    background-color: #ccc;
+}
+  
+.mensaje {
+    text-align: center;
+    margin-top: 10px;
+}
+  
+.success {
+    color: green;
+}
+  
+.error {
+    color: red;
+}
+
+
+.tarjeta {
+    margin-top: 20px;
+    margin-left: 20px; 
+    width: 400px; 
+    height: 250px; 
+    background-image: url('https://img.freepik.com/free-photo/blue-paint-wall-background-texture_53876-16373.jpg');
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 10px;
+    color: black; 
+    padding: 10px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden; 
+}
+  
+.tarjeta-frontal {
+    height: 100%;
+}
+
+.tarjeta-frontal{
+    padding: 15px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.logo {
+    width: 40px; 
+    height: 30px; 
+    background-size: contain;   
+    margin: 5px 0 5px 10px; 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}
+  
+.nombre-tarjeta {
+    font-size: 30px; 
+    margin: 0;
+    font-weight: bold; 
+    height: 40px; 
+}
+
+.numero-tarjeta {
+    font-size: 1.3em; 
+    letter-spacing: 1.5px; 
+    margin: 5px 0; 
+    height: 25px;
+}
+
+.fecha-expiracion {
+    margin-top: 5px;
+    font-size: 0.9em;
+    height: 20px;
+}
+  
+.tarjeta-dorsal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://img.freepik.com/free-photo/blue-paint-wall-background-texture_53876-16373.jpg');
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 10px;
+    display: none; 
+    padding: 20px;
+    justify-content: center; 
+    align-items: center; 
+}
+  
+.tarjeta:hover .tarjeta-dorsal {
+    display: block; 
+}
+  
+.stripe {
+    height: 10px; 
+    background-color: #fff; 
+    margin-bottom: 10px; 
+}
+  
+.cvv {
+    font-size: 1.2em;
+    margin: 0;
+}
+  
+.form-tarjeta-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
