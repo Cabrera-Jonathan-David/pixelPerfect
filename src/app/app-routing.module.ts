@@ -5,6 +5,7 @@ import { RegisterComponent } from './Components/Register/register.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ModifyUserComponent } from './Components/modify-user/modify-user.component';
 import { ProductComponent } from './Components/product/product.component';
+import { PrePaymentComponent } from './Components/pre-payment/pre-payment.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
 {path: 'home', component: HomeComponent},
 {path: 'modify-user', component: ModifyUserComponent},
 {path: 'producto', component: ProductComponent},
+{path: 'prePayment', component: PrePaymentComponent},
 {path: '', redirectTo: '/home', pathMatch: 'full'},  
 {path: '**', redirectTo: 'home'}
 

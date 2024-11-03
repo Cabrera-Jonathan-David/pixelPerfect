@@ -20,7 +20,7 @@
         </li>
       </ul>
       <form class="d-flex mx-auto"> 
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" (focus)="onFocus()" (blur)="onBlur()" [(ngModel)]="searchQuery" style="width: 300px;"> <!-- Input más grande -->
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" (focus)="onFocus()" (blur)="onBlur()" [(ngModel)]="searchQuery" name="search" style="width: 300px;"> <!-- Input más grande -->
         <button class="btn btn-outline-light" type="button" (click)="search()"> 
           <i class="fas fa-search"></i>
         </button>
