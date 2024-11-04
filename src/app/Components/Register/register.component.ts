@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from '../../Services/client.service';
 import { UserService } from '../../Services/user.service';
-import { mayorDeEdadValidator } from '../../Validators/edad.validator';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { ValidationService } from '../../Services/validation.service';
 
 
@@ -25,18 +23,17 @@ export class RegisterComponent implements OnInit {
     private clientService: ClientService,
     private userService: UserService,
     private router: Router,
-    private http: HttpClient,
     private validationService: ValidationService
   ){
     this.registerForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20), Validators.pattern(/^[a-zA-Z0-9_]*$/)], [this.validationService.checkUsernameExistsAsync()]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]],
       confirmPassword: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email], [this.validationService.checkEmailExistsAsync()]],
+      email: ['', [Validators.required, Validators.email], [this.validationService.emailValidator(this.clientService)]],
       nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern(/^[a-zA-Z\s]*$/)]],
       apellido: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern(/^[a-zA-Z\s]*$/)]],
-      dni: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)], [this.validationService.checkDniExistsAsync()]],
-      fechaNacimiento: ['', [Validators.required, mayorDeEdadValidator()]],
+      dni: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)], [this.validationService.dniValidator(this.clientService)]],
+      fechaNacimiento: ['', [Validators.required, this.validationService.mayorDeEdadValidator()]],
       codigoArea: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       telefono: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       direccion: ['', Validators.required],
@@ -75,6 +72,7 @@ export class RegisterComponent implements OnInit {
           await this.userService.createUser(userData);
           alert('Usuario registrado con exito.');
           this.router.navigate(['/login']);
+          
 
         } catch (error) {
           console.error('Error registrando usuario:', error);
