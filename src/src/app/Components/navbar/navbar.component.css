@@ -1,0 +1,42 @@
+.navbar {
+    padding: 0.5rem 1rem; /* Espaciado vertical */
+  }
+  
+  .form-control {
+    width: 300px; /* Ancho fijo para el input de búsqueda */
+  }
+  
+  .btn {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efecto suave al pasar el cursor */
+  }
+  
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo claro al pasar el cursor */
+  }
+  
+  .fa-search {
+    font-size: 18px; /* Tamaño de la lupa */
+  }
+  
+  .btn-danger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Tamaño del botón */
+    height: 40px; /* Tamaño del botón */
+    border-radius: 50%; /* Para hacerlo más estilizado */
+  }
+  
+  .btn-danger i {
+    font-size: 18px; /* Tamaño del icono */
+    color: #fff; /* Color del icono */
+  }
+  
+  /* Opcional: Efecto de hover */
+  .btn-danger:hover {
+    background-color: #c82333;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  
+  

@@ -1,0 +1,135 @@
+<div class="container register-container mt-5 text-center">
+  <!-- Botones de acción -->
+  <button class="button" (click)="goToLogin()">Iniciar Sesión</button>
+  <button class="button" (click)="toggleForm()">Comprar como invitado</button>
+</div>
+
+<!-- Formulario desplegable -->
+<div *ngIf="isFormVisible" class="mt-4">
+  <h3 class="text-center mb-4">Compra como invitado</h3>
+  
+  <form (ngSubmit)="onSubmit()" class="form-container" [formGroup]="guestForm">
+      <h4 class="section-title mt-4">Información personal</h4>
+
+      <!-- Información personal -->
+      <div class="row">
+          <div class="col-md-6 mb-3">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" class="form-control" formControlName="nombre" />
+              <div *ngIf="guestForm.get('nombre')?.invalid && guestForm.get('nombre')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</span>
+                  <span *ngIf="guestForm.get('nombre')?.errors?.['minlength']">Debe tener al menos 2 caracteres.</span>
+                  <span *ngIf="guestForm.get('nombre')?.errors?.['maxlength']">No puede superar los 50 caracteres.</span>
+                  <span *ngIf="guestForm.get('nombre')?.errors?.['pattern']">Solo letras y espacios permitidos.</span>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" class="form-control" formControlName="apellido" />
+              <div *ngIf="guestForm.get('apellido')?.invalid && guestForm.get('apellido')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('apellido')?.errors?.['required']">El apellido es obligatorio.</span>
+                  <span *ngIf="guestForm.get('apellido')?.errors?.['minlength']">Debe tener al menos 2 caracteres.</span>
+                  <span *ngIf="guestForm.get('apellido')?.errors?.['maxlength']">No puede superar los 50 caracteres.</span>
+                  <span *ngIf="guestForm.get('apellido')?.errors?.['pattern']">Solo letras y espacios permitidos.</span>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <label for="dni">DNI</label>
+              <input type="text" id="dni" class="form-control" formControlName="dni" />
+              <div *ngIf="guestForm.get('dni')?.invalid && guestForm.get('dni')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('dni')?.errors?.['required']">El DNI es obligatorio.</span>
+                  <span *ngIf="guestForm.get('dni')?.errors?.['pattern']">Solo se permiten números.</span>
+                  <span *ngIf="guestForm.get('dni')?.errors?.['dniExists']">Ya existe un usuario asociado a ese DNI.</span>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input type="date" id="fechaNacimiento" class="form-control" formControlName="fechaNacimiento" />
+              <div *ngIf="guestForm.get('fechaNacimiento')?.invalid && guestForm.get('fechaNacimiento')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('fechaNacimiento')?.errors?.['required']">La fecha es obligatoria.</span>
+                  <span *ngIf="guestForm.get('fechaNacimiento')?.errors?.['menorDeEdad']">Debes ser mayor de 18 años.</span>
+              </div>
+          </div>
+      </div>
+
+      <h4 class="section-title mt-4">Contacto</h4>
+
+      <!-- Contacto -->
+      <div class="row">
+          <div class="col-md-6 mb-3">
+              <label for="codigoArea">Código de área</label>
+              <input type="text" id="codigoArea" class="form-control" formControlName="codigoArea" />
+              <div *ngIf="guestForm.get('codigoArea')?.invalid && guestForm.get('codigoArea')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('codigoArea')?.errors?.['required']">El código de área es obligatorio.</span>
+                  <span *ngIf="guestForm.get('codigoArea')?.errors?.['pattern']">Solo números permitidos.</span>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <label for="telefono">Número de teléfono</label>
+              <input type="text" id="telefono" class="form-control" formControlName="telefono" />
+              <div *ngIf="guestForm.get('telefono')?.invalid && guestForm.get('telefono')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('telefono')?.errors?.['required']">El teléfono es obligatorio.</span>
+                  <span *ngIf="guestForm.get('telefono')?.errors?.['pattern']">Solo números permitidos.</span>
+              </div>
+          </div>
+
+          <div class="col-md-12 mb-3">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" class="form-control" formControlName="email" />
+              <div *ngIf="guestForm.get('email')?.invalid && guestForm.get('email')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('email')?.errors?.['required']">El correo electrónico es obligatorio.</span>
+                  <span *ngIf="guestForm.get('email')?.errors?.['email']">Debe ser un correo electrónico válido.</span>
+                  <span *ngIf="guestForm.get('email')?.errors?.['emailExists']">Ya existe un usuario asociado a ese correo electrónico.</span>
+              </div>
+          </div>
+      </div>
+
+      <h4 class="section-title mt-4">Dirección</h4>
+
+      <!-- Dirección -->
+      <div class="row">
+          <div class="col-md-6 mb-3">
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" class="form-control" formControlName="direccion" />
+              <div *ngIf="guestForm.get('direccion')?.invalid && guestForm.get('direccion')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('direccion')?.errors?.['required']">La dirección es obligatoria.</span>
+              </div>
+          </div>
+
+          <div class="col-md-3 mb-3">
+              <label for="altura">Altura</label>
+              <input type="number" id="altura" class="form-control" formControlName="altura" />
+              <div *ngIf="guestForm.get('altura')?.invalid && guestForm.get('altura')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('altura')?.errors?.['required']">La altura es obligatoria.</span>
+              </div>
+          </div>
+
+          <div class="col-md-3 mb-3">
+              <label for="piso">Piso</label>
+              <input type="text" id="piso" class="form-control" formControlName="piso" />
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <label for="codigoPostal">Código Postal</label>
+              <input type="text" id="codigoPostal" class="form-control" formControlName="codigoPostal" />
+              <div *ngIf="guestForm.get('codigoPostal')?.invalid && guestForm.get('codigoPostal')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('codigoPostal')?.errors?.['required']">El código postal es obligatorio.</span>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <label for="ciudad">Ciudad</label>
+              <input type="text" id="ciudad" class="form-control" formControlName="ciudad" />
+              <div *ngIf="guestForm.get('ciudad')?.invalid && guestForm.get('ciudad')?.touched" class="text-danger">
+                  <span *ngIf="guestForm.get('ciudad')?.errors?.['required']">La ciudad es obligatoria.</span>
+              </div>
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="guestForm.invalid">Enviar</button>
+  </form>
+</div>

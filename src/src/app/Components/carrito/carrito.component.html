@@ -1,0 +1,50 @@
+<div class="dropdown">
+  <button
+    class="btn btn-outline-light dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    [disabled]="!cartItems.length"
+  >
+    <i class="fas fa-shopping-cart"></i> Carrito
+    <span class="badge bg-light text-dark">{{ cartItems.length }}</span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-end p-3" *ngIf="cartItems.length">
+
+    <div
+      *ngFor="let item of cartItems"
+      class="cart-item d-flex align-items-center"
+    >
+      <img
+        [src]="item.product.image_url"
+        alt="Imagen del producto"
+        class="img-thumbnail"
+        width="50"
+      />
+      <div class="ms-3">
+        <p>{{ item.product.name }}</p>
+        <p>{{ item.product.price }}</p>
+        <div class="quantity-controls">
+          <button
+            (click)="decreaseQuantity(item)"
+            class="btn btn-outline-secondary btn-sm"
+          >
+            -
+          </button>
+          <span>{{ item.quantity }}</span>
+          <button
+            (click)="increaseQuantity(item)"
+            class="btn btn-outline-secondary btn-sm"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <button (click)="removeItem(item)" class="btn btn-danger ms-auto">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+    <button class="btn btn-primary mt-2 w-100" routerLink="/prepayment">
+      Continuar
+    </button>
+  </div>
+</div>
