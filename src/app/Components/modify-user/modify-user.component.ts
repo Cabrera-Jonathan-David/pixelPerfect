@@ -48,15 +48,11 @@ export class ModifyUserComponent implements OnInit {
                 const clientData = await this.clientService.getClientById(user.id_cliente);
                     if (clientData) {
                       this.modifyForm.patchValue(clientData);
-                      } else {
-                          console.error('No se encontró cliente con el id proporcionado');
-                   }
-            } else {
-                console.error('El usuario no tiene un id_cliente asociado');
-            }
-        } catch (error) {
+                      } 
+             }
+          } catch (error) {
             console.error('Error al obtener los datos del usuario o cliente:', error);
-        }
+          }
     }
   }
 
@@ -66,11 +62,11 @@ export class ModifyUserComponent implements OnInit {
     const username = localStorage.getItem('username'); 
     if (username) {
         try {
-            // Obtener el usuario por el username
+            
             const user = await this.userService.getUserByUsername(username);
 
             if (user && user.id_cliente) {
-                // Obtener el cliente usando el id_cliente
+                
                 const clientData = await this.clientService.getClientById(user.id_cliente);
 
                 

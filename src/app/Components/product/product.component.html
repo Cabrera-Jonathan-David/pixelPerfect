@@ -1,7 +1,15 @@
-<div class="card product-card" (click)="verDetalle(producto.id)">
-  <img [src]="producto.image" class="card-img-top" alt="Imagen del producto" />
-  <div class="card-body">
-    <h5 class="card-title">{{ producto.name }}</h5>
-    <p class="card-text">{{ producto.price | currency }}</p>
+<label for="productId">Introduce el ID del producto:</label>
+<input type="text" id="productId" [(ngModel)]="selectedProductId" name="productId" placeholder="ID del producto">
+<button (click)="loadProduct()">Cargar Producto</button>
+
+<div *ngIf="product$ | async as product">
+    <h1>{{ product.name }}</h1>
+    <p>Marca: {{ product.brand }}</p>
+    <p>Precio: {{ product.price }}</p>
+    <p>Descripción: {{ product.description }}</p>
+  
+    <!-- Muestra la imagen utilizando la URL -->
+    <img [src]="product.image_url" alt="{{ product.name }}" style="max-width: 100%; height: auto;">
+    
   </div>
-</div>
+  
