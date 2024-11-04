@@ -1,44 +1,504 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Laptop Dell XPS 13",
-        "brand": "Dell",
-        "price": 1200.99,
-        "stock": 10,
-        "description": "Laptop ultraportable with a 13-inch touchscreen and Intel Core i7 processor.",
-        "category": "Laptops",
-        "image_url": "https://m.media-amazon.com/images/I/61hSHC1ClAL._AC_SL1500_.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Monitor Samsung 27\" QHD",
-        "brand": "Samsung",
-        "price": 300.49,
-        "stock": 25,
-        "description": "27-inch Samsung monitor with QHD resolution, ideal for work and gaming.",
-        "category": "Monitors",
-        "image_url": "URL"
-      },
-      {
-        "id": 3,
-        "name": "Logitech G PRO Mechanical Keyboard",
-        "brand": "Logitech",
-        "price": 129.99,
-        "stock": 50,
-        "description": "Compact mechanical keyboard with GX Blue switches for superior gaming performance.",
-        "category": "Keyboards",
-        "image_url": "URL"
-      },
-      {
-        "id": 4,
-        "name": "Razer DeathAdder V2 Mouse",
-        "brand": "Razer",
-        "price": 59.99,
-        "stock": 30,
-        "description": "Ergonomic high-precision gaming mouse with 20,000 DPI optical sensor.",
-        "category": "Mice",
-        "image_url": "URL"
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Dell XPS 13",
+      "brand": "Dell",
+      "price": 1200.99,
+      "stock": 10,
+      "description": "Laptop ultraportable with a 13-inch touchscreen and Intel Core i7 processor.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/61hSHC1ClAL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Monitor Samsung 27\" QHD",
+      "brand": "Samsung",
+      "price": 300.49,
+      "stock": 25,
+      "description": "27-inch Samsung monitor with QHD resolution, ideal for work and gaming.",
+      "category": "Monitors",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6MTOW0v0BQpr-OE9vVS1LknvPB_oQdjU__g&s"
+    },
+    {
+      "id": "3",
+      "name": "Logitech G PRO Mechanical Keyboard",
+      "brand": "Logitech",
+      "price": 129.99,
+      "stock": 50,
+      "description": "Compact mechanical keyboard with GX Blue switches for superior gaming performance.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/71s-+2v2DQL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Razer DeathAdder V2 Mouse",
+      "brand": "Razer",
+      "price": 59.99,
+      "stock": 30,
+      "description": "Ergonomic high-precision gaming mouse with 20,000 DPI optical sensor.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81unM9K+goL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "5",
+      "name": "ASUS ROG Strix G15",
+      "brand": "ASUS",
+      "price": 1450.0,
+      "stock": 15,
+      "description": "High-performance gaming laptop with NVIDIA GeForce RTX 3060.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/81H9KOsADWL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "6",
+      "name": "BenQ GW2780 27\" Monitor",
+      "brand": "BenQ",
+      "price": 249.99,
+      "stock": 20,
+      "description": "27-inch IPS monitor with eye-care technology and 1080p resolution.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/61HdoF+ncnL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Corsair K95 RGB Mechanical Keyboard",
+      "brand": "Corsair",
+      "price": 199.99,
+      "stock": 12,
+      "description": "Gaming keyboard with customizable RGB lighting and dedicated macro keys.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/81a7fD2CofL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Logitech MX Master 3 Mouse",
+      "brand": "Logitech",
+      "price": 99.99,
+      "stock": 18,
+      "description": "Wireless mouse with advanced ergonomic design and customizable buttons.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81llG8h5PfL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "9",
+      "name": "HP Envy x360 15",
+      "brand": "HP",
+      "price": 1099.99,
+      "stock": 8,
+      "description": "Convertible laptop with Ryzen 5 processor and 15.6-inch Full HD display.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/81-y4P40+UL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Dell UltraSharp U2720Q 27\" Monitor",
+      "brand": "Dell",
+      "price": 599.99,
+      "stock": 5,
+      "description": "27-inch 4K monitor with USB-C connectivity and excellent color accuracy.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/91r7dHDmp9L._AC_SL1500_.jpg"
+    },
+    {
+      "id": "11",
+      "name": "SteelSeries Apex Pro Mechanical Keyboard",
+      "brand": "SteelSeries",
+      "price": 199.99,
+      "stock": 10,
+      "description": "Customizable mechanical keyboard with adjustable actuation switches.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/81tyeFYFzWL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Razer Naga Mouse",
+      "brand": "Razer",
+      "price": 79.99,
+      "stock": 25,
+      "description": "Gaming mouse with 16 programmable buttons for MMO gaming.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81Q69l6KkXL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "13",
+      "name": "Acer Aspire 5 Laptop",
+      "brand": "Acer",
+      "price": 549.99,
+      "stock": 20,
+      "description": "Budget-friendly laptop with AMD Ryzen 5 and 15.6-inch display.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/71DqkFhEQML._AC_SL1500_.jpg"
+    },
+    {
+      "id": "14",
+      "name": "LG 34WN80C-B 34\" UltraWide Monitor",
+      "brand": "LG",
+      "price": 749.99,
+      "stock": 6,
+      "description": "34-inch UltraWide monitor with QHD resolution, perfect for multitasking.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/91-a1T14biL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "15",
+      "name": "HyperX Alloy FPS Pro Mechanical Keyboard",
+      "brand": "HyperX",
+      "price": 79.99,
+      "stock": 40,
+      "description": "Compact mechanical keyboard designed for FPS gaming.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/81M8P2B4TaL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "16",
+      "name": "Logitech G502 HERO Mouse",
+      "brand": "Logitech",
+      "price": 49.99,
+      "stock": 35,
+      "description": "High-performance gaming mouse with customizable RGB lighting.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81t4U6q2rZL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "17",
+      "name": "Microsoft Surface Laptop 4",
+      "brand": "Microsoft",
+      "price": 999.99,
+      "stock": 12,
+      "description": "Sleek laptop with a 13.5-inch touchscreen and Intel Core i5 processor.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/81fl6QHkGfL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "18",
+      "name": "Samsung Odyssey G7 27\" Monitor",
+      "brand": "Samsung",
+      "price": 699.99,
+      "stock": 7,
+      "description": "27-inch curved gaming monitor with 240Hz refresh rate and QHD resolution.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/81DXBBTEX8L._AC_SL1500_.jpg"
+    },
+    {
+      "id": "19",
+      "name": "Keychron K6 Mechanical Keyboard",
+      "brand": "Keychron",
+      "price": 74.99,
+      "stock": 20,
+      "description": "Compact wireless mechanical keyboard with RGB backlighting.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/81QF5Di0oML._AC_SL1500_.jpg"
+    },
+    {
+      "id": "20",
+      "name": "SteelSeries Rival 600 Gaming Mouse",
+      "brand": "SteelSeries",
+      "price": 89.99,
+      "stock": 18,
+      "description": "Gaming mouse with dual sensors and customizable weight system.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81lLUc9hfNL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "21",
+      "name": "Lenovo ThinkPad X1 Carbon Gen 9",
+      "brand": "Lenovo",
+      "price": 1649.99,
+      "stock": 8,
+      "description": "Premium business laptop with Intel Core i7 and 14-inch display.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/91S7A-FNs9L._AC_SL1500_.jpg"
+    },
+    {
+      "id": "22",
+      "name": "ViewSonic VA2759-SMH 27\" Monitor",
+      "brand": "ViewSonic",
+      "price": 249.99,
+      "stock": 15,
+      "description": "27-inch monitor with Full HD resolution and ultra-slim design.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/71WoEBuIdgL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "23",
+      "name": "Razer Huntsman Mini Keyboard",
+      "brand": "Razer",
+      "price": 119.99,
+      "stock": 30,
+      "description": "Compact 60% mechanical keyboard with Razer Optical switches.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/71D5GzdfAHL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "24",
+      "name": "Logitech M720 Triathlon Mouse",
+      "brand": "Logitech",
+      "price": 69.99,
+      "stock": 22,
+      "description": "Multi-device wireless mouse that connects via Bluetooth or USB receiver.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81rU0ePVdLL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "25",
+      "name": "MSI GS66 Stealth Laptop",
+      "brand": "MSI",
+      "price": 1999.99,
+      "stock": 5,
+      "description": "Powerful gaming laptop with Intel Core i9 and NVIDIA GeForce RTX 3080.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/81D+m6aNLKL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "26",
+      "name": "Acer Predator XB271HU 27\" Monitor",
+      "brand": "Acer",
+      "price": 649.99,
+      "stock": 6,
+      "description": "27-inch monitor with NVIDIA G-Sync and 144Hz refresh rate.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/91HLkE1LiFL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "27",
+      "name": "Corsair K55 RGB Gaming Keyboard",
+      "brand": "Corsair",
+      "price": 49.99,
+      "stock": 30,
+      "description": "RGB gaming keyboard with six programmable macro keys.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/81fB1HTBBFL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "28",
+      "name": "Glorious Model O Gaming Mouse",
+      "brand": "Glorious",
+      "price": 59.99,
+      "stock": 25,
+      "description": "Ultra-lightweight gaming mouse with RGB lighting and customizable DPI.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/81UXGq8TrpL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "29",
+      "name": "HP Spectre x360 14",
+      "brand": "HP",
+      "price": 1399.99,
+      "stock": 10,
+      "description": "Convertible laptop with Intel Core i7 and 14-inch OLED display.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/81tvzYt2eFL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "30",
+      "name": "Dell S2721D 27\" Monitor",
+      "brand": "Dell",
+      "price": 349.99,
+      "stock": 15,
+      "description": "27-inch QHD monitor with thin bezels and vibrant colors.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/81tSb5k2KcL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "31",
+      "name": "Redragon K552 Mechanical Gaming Keyboard",
+      "brand": "Redragon",
+      "price": 49.99,
+      "stock": 40,
+      "description": "Compact RGB mechanical gaming keyboard with durable design.",
+      "category": "Keyboards",
+      "image_url": "https://m.media-amazon.com/images/I/71UJX3GmVBL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "32",
+      "name": "Razer Basilisk X Hyperspeed Mouse",
+      "brand": "Razer",
+      "price": 59.99,
+      "stock": 20,
+      "description": "Wireless gaming mouse with customizable sensitivity and programmable buttons.",
+      "category": "Mouse",
+      "image_url": "https://m.media-amazon.com/images/I/71pT7nPtdzL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "33",
+      "name": "ASUS VivoBook 15",
+      "brand": "ASUS",
+      "price": 699.99,
+      "stock": 12,
+      "description": "15-inch laptop with AMD Ryzen 5 and a vibrant display.",
+      "category": "Laptops",
+      "image_url": "https://m.media-amazon.com/images/I/81OAWx01xNL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "34",
+      "name": "LG 27UL500-W 27\" Monitor",
+      "brand": "LG",
+      "price": 329.99,
+      "stock": 10,
+      "description": "27-inch 4K monitor with HDR10 support and IPS technology.",
+      "category": "Monitors",
+      "image_url": "https://m.media-amazon.com/images/I/81sn32EoSPL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "35",
+      "name": "Turtle Beach Stealth 600 Gen 2 Gaming Headset",
+      "brand": "Turtle Beach",
+      "price": 99.99,
+      "stock": 15,
+      "description": "Wireless gaming headset with surround sound and long battery life.",
+      "category": "Headsets",
+      "image_url": "https://m.media-amazon.com/images/I/71+yx6h7FOL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "36",
+      "name": "Corsair Void RGB Elite Wireless Headset",
+      "brand": "Corsair",
+      "price": 99.99,
+      "stock": 18,
+      "description": "Wireless gaming headset with customizable RGB lighting.",
+      "category": "Headsets",
+      "image_url": "https://m.media-amazon.com/images/I/71AoABTKgIL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "37",
+      "name": "Creative Pebble 2.0 Speakers",
+      "brand": "Creative",
+      "price": 49.99,
+      "stock": 25,
+      "description": "Compact 2.0 speaker system with powerful sound for your desk.",
+      "category": "Speakers",
+      "image_url": "https://m.media-amazon.com/images/I/71OHZpZlLFL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "38",
+      "name": "Logitech G560 LIGHTSYNC Speakers",
+      "brand": "Logitech",
+      "price": 199.99,
+      "stock": 12,
+      "description": "High-performance gaming speakers with RGB lighting.",
+      "category": "Speakers",
+      "image_url": "https://m.media-amazon.com/images/I/81N5z2WZdeL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "39",
+      "name": "Samsung Galaxy Buds Live",
+      "brand": "Samsung",
+      "price": 169.99,
+      "stock": 20,
+      "description": "True wireless earbuds with active noise cancellation.",
+      "category": "Headsets",
+      "image_url": "https://m.media-amazon.com/images/I/71z6Zqe7vDL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "40",
+      "name": "HyperX Cloud II Gaming Headset",
+      "brand": "HyperX",
+      "price": 89.99,
+      "stock": 25,
+      "description": "Gaming headset with virtual 7.1 surround sound and comfortable design.",
+      "category": "Headsets",
+      "image_url": "https://m.media-amazon.com/images/I/61nGQ0F1RxL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "41",
+      "name": "Razer Kraken X Lite Gaming Headset",
+      "brand": "Razer",
+      "price": 49.99,
+      "stock": 30,
+      "description": "Lightweight gaming headset with great sound and microphone quality.",
+      "category": "Headsets",
+      "image_url": "https://m.media-amazon.com/images/I/71SObUN7OdL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "42",
+      "name": "ZOTAC Gaming GeForce RTX 3080 Graphics Card",
+      "brand": "ZOTAC",
+      "price": 799.99,
+      "stock": 10,
+      "description": "High-end graphics card for gaming and creative work.",
+      "category": "Graphics Cards",
+      "image_url": "https://m.media-amazon.com/images/I/81yQxQzDpmL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "43",
+      "name": "ASUS TUF Gaming GeForce GTX 1660 Super",
+      "brand": "ASUS",
+      "price": 259.99,
+      "stock": 15,
+      "description": "Mid-range graphics card with excellent performance for 1080p gaming.",
+      "category": "Graphics Cards",
+      "image_url": "https://m.media-amazon.com/images/I/71YtnCv+yqL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "44",
+      "name": "MSI GeForce RTX 3070 Gaming X",
+      "brand": "MSI",
+      "price": 649.99,
+      "stock": 8,
+      "description": "Powerful graphics card for high-resolution gaming and VR.",
+      "category": "Graphics Cards",
+      "image_url": "https://m.media-amazon.com/images/I/81URjUeb7UL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "45",
+      "name": "EVGA GeForce GTX 1650 SC Ultra Gaming",
+      "brand": "EVGA",
+      "price": 199.99,
+      "stock": 20,
+      "description": "Affordable graphics card for entry-level gaming.",
+      "category": "Graphics Cards",
+      "image_url": "https://m.media-amazon.com/images/I/81BBUwTGq5L._AC_SL1500_.jpg"
+    },
+    {
+      "id": "46",
+      "name": "Corsair Vengeance LPX 16GB DDR4 RAM",
+      "brand": "Corsair",
+      "price": 79.99,
+      "stock": 50,
+      "description": "High-performance RAM for gaming and productivity.",
+      "category": "RAM",
+      "image_url": "https://m.media-amazon.com/images/I/81mds5w20fL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "47",
+      "name": "G.SKILL Trident Z RGB 16GB DDR4 RAM",
+      "brand": "G.SKILL",
+      "price": 89.99,
+      "stock": 25,
+      "description": "Stylish RGB RAM for gaming and overclocking.",
+      "category": "RAM",
+      "image_url": "https://m.media-amazon.com/images/I/81to1JnvBML._AC_SL1500_.jpg"
+    },
+    {
+      "id": "48",
+      "name": "Samsung 970 EVO 1TB NVMe SSD",
+      "brand": "Samsung",
+      "price": 139.99,
+      "stock": 30,
+      "description": "Fast NVMe SSD for improved system responsiveness.",
+      "category": "Storage",
+      "image_url": "https://m.media-amazon.com/images/I/81I3h+h41zL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "49",
+      "name": "WD Blue 2TB HDD",
+      "brand": "Western Digital",
+      "price": 59.99,
+      "stock": 40,
+      "description": "Reliable 2TB hard drive for data storage.",
+      "category": "Storage",
+      "image_url": "https://m.media-amazon.com/images/I/81eZpUwC3OL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "50",
+      "name": "Seagate Barracuda 4TB HDD",
+      "brand": "Seagate",
+      "price": 89.99,
+      "stock": 15,
+      "description": "High-capacity 4TB hard drive for large data files.",
+      "category": "Storage",
+      "image_url": "https://m.media-amazon.com/images/I/81tWZJwYndL._AC_SL1500_.jpg"
+    }
+  ]
+}

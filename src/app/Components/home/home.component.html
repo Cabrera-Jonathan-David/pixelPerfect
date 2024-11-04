@@ -1,52 +1,241 @@
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Bienvenido a Perfect Pixel</h1>
-    
-    <!-- Sección de imagen de fondo -->
-    <div class="jumbotron text-white" style="background: url('https://via.placeholder.com/1200x400') no-repeat center center; background-size: cover;">
-      <div class="container">
-        <h1 class="display-4">Descubre nuestros productos</h1>
-        <p class="lead">Todo lo que necesitas para tus proyectos creativos.</p>
-        <a class="btn btn-primary btn-lg" routerLink="/productos" role="button">Ver Productos</a>
+<!-- Banner Principal -->
+<div class="container-fluid p-0">
+  <div class="bg-dark text-white text-center py-5">
+    <h1>Bienvenido a Perfect Pixel</h1>
+    <p>Todo lo que necesitas en hardware y accesorios para computación</p>
+    <a href="/products" class="btn btn-primary mt-3">Explorar Productos</a>
+  </div>
+</div>
+
+<!-- Carrusel de Productos Destacados -->
+<div
+  id="carouselExampleCaptions"
+  class="carousel slide mt-5"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="ruta/a/imagen1.jpg"
+        class="d-block w-100"
+        alt="Producto destacado 1"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Teclados Mecánicos</h5>
+        <p>Descubre la precisión y velocidad de nuestros teclados mecánicos</p>
       </div>
     </div>
-  
-    <!-- Sección de productos destacados -->
-    <h2 class="text-center mt-5 mb-4">Productos Destacados</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Producto 1</h5>
-            <p class="card-text">Descripción breve del producto 1.</p>
-            <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-          </div>
+    <div class="carousel-item">
+      <img
+        src="ruta/a/imagen2.jpg"
+        class="d-block w-100"
+        alt="Producto destacado 2"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Mouses de Alta Precisión</h5>
+        <p>Explora nuestra selección de mouses de alto rendimiento</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="ruta/a/imagen3.jpg"
+        class="d-block w-100"
+        alt="Producto destacado 3"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Accesorios para Gamers</h5>
+        <p>
+          Todo lo que necesitas para llevar tu experiencia de juego al siguiente
+          nivel
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Sección de Productos Destacados -->
+<div class="row mt-4">
+  <div *ngFor="let product of products" class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img
+        [src]="product.image_url"
+        class="card-img-top"
+        alt="{{ product.name }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description | slice : 0 : 100 }}...</p>
+        <p class="card-text"><strong>Precio:</strong> ${{ product.price }}</p>
+        <p><strong>Stock:</strong> {{ product.stock }}</p>
+        <ng-template #outOfStock>
+          <p class="text-danger"><strong>Sin stock disponible</strong></p>
+        </ng-template>
+
+        <!-- Botón para ver detalles -->
+        <button
+          class="btn btn-outline-primary me-2"
+          [routerLink]="['/products', product.id]"
+        >
+          Ver detalle
+        </button>
+
+        <!-- Botón para agregar al carrito -->
+        <button class="btn btn-success" (click)="addToCart(product)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección de Categorías -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Explora por Categoría</h2>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 text-center bg-light">
+        <img src="ruta/a/teclado.jpg" class="card-img-top" alt="Teclados" />
+        <div class="card-body">
+          <h5 class="card-title">Teclados</h5>
+          <a routerLink="/productos/teclados" class="btn btn-outline-dark"
+            >Ver Teclados</a
+          >
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 2">
-          <div class="card-body">
-            <h5 class="card-title">Producto 2</h5>
-            <p class="card-text">Descripción breve del producto 2.</p>
-            <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-          </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 text-center bg-light">
+        <img src="ruta/a/mouse.jpg" class="card-img-top" alt="Mouses" />
+        <div class="card-body">
+          <h5 class="card-title">Mouses</h5>
+          <a routerLink="/productos/mouses" class="btn btn-outline-dark"
+            >Ver Mouses</a
+          >
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 3">
-          <div class="card-body">
-            <h5 class="card-title">Producto 3</h5>
-            <p class="card-text">Descripción breve del producto 3.</p>
-            <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-          </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 text-center bg-light">
+        <img
+          src="ruta/a/auriculares.jpg"
+          class="card-img-top"
+          alt="Auriculares"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Auriculares</h5>
+          <a routerLink="/productos/auriculares" class="btn btn-outline-dark"
+            >Ver Auriculares</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 text-center bg-light">
+        <img src="ruta/a/monitores.jpg" class="card-img-top" alt="Monitores" />
+        <div class="card-body">
+          <h5 class="card-title">Monitores</h5>
+          <a routerLink="/productos/monitores" class="btn btn-outline-dark"
+            >Ver Monitores</a
+          >
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Sección de pie de página -->
-  <footer class="bg-dark text-white text-center py-4">
-    <p>&copy; 2024 Perfect Pixel. Todos los derechos reservados.</p>
-  </footer>
+</div>
+
+<!-- Banner Promocional -->
+<div class="container-fluid bg-warning text-dark py-5 mt-5 text-center">
+  <h2>¡Ofertas Exclusivas!</h2>
+  <p>Hasta 50% de descuento en productos seleccionados</p>
+  <a href="/products" class="btn btn-dark">Ver Ofertas</a>
+</div>
+
+<!-- Testimonios -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Opiniones de Clientes</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <blockquote class="blockquote">
+            <p class="mb-0">
+              "Excelente calidad en los productos. Totalmente recomendados."
+            </p>
+            <footer class="blockquote-footer">Juan Pérez</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <blockquote class="blockquote">
+            <p class="mb-0">
+              "Rápido envío y atención al cliente inmejorable."
+            </p>
+            <footer class="blockquote-footer">María López</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <blockquote class="blockquote">
+            <p class="mb-0">
+              "Mis accesorios de gaming ahora son perfectos. Volveré a comprar."
+            </p>
+            <footer class="blockquote-footer">Carlos Ramírez</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+  <p>&copy; 2024 Perfect Pixel. Todos los derechos reservados.</p>
+  <a href="/faq" class="text-white">Preguntas Frecuentes</a> |
+  <a href="/sucursales" class="text-white">Nuestras Sucursales</a>
+</footer>

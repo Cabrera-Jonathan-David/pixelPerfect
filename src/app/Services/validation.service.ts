@@ -1,59 +1,54 @@
 import { Injectable } from '@angular/core';
 import { ClientService } from './client.service';
-import { AbstractControl, AsyncValidatorFn, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
 import { UserService } from './user.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ValidationService {
-
   constructor(
-    private clientService : ClientService,
+    private clientService: ClientService,
     private userService: UserService
-  ) { }
+  ) {}
 
-  // VALIDADOR ASINCRONICO PARA VERIFICAR QUE NO EXISTA UN DNI REPETIDO EN UN USER
-  dniValidator(clientService: ClientService): AsyncValidatorFn {
-    return async (control: AbstractControl): Promise<ValidationErrors | null> => {
-        const dni = control.value;
+  checkDniExistsAsync(): AsyncValidatorFn {
+    return async (control: AbstractControl) => {
+      if (!control.value) {
+        return null; // No validar si no hay valor
+      }
 
-        // Solo validar si el campo no está vacío
-        if (!dni) {
-            return null; // No hay error si el campo está vacío
-        }
-
-        const result = await clientService.validateDni(dni);
-        return result.exists ? { dniExists: true } : null; // Retorna un error si existe
+      try {
+        const existingDni = await this.clientService.checkDniExists(
+          control.value
+        );
+        return existingDni ? { dniExists: true } : null; // Devuelve un objeto de error si el DNI existe
+      } catch (error) {
+        console.error('Error verificando DNI:', error);
+        return null; // Si hay un error, no marcamos el control como inválido
+      }
     };
   }
 
-  // VALIDADOR ASINCRONICO PARA VERIFICAR QUE NO EXISTA UN DNI REPETIDO EN UN USER
-  emailValidator(clientService: ClientService): AsyncValidatorFn {
-    return async (control: AbstractControl): Promise<ValidationErrors | null> => {
-        const email = control.value;
+  // Validación para el email
+  checkEmailExistsAsync(): AsyncValidatorFn {
+    return async (control: AbstractControl) => {
+      if (!control.value) {
+        return null; // No validar si no hay valor
+      }
 
-        // Solo validar si el campo no está vacío
-        if (!email) {
-            return null; // No hay error si el campo está vacío
-        }
-
-        const result = await clientService.validateEmail(email);
-        return result.exists ? { emailExists: true } : null; // Retorna un error si existe
+      try {
+        const existingEmail = await this.clientService.checkUserEmailExists(
+          control.value
+        );
+        return existingEmail ? { emailExists: true } : null; // Devuelve un objeto de error si el email existe
+      } catch (error) {
+        console.error('Error verificando email:', error);
+        return null; // Si hay un error, no marcamos el control como inválido
+      }
     };
   }
 
-
-
-
-
-
-
-
-
-
-
-  // VALIDADOR ASINCRONICO PARA VERIFICAR QUE NO EXISTA UN USERNAME REPETIDO
   checkUsernameExistsAsync(): AsyncValidatorFn {
     return async (control: AbstractControl) => {
       if (!control.value) {
@@ -61,7 +56,9 @@ export class ValidationService {
       }
 
       try {
-        const existingUser = await this.userService.checkUsernameExists(control.value);
+        const existingUser = await this.userService.checkUsernameExists(
+          control.value
+        );
         return existingUser ? { usernameExists: true } : null; // Devuelve un objeto de error si el usuario existe
       } catch (error) {
         console.error('Error verificando nombre de usuario:', error);
@@ -69,35 +66,4 @@ export class ValidationService {
       }
     };
   }
-
-  // VALIDADOR PARA VERIFICAR SI ES MAYOR DE EDAD, NO ASINCRONICO
-  mayorDeEdadValidator(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-        const fechaNacimiento = control.value;
-
-        if (!fechaNacimiento) {
-            return null; 
-        }
-
-        const hoy = new Date();
-        const fechaNacimientoDate = new Date(fechaNacimiento);
-
-        if (isNaN(fechaNacimientoDate.getTime())) {
-            return null;
-        }
-
-        const edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
-        const mes = hoy.getMonth() - fechaNacimientoDate.getMonth();
-        const dia = hoy.getDate() - fechaNacimientoDate.getDate();
-
-        if (edad < 18 || (edad === 18 && (mes < 0 || (mes === 0 && dia < 0)))) {
-            return { menorDeEdad: true }; 
-        }
-
-        return null; 
-    };
-
-}
-
-
 }
