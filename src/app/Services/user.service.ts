@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Interface/user';
 import { HttpClient } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
 
 
 
@@ -17,16 +16,19 @@ export class UserService {
 
 constructor(private http: HttpClient){}
 
-async checkUsernameExists(username: string): Promise<boolean> {
-  const response = await this.http.get<any[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
-  return Array.isArray(response) && response.length > 0; // Devuelve un booleano
-}
-
-
+// METODO PARA CREAR UN USUARIO
 async createUser(userData: any): Promise<any> {
   return await this.http.post(this.apiUsersUrl, userData).toPromise();
 }
 
+
+// METODO PARA VERIFICAR SI EXISTE UN USERNAME , ME DEVUELVE BOOLEANO
+async checkUsernameExists(username: string): Promise<boolean> {
+  const response = await this.http.get<any[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
+  return Array.isArray(response) && response.length > 0; 
+}
+
+//METODO PARA OBTENER UN USUARIO POR USERNAME
 async getUserByUsername(username: string): Promise<User | null> {
   const response = await this.http.get<User[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
   if (Array.isArray(response) && response.length > 0) {
@@ -35,10 +37,46 @@ async getUserByUsername(username: string): Promise<User | null> {
   return null; 
 }
 
+//METODO PARA OBTENER UN USUARIO POR ID DEL CLIENTE
+async getUserByClientId(clientId: string): Promise<User | null> {
+  const response = await this.http.get<User[]>(`${this.apiUsersUrl}?id_cliente=${clientId}`);
+
+  if (Array.isArray(response) && response.length > 0) {
+    return response[0]; 
+  }
+
+  return null;
+}
+
+
+// METODO PARA OBTENER TODOS LOS USUARIOS
+getAllUsers(): Promise<User[]> {
+  return this.http.get<User[]>(this.apiUsersUrl).toPromise().then(users => {
+    return users || []; 
+  }).catch(error => {
+    console.error('Error fetching users:', error);
+    return []; 
+  });
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------- METODOS PARA SISTEMA DE TOKENS E IDENTIFICACION ------------------------
 //-----------------------------------------------------------------------------------------------
 async login(username: string, password: string): Promise<string | null> {
   const response = await this.http.get<User[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
@@ -68,13 +106,5 @@ logout(): void {
 isAuthenticated(): boolean {
   return localStorage.getItem('token') !== null; // Verifica si hay un token almacenado
 }
-
-
-
-
-
-
-
-
 
 }

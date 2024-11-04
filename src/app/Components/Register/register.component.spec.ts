@@ -21,3 +21,11 @@ describe('RegisterComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+function expect(component: RegisterComponent): any { //hice que en vez de retornara de un any a void
+  throw new Error('Function not implemented.');
+}
+function beforeEach(arg0: () => Promise<void>) {
+  throw new Error('Function not implemented.');
+}
+

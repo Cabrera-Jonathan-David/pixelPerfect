@@ -47,9 +47,9 @@
       "dni": "38619503",
       "fechaNacimiento": "1994-11-20",
       "codigoArea": "0223",
-      "telefono": "155478486",
+      "telefono": "155478487",
       "direccion": "Trinidad y Tobago",
-      "altura": "245",
+      "altura": "242",
       "piso": "",
       "codigoPostal": "7600",
       "ciudad": "Mar del Plata",
@@ -73,6 +73,23 @@
       "codigoPostal": "7600",
       "ciudad": "Mar del plata",
       "provincia": "bs as",
+      "pais": "Argentina"
+    },
+    {
+      "id": "c88f",
+      "email": "alfredo@gmail.com",
+      "nombre": "Alfredo",
+      "apellido": "Alfredo",
+      "dni": "22222222",
+      "fechaNacimiento": "1998-08-05",
+      "codigoArea": "011",
+      "telefono": "1564548499",
+      "direccion": "9 de julio",
+      "altura": "5689",
+      "piso": "",
+      "codigoPostal": "2256",
+      "ciudad": "buenos aires",
+      "provincia": "Buenos Aires",
       "pais": "Argentina"
     }
   ]
