@@ -1,44 +1,204 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Laptop Dell XPS 13",
-        "brand": "Dell",
-        "price": 1200.99,
-        "stock": 10,
-        "description": "Laptop ultraportable with a 13-inch touchscreen and Intel Core i7 processor.",
-        "category": "Laptops",
-        "image_url": "https://m.media-amazon.com/images/I/61hSHC1ClAL._AC_SL1500_.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Monitor Samsung 27\" QHD",
-        "brand": "Samsung",
-        "price": 300.49,
-        "stock": 25,
-        "description": "27-inch Samsung monitor with QHD resolution, ideal for work and gaming.",
-        "category": "Monitors",
-        "image_url": "URL"
-      },
-      {
-        "id": 3,
-        "name": "Logitech G PRO Mechanical Keyboard",
-        "brand": "Logitech",
-        "price": 129.99,
-        "stock": 50,
-        "description": "Compact mechanical keyboard with GX Blue switches for superior gaming performance.",
-        "category": "Keyboards",
-        "image_url": "URL"
-      },
-      {
-        "id": 4,
-        "name": "Razer DeathAdder V2 Mouse",
-        "brand": "Razer",
-        "price": 59.99,
-        "stock": 30,
-        "description": "Ergonomic high-precision gaming mouse with 20,000 DPI optical sensor.",
-        "category": "Mice",
-        "image_url": "URL"
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Gamer HP Pavilion",
+      "brand": "HP",
+      "price": 1200,
+      "stock": 15,
+      "description": "Laptop gamer con procesador Intel i7 y tarjeta gráfica RTX 3060.",
+      "category": "Laptops",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "2",
+      "name": "Mouse Razer DeathAdder",
+      "brand": "Razer",
+      "price": 60,
+      "stock": 100,
+      "description": "Mouse ergonómico con iluminación RGB y alta precisión.",
+      "category": "Periféricos",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "3",
+      "name": "Teclado mecánico Corsair K95",
+      "brand": "Corsair",
+      "price": 180,
+      "stock": 3,
+      "description": "Teclado mecánico con retroiluminación RGB y teclas programables.",
+      "category": "Teclados",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "4",
+      "name": "Monitor Dell UltraSharp 27\"",
+      "brand": "Dell",
+      "price": 600,
+      "stock": 30,
+      "description": "Monitor de alta resolución con colores precisos y tecnología IPS.",
+      "category": "Monitores",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "5",
+      "name": "Placa base ASUS ROG Strix B550-F",
+      "brand": "ASUS",
+      "price": 200,
+      "stock": 1,
+      "description": "Placa base compatible con procesadores AMD Ryzen y tecnología gaming.",
+      "category": "Componentes",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "6",
+      "name": "SSD Samsung 970 EVO 1TB",
+      "brand": "Samsung",
+      "price": 120,
+      "stock": 40,
+      "description": "SSD NVMe de alto rendimiento con capacidad de 1TB.",
+      "category": "Almacenamiento",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "7",
+      "name": "Tarjeta gráfica NVIDIA GeForce RTX 3080",
+      "brand": "NVIDIA",
+      "price": 800,
+      "stock": 0,
+      "description": "Tarjeta gráfica de alto rendimiento para gamers y creadores de contenido.",
+      "category": "Componentes",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "8",
+      "name": "Auriculares Logitech G Pro",
+      "brand": "Logitech",
+      "price": 100,
+      "stock": 70,
+      "description": "Auriculares con sonido envolvente y micrófono desmontable.",
+      "category": "Periféricos",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "9",
+      "name": "Fuente de poder EVGA 600W",
+      "brand": "EVGA",
+      "price": 75,
+      "stock": 25,
+      "description": "Fuente de poder de 600W con eficiencia 80 PLUS.",
+      "category": "Componentes",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "10",
+      "name": "Laptop Dell XPS 15",
+      "brand": "Dell",
+      "price": 1500,
+      "stock": 12,
+      "description": "Laptop ultradelgada con pantalla 4K y rendimiento excepcional.",
+      "category": "Laptops",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "11",
+      "name": "Hub USB Anker 10 puertos",
+      "brand": "Anker",
+      "price": 40,
+      "stock": 80,
+      "description": "Hub USB con 10 puertos para conectar múltiples dispositivos.",
+      "category": "Accesorios",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "12",
+      "name": "Webcam Logitech C920",
+      "brand": "Logitech",
+      "price": 80,
+      "stock": 60,
+      "description": "Webcam HD con enfoque automático y micrófono integrado.",
+      "category": "Periféricos",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "13",
+      "name": "Silla Gamer DXRacer",
+      "brand": "DXRacer",
+      "price": 350,
+      "stock": 3,
+      "description": "Silla gamer ergonómica para largas sesiones de juego.",
+      "category": "Muebles",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "14",
+      "name": "Monitor LG 34\" UltraWide",
+      "brand": "LG",
+      "price": 900,
+      "stock": 10,
+      "description": "Monitor UltraWide para una experiencia inmersiva en juegos y trabajo.",
+      "category": "Monitores",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "15",
+      "name": "Router WiFi TP-Link AC1750",
+      "brand": "TP-Link",
+      "price": 60,
+      "stock": 45,
+      "description": "Router de doble banda con tecnología AC1750 para mejor rendimiento.",
+      "category": "Redes",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "16",
+      "name": "Disco Duro Externo Seagate 2TB",
+      "brand": "Seagate",
+      "price": 100,
+      "stock": 30,
+      "description": "Disco duro externo de 2TB, ideal para almacenamiento portátil.",
+      "category": "Almacenamiento",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "17",
+      "name": "Tarjeta de sonido Creative Sound Blaster",
+      "brand": "Creative",
+      "price": 100,
+      "stock": 20,
+      "description": "Tarjeta de sonido para una experiencia auditiva superior.",
+      "category": "Componentes",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "18",
+      "name": "Cámara de acción GoPro Hero 9",
+      "brand": "GoPro",
+      "price": 400,
+      "stock": 25,
+      "description": "Cámara de acción resistente al agua, ideal para grabar aventuras.",
+      "category": "Cámaras",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "19",
+      "name": "Microfono USB Blue Yeti",
+      "brand": "Blue",
+      "price": 130,
+      "stock": 40,
+      "description": "Micrófono USB ideal para streaming y grabación de voz.",
+      "category": "Periféricos",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    },
+    {
+      "id": "20",
+      "name": "Cargador portátil Anker PowerCore",
+      "brand": "Anker",
+      "price": 50,
+      "stock": 75,
+      "description": "Cargador portátil de alta capacidad para dispositivos móviles.",
+      "category": "Accesorios",
+      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+    }
+  ]
+}

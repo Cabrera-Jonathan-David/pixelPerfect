@@ -2,12 +2,12 @@
   "name": "proyectito",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
+    "ng": "ng",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "backend": "json-server ./DB/users.json --watch --port 3000" 
+   "backend": "concurrently \"json-server --watch ./DB/users.json --port 3001\" \"json-server --watch ./DB/products.json --port 3002\" \"json-server --watch ./DB/cards.json --port 3003\""
    },
   "private": true,
   "dependencies": {

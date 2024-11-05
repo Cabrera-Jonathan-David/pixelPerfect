@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../Services/user.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../Services/authentication.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private location: Location
 
   ) { 
       this.loginForm = this.fb.group({
@@ -28,10 +29,16 @@ export class LoginComponent implements OnInit {
 
     }
 
+   
+  
+
   ngOnInit(): void {
     
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 
   async onSubmit(){
 
@@ -42,8 +49,9 @@ export class LoginComponent implements OnInit {
             if(token){
               localStorage.setItem('token', token)
               this.authService.login();
-              this.router.navigate(['/home']);
               this.loginError = false;
+              /*this.router.navigate(['/home']);*/
+              this.goBack();
             }else{
               this.loginError = true;
               console.error('Credenciales Incorrectas')

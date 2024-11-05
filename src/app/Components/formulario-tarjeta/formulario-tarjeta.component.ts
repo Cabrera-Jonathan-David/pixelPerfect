@@ -44,5 +44,6 @@ export class FormularioTarjetaComponent {
     this.tarjetaForm.get('numeroTarjeta')?.setValue(this.tarjetaForm.get('numeroTarjeta')?.value.replace(/-/g, '')); // Eliminar guiones al guardar
   }
 
+  
 
 }

@@ -10,7 +10,7 @@ import { User } from '../Interface/user';
 })
 export class ClientService {
 
-private apiUrlClient = "http://localhost:3000/clients";
+private apiUrlClient = "http://localhost:3001/clients";
 
   constructor(
       private http: HttpClient,
@@ -64,7 +64,7 @@ async getClientById(id: string): Promise<Client | null> {
 
 // OBTENER CLIENTE POR DNI
 async getClientByDni(dni: string): Promise<Client | null> {
-  const response = await this.http.get<Client[]>(`${this.apiUrlClient}?dni=${dni}`);
+  const response = await firstValueFrom(this.http.get<Client[]>(`${this.apiUrlClient}?dni=${dni}`));
 
   if (Array.isArray(response) && response.length > 0) {
     return response[0]; 

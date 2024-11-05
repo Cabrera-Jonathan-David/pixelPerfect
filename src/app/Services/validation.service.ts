@@ -18,15 +18,20 @@ export class ValidationService {
     return async (control: AbstractControl): Promise<ValidationErrors | null> => {
         const dni = control.value;
 
-        // Solo validar si el campo no está vacío
         if (!dni) {
             return null; // No hay error si el campo está vacío
         }
 
-        const result = await clientService.validateDni(dni);
-        return result.exists ? { dniExists: true } : null; // Retorna un error si existe
+        try {
+            const result = await clientService.validateDni(dni);
+            return result.exists ? { dniExists: true } : null; // Retorna un error si existe
+        } catch (error) {
+            console.error('Error verificando DNI:', error);
+            return null; // Retorna null si hay un error, o podrías marcar el control como inválido
+        }
     };
-  }
+}
+
 
   // VALIDADOR ASINCRONICO PARA VERIFICAR QUE NO EXISTA UN DNI REPETIDO EN UN USER
   emailValidator(clientService: ClientService): AsyncValidatorFn {
@@ -42,15 +47,6 @@ export class ValidationService {
         return result.exists ? { emailExists: true } : null; // Retorna un error si existe
     };
   }
-
-
-
-
-
-
-
-
-
 
 
   // VALIDADOR ASINCRONICO PARA VERIFICAR QUE NO EXISTA UN USERNAME REPETIDO

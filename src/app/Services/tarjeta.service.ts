@@ -7,7 +7,7 @@ import { Tarjeta } from '../Interface/tarjeta';
   providedIn: 'root'
 })
 export class TarjetaService {
-  private apiUrl = 'http://localhost:3000/tarjetas';
+  private apiUrl = 'http://localhost:3003/tarjetas';
 
   constructor(private http: HttpClient) {}
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
   private loggedIn: boolean = false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   login(): void{
 
@@ -16,6 +17,7 @@ export class AuthenticationService {
   logout(): void{
 
     localStorage.removeItem('token');
+    this.router.navigate(['/home']);
   }
 
   isLoggedIn(): boolean{

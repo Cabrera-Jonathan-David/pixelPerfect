@@ -1,6 +1,6 @@
-
 import { Injectable } from '@angular/core';
 import { User } from '../Interface/user';
+import { firstValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  private apiUsersUrl = 'http://localhost:3000/users';
+  private apiUsersUrl = 'http://localhost:3001/users';
   
 
 
@@ -24,28 +24,36 @@ async createUser(userData: any): Promise<any> {
 
 // METODO PARA VERIFICAR SI EXISTE UN USERNAME , ME DEVUELVE BOOLEANO
 async checkUsernameExists(username: string): Promise<boolean> {
-  const response = await this.http.get<any[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
-  return Array.isArray(response) && response.length > 0; 
+  try {
+    const response = await firstValueFrom(this.http.get<any[]>(`${this.apiUsersUrl}?username=${username}`));
+    return response.length > 0;
+  } catch (error) {
+    console.error("Error fetching username:", error);
+    return false;
+  }
 }
+
 
 //METODO PARA OBTENER UN USUARIO POR USERNAME
 async getUserByUsername(username: string): Promise<User | null> {
-  const response = await this.http.get<User[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
-  if (Array.isArray(response) && response.length > 0) {
-      return response[0];
+  try {
+    const response = await firstValueFrom(this.http.get<User[]>(`${this.apiUsersUrl}?username=${username}`));
+    return response.length > 0 ? response[0] : null;
+  } catch (error) {
+    console.error("Error fetching user by username:", error);
+    return null;
   }
-  return null; 
 }
 
 //METODO PARA OBTENER UN USUARIO POR ID DEL CLIENTE
 async getUserByClientId(clientId: string): Promise<User | null> {
-  const response = await this.http.get<User[]>(`${this.apiUsersUrl}?id_cliente=${clientId}`);
-
-  if (Array.isArray(response) && response.length > 0) {
-    return response[0]; 
+  try {
+    const response = await firstValueFrom(this.http.get<User[]>(`${this.apiUsersUrl}?id_cliente=${clientId}`));
+    return response.length > 0 ? response[0] : null;
+  } catch (error) {
+    console.error("Error fetching user by client ID:", error);
+    return null;
   }
-
-  return null;
 }
 
 
@@ -60,36 +68,25 @@ getAllUsers(): Promise<User[]> {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ---------------------- METODOS PARA SISTEMA DE TOKENS E IDENTIFICACION ------------------------
-//-----------------------------------------------------------------------------------------------
+// ---------------------- MÉTODOS PARA SISTEMA DE TOKENS E IDENTIFICACIÓN ------------------------
 async login(username: string, password: string): Promise<string | null> {
-  const response = await this.http.get<User[]>(`${this.apiUsersUrl}?username=${username}`).toPromise();
-  if (Array.isArray(response) && response.length > 0) {
-    const user = response[0];
-    if (user.password === password) {
-      const token = this.generateToken(user); // Genera un token de usuario
-      localStorage.setItem('token', token); // Guarda el token en localStorage
-      localStorage.setItem('username', user.username); // aca guardo el user en la local storage
-      return token; // Retorna el token para uso adicional si es necesario
+  try {
+    const response = await firstValueFrom(this.http.get<User[]>(`${this.apiUsersUrl}?username=${username}`));
+    if (response.length > 0) {
+      const user = response[0];
+      if (user.password === password) {
+        const token = this.generateToken(user); // Genera un token de usuario
+        localStorage.setItem('token', token); // Guarda el token en localStorage
+        localStorage.setItem('username', user.username); // Guarda el usuario en localStorage
+        return token; // Retorna el token para uso adicional si es necesario
+      }
     }
+    return null;
+  } catch (error) {
+    console.error("Error during login:", error);
+    return null;
   }
-  return null; 
 }
 
 // Generador de token 
