@@ -11,6 +11,8 @@ import { ValidationService } from '../../Services/validation.service';
   templateUrl: './pre-payment.component.html',
   styleUrl: './pre-payment.component.css'
 })
+
+
 export class PrePaymentComponent implements OnInit {
 
 

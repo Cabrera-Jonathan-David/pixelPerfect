@@ -298,6 +298,27 @@
       </div>
 
       <div class="col-md-6 mb-3">
+        <label for="provincia">Provincia</label>
+        <input
+          type="text"
+          id="provincia"
+          class="form-control"
+          formControlName="provincia"
+        />
+        <div
+          *ngIf="
+            guestForm.get('provincia')?.invalid &&
+            guestForm.get('provincia')?.touched
+          "
+          class="text-danger"
+        >
+          <span *ngIf="guestForm.get('provincia')?.errors?.['required']"
+            >La provincia es obligatoria.</span
+          >
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
         <label for="pais">País</label>
         <input
           type="text"
@@ -318,26 +339,7 @@
       </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-      <label for="provincia">Provincia</label>
-      <input
-        type="text"
-        id="provincia"
-        class="form-control"
-        formControlName="provincia"
-      />
-      <div
-        *ngIf="
-          guestForm.get('provincia')?.invalid &&
-          guestForm.get('provincia')?.touched
-        "
-        class="text-danger"
-      >
-        <span *ngIf="guestForm.get('provincia')?.errors?.['required']"
-          >El pais es obligatorio.</span
-        >
-      </div>
-    </div>
+    
 
     <button
       type="submit"
