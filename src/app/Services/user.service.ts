@@ -60,22 +60,6 @@ getAllUsers(): Promise<User[]> {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ---------------------- METODOS PARA SISTEMA DE TOKENS E IDENTIFICACION ------------------------
 //-----------------------------------------------------------------------------------------------
 async login(username: string, password: string): Promise<string | null> {

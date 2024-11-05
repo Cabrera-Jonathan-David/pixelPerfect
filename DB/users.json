@@ -17,6 +17,12 @@
       "username": "Joaquin",
       "password": "Joaco1234!",
       "id_cliente": "1eba"
+    },
+    {
+      "id": "f02d",
+      "username": "Facundo",
+      "password": "Facu1234!",
+      "id_cliente": "4f76"
     }
   ],
   "clients": [
@@ -90,6 +96,42 @@
       "codigoPostal": "2256",
       "ciudad": "buenos aires",
       "provincia": "Buenos Aires",
+      "pais": "Argentina"
+    },
+    {
+      "id": "4f76",
+      "username": "Facundo",
+      "password": "Facu1234!",
+      "email": "Amores@gmail.com",
+      "nombre": "facu",
+      "apellido": "amores",
+      "dni": "34567678",
+      "fechaNacimiento": "2000-09-20",
+      "codigoArea": "223",
+      "telefono": "155987867",
+      "direccion": "9 de julio",
+      "altura": "5689",
+      "piso": "",
+      "codigoPostal": "2256",
+      "ciudad": "buenos aires",
+      "provincia": "Buenos Aires",
+      "pais": "Argentina"
+    },
+    {
+      "id": "324e",
+      "email": "jony@gmail.com",
+      "nombre": "Jony",
+      "apellido": "Cabrera",
+      "dni": "56789123",
+      "fechaNacimiento": "2000-08-15",
+      "codigoArea": "223",
+      "telefono": "5254585",
+      "direccion": "San luis",
+      "altura": 521,
+      "piso": "3",
+      "codigoPostal": "7600",
+      "ciudad": "mar del plata",
+      "provincia": "buenos aires",
       "pais": "Argentina"
     }
   ]

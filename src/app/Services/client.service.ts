@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Client } from '../Interface/client';
-import { firstValueFrom } from 'rxjs';
 import { UserService } from './user.service';
 import { User } from '../Interface/user';
 

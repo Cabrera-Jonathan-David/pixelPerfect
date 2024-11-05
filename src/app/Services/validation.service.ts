@@ -44,15 +44,6 @@ export class ValidationService {
   }
 
 
-
-
-
-
-
-
-
-
-
   // VALIDADOR ASINCRONICO PARA VERIFICAR QUE NO EXISTA UN USERNAME REPETIDO
   checkUsernameExistsAsync(): AsyncValidatorFn {
     return async (control: AbstractControl) => {

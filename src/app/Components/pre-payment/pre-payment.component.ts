@@ -62,6 +62,7 @@ export class PrePaymentComponent implements OnInit {
 
     ngOnInit(): void {
       
+      console.log(this.guestForm.errors);
       this.isLoggedIn = this.authService.isLoggedIn();
         if(this.isLoggedIn)
         {
