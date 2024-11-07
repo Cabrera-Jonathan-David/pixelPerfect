@@ -1,9 +1,9 @@
 {
     "tarjetas": [
-      { "id": 1, "nombreTitular": "Carlos Martinez", "numeroTarjeta": "1111222233334444", "fechaExpiracion": "01/25", "cvv": "111" },
-      { "id": 2, "nombreTitular": "Ana Garcia", "numeroTarjeta": "2222333344445555", "fechaExpiracion": "02/25", "cvv": "222" },
-      { "id": 3, "nombreTitular": "Juan Lopez", "numeroTarjeta": "3333444455556666", "fechaExpiracion": "03/26", "cvv": "333" },
-      { "id": 4, "nombreTitular": "Luis Hernandez", "numeroTarjeta": "4444555566667777", "fechaExpiracion": "04/27", "cvv": "444" },
+      { "id": 1, "nombreTitular": "Cristian Telega", "numeroTarjeta": "1111222233334444", "fechaExpiracion": "01/25", "cvv": "111" },
+      { "id": 2, "nombreTitular": "Schaffer Octavio", "numeroTarjeta": "2222333344445555", "fechaExpiracion": "02/25", "cvv": "222" },
+      { "id": 3, "nombreTitular": "Amores Facundo", "numeroTarjeta": "3333444455556666", "fechaExpiracion": "03/25", "cvv": "333" },
+      { "id": 4, "nombreTitular": "CabreraJonathan", "numeroTarjeta": "4444555566667777", "fechaExpiracion": "04/28", "cvv": "444" },
       { "id": 5, "nombreTitular": "Maria Gonzalez", "numeroTarjeta": "5555666677778888", "fechaExpiracion": "05/28", "cvv": "555" },
       { "id": 6, "nombreTitular": "Jose Perez", "numeroTarjeta": "6666777788889999", "fechaExpiracion": "06/29", "cvv": "666" },
       { "id": 7, "nombreTitular": "Laura Diaz", "numeroTarjeta": "7777888899990000", "fechaExpiracion": "07/30", "cvv": "777" },
