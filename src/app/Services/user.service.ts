@@ -94,6 +94,22 @@ private generateToken(user: User): string {
   return btoa(JSON.stringify({ id: user.id, username: user.username })); // Crea un token sencillo codificado en base64
 }
 
+// Obtener el id del token para añadirlo a la venta
+getClientIdFromToken(): string | null {
+  const token = localStorage.getItem('token');
+  if (token) {
+    try {
+      const decodedToken = JSON.parse(atob(token));
+      return decodedToken.id || null; // Accede a `userId` en lugar de `id_cliente`
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null;
+    }
+  }
+  return null;
+}
+
+
 // Cierre de sesión
 logout(): void {
   localStorage.removeItem('token'); // Elimina el token del almacenamiento

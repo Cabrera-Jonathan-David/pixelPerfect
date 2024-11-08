@@ -1,41 +1,44 @@
 <div class="form-tarjeta-container"> 
-    
-
-<div class="form-container">
+  <div class="form-container">
     <h2>Formulario de Pago</h2>
     <form [formGroup]="tarjetaForm" (ngSubmit)="enviarFormulario()">
-        <label for="nombreTitular">Nombre del Titular</label>
-        <input id="nombreTitular" formControlName="nombreTitular" type="text" (input)="updateCardDisplay()" maxlength="19" />
-  
-        <label for="numeroTarjeta">Número de Tarjeta</label>
-        
-        <input id="numeroTarjeta" formControlName="numeroTarjeta" type="text" (input)="updateCardDisplay()" maxlength="16" />
-  
-        <label for="fechaExpiracion">Fecha de Expiración (MM/YY)</label>
-        <input id="fechaExpiracion" formControlName="fechaExpiracion" type="text" (input)="updateCardDisplay()" maxlength="5" />
-  
-        <label for="cvv">CVV</label>
-        
-        <input id="cvv" formControlName="cvv" type="text" (input)="updateCardDisplay()" maxlength="3" />
-  
-        <button type="submit" [disabled]="!tarjetaForm.valid">Pagar</button>
-      </form>
-    
-    <p *ngIf="mensajeExito" class="mensaje">{{ mensajeExito }}</p>
+      <label for="nombreTitular">Nombre del Titular</label>
+      <input id="nombreTitular" formControlName="nombreTitular" type="text" maxlength="19" />
+
+      <label for="numeroTarjeta">Número de Tarjeta</label>
+      <input id="numeroTarjeta" formControlName="numeroTarjeta" type="text" (input)="updateCardDisplay()" maxlength="16" />
+
+      <label for="fechaExpiracion">Fecha de Expiración (MM/YY)</label>
+      <input id="fechaExpiracion" formControlName="fechaExpiracion" type="text" (input)="updateCardDisplay()" maxlength="5" />
+
+      <label for="cvv">CVV</label>
+      <input id="cvv" formControlName="cvv" type="text" maxlength="3" />
+
+      <button type="submit" [disabled]="!tarjetaForm.valid">Pagar</button>
+    </form>
+    <p *ngIf="mensajeExito" class="mensaje-exito">{{ mensajeExito }}</p>
   </div>
-  
+
+  <!-- Vista de la Tarjeta -->
   <div class="tarjeta">
-    
     <div class="tarjeta-frontal">
-        <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHo3ZM14emiV-AphgLDvp9IwjNZ39Kah6Rg&s" alt="Logo de la tarjeta" />
-      <h3 class="nombre-tarjeta">{{ tarjetaForm.get('nombreTitular')?.value }}</h3>
-      <p class="numero-tarjeta">{{ formatCardNumber(tarjetaForm.get('numeroTarjeta')?.value) }}</p>
-      <p class="fecha-expiracion">Exp: {{ tarjetaForm.get('fechaExpiracion')?.value }}</p>
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHo3ZM14emiV-AphgLDvp9IwjNZ39Kah6Rg&s" alt="Logo de la tarjeta" />
+      <h3 class="nombre-tarjeta">{{ tarjetaForm.get('nombreTitular')?.value || 'Nombre del Titular' }}</h3>
+      <p class="numero-tarjeta">{{ formatCardNumber(tarjetaForm.get('numeroTarjeta')?.value) || '**** **** **** ****' }}</p>
+      <p class="fecha-expiracion">Exp: {{ tarjetaForm.get('fechaExpiracion')?.value || 'MM/YY' }}</p>
     </div>
+
     <div class="tarjeta-dorsal">
-        <div class="stripe"></div>
-      <div class="cvv">CVV: {{ tarjetaForm.get('cvv')?.value }}</div>
+      <div class="stripe"></div>
+      <div class="cvv">CVV: {{ tarjetaForm.get('cvv')?.value || '***' }}</div>
     </div>
   </div>
- 
+</div>
+
+<div *ngIf="showModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Confirmación de Pago</h2>
+    <p>{{ mensajeExito }}</p>
+    <button (click)="confirmarYRedirigir()">Aceptar</button>
+  </div>
 </div>

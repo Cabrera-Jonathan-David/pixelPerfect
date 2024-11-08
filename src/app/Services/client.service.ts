@@ -89,8 +89,4 @@ async updateClient(id: string, updatedData: Partial<Client>): Promise<void> {
 async createClient(clienteData: any): Promise<any> {
   return await this.http.post(this.apiUrlClient, clienteData).toPromise();
 }
-
-
-
-
 }
