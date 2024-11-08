@@ -21,7 +21,7 @@
     {
       "id": "5980",
       "username": "facundoamores",
-      "password": "Cristian123!",
+      "password": "Facu1234!",
       "id_cliente": "9104"
     }
   ],
@@ -132,6 +132,23 @@
       "ciudad": "Beltsville",
       "provincia": "MD",
       "pais": "United States"
+    },
+    {
+      "id": "a3ee",
+      "email": "mirko_el_capo@gmail.com",
+      "nombre": "Mirko",
+      "apellido": "Cobrizo",
+      "dni": "48000000",
+      "fechaNacimiento": "2000-01-01",
+      "codigoArea": "7600",
+      "telefono": "46299954",
+      "direccion": "SuCasa",
+      "altura": 3333,
+      "piso": "0",
+      "codigoPostal": "7600",
+      "ciudad": "emedepe",
+      "provincia": "baires",
+      "pais": "campeon del mundo"
     }
   ]
 }

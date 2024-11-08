@@ -35,8 +35,34 @@ export class FormularioTarjetaComponent {
       cvv: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
     });
 
-    // Obtener userId dede el token
-    this.userId = this.userService.getClientIdFromToken();
+    // Obtener userId desde el token
+    this.obtenerUserIdDesdeToken();
+  }
+
+  private obtenerUserIdDesdeToken(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const decodedToken = JSON.parse(atob(token));
+        const userId = decodedToken.id; // Obtener el id del usuario
+        if (userId) {
+          this.userService.getUserByUsername(decodedToken.username).then(user => {
+            if (user) {
+              this.userId = user.id_cliente; // Asignar el id_cliente al userId
+            }
+          });
+        }
+      } catch (error) {
+        console.error('Error decoding token:', error);
+      }
+    }else{
+      this.userId = localStorage.getItem('clientId'); 
+
+    if (!this.userId) {
+      
+      this.router.navigate(['/pre-payment']);
+    }
+    }
   }
 
   async enviarFormulario() {
@@ -75,8 +101,6 @@ export class FormularioTarjetaComponent {
     );
   }
 
-
-
   private async registrarPago() {
     const paymentData: PaymentRegister = {
       id: Date.now(), 
@@ -85,31 +109,28 @@ export class FormularioTarjetaComponent {
         price: cartItem.product.price,
         quantity: cartItem.quantity
       })),
-      userId: this.userId!, // Utilizamos el userId en formato original
+      userId: this.userId!, // Utilizamos el userId obtenido del token
       estado: 'Pendiente'
     };
 
-    // Enviar el objeto `PaymentRegister` al servicio
-    await this.paymentHistoryService.registrarPago(paymentData).toPromise();
-  }
 
+    // Enviar el objeto `PaymentRegister` al servicio
   
-  
-  
+    const response = await this.paymentHistoryService.registrarPago(paymentData).toPromise();
+    
+  }
   
   formatCardNumber(value: string): string {
     if (!value) return '';
     return value.replace(/\s/g, '').replace(/(.{4})/g, '$1-').trim().slice(0, -1);
   }
 
-
   updateCardDisplay() {
     this.tarjetaForm.get('numeroTarjeta')?.setValue(this.tarjetaForm.get('numeroTarjeta')?.value.replace(/-/g, ''));
   }
 
-
-confirmarYRedirigir() {
-  this.showModal = false;
-  this.router.navigate(['/home']); 
-}
+  confirmarYRedirigir() {
+    this.showModal = false;
+    this.router.navigate(['/home']); 
+  }
 }

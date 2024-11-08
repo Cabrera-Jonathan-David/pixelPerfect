@@ -100,7 +100,7 @@ getClientIdFromToken(): string | null {
   if (token) {
     try {
       const decodedToken = JSON.parse(atob(token));
-      return decodedToken.id || null; // Accede a `userId` 
+      return decodedToken.id || null; // Accede a `userId` en lugar de `id_cliente`
     } catch (error) {
       console.error('Error decoding token:', error);
       return null;

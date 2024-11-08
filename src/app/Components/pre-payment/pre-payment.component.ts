@@ -106,20 +106,13 @@ export class PrePaymentComponent implements OnInit {
         }
 
         const response = await this.clientService.createClient(client);
-        this.router.navigate(['/payment'])
-
+        if (response && response.id) {
+         
+          localStorage.setItem('clientId', response.id);
+        } else {
+          console.error('Error: La respuesta del servicio no contiene id');
+        }
+        this.router.navigate(['/payment']);
       }
-
-
     }  
-
-
-
-
-
-
-
-
-
-
 }

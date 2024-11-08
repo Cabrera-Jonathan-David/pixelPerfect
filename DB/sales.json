@@ -1,54 +1,44 @@
 {
   "payment-history": [
+    {},
     {
-      "id": "1",
+      "id": 1731087120912,
       "products": [
+        {
+          "productId": "2",
+          "price": 60,
+          "quantity": 1
+        },
         {
           "productId": "1",
-          "price": 1200.99,
+          "price": 1200,
           "quantity": 1
-        },
-        {
-          "productId": "12",
-          "price": 300.5,
-          "quantity": 2
-        }
-      ],
-      "userId": "5980",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "2",
-      "products": [
-        {
-          "productId": "4",
-          "price": 450,
-          "quantity": 1
-        },
-        {
-          "productId": "6",
-          "price": 99.99,
-          "quantity": 3
         }
       ],
       "userId": "010f",
       "estado": "Pendiente"
     },
     {
-      "id": 1731082089645,
+      "id": 1731092341524,
       "products": [
+        {
+          "productId": "5",
+          "price": 200,
+          "quantity": 1
+        },
         {
           "productId": "8",
           "price": 100,
           "quantity": 1
-        },
-        {
-          "productId": "9",
-          "price": 75,
-          "quantity": 1
         }
       ],
-      "userId": "0f2d",
+      "userId": "a3ee",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 1731092389566,
+      "products": [],
+      "userId": "010f",
       "estado": "Pendiente"
     }
   ]
