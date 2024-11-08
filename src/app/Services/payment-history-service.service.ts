@@ -7,7 +7,7 @@ import { PaymentRegister } from '../Interface/payment-register';
   providedIn: 'root'
 })
 export class PaymentHistoryService {
-  private apiUrl = 'http://localhost:5000/payment-history'; // URL para el registro de pagos
+  private apiUrl = 'http://localhost:3004/payment-history'; // URL para el registro de pagos
 
   constructor(private http: HttpClient) {}
 
