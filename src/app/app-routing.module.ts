@@ -9,9 +9,15 @@ import { DetalleProductoComponent } from './Components/detalle-producto/detalle-
 import { CarritoComponent } from './Components/carrito/carrito.component';
 import { FormularioTarjetaComponent } from './Components/formulario-tarjeta/formulario-tarjeta.component';
 import { PrePaymentComponent } from './Components/pre-payment/pre-payment.component';
+import { ListProductsComponent } from './Components/admin/list-products/list-products.component';
+import { CreateProductsComponent } from './Components/admin/create-products/create-products.component';
+import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
 
 
 const routes: Routes = [
+
+  // users paths
+
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
@@ -22,7 +28,17 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'payment', component: FormularioTarjetaComponent },
   { path: 'prepayment', component: PrePaymentComponent },
+
+  // admin paths
+
+  { path: 'admin/create-products', component: CreateProductsComponent },
+  { path: 'admin/list-products', component: ListProductsComponent },
+  { path: 'admin/update-products/:id', component: UpdateProductsComponent },
+
+
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' }
   
 ];
 
