@@ -47,11 +47,13 @@ export class ListProductsComponent implements OnInit {
   }
 
   updateProduct(id: string){
-    this.router.navigate([`update-products/${id}`]);
+    this.router.navigate([`admin/update-products/${id}`]);
   }
 
 
-
+  createProduct(){
+    this.router.navigate([`admin/create-products`]);
+  }
 
 
 
