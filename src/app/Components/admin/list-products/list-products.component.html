@@ -1,0 +1,34 @@
+<p>list-products works!</p>
+
+
+<button (click) = "createProduct()">AGREGAR UN PRODUCTO</button>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>#</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Product of productsList">
+            <td> {{ Product.id }} </td>
+            <td> {{ Product.name}} </td>
+            <td> {{ Product.brand }} </td>
+            <td> {{ Product.price }} </td>
+            <td> {{ Product.stock }} </td>
+            <td>
+                <button (click)="deleteProduct(Product.id)">Eliminar</button>
+            </td>
+            <td>
+                <button (click)="updateProduct(Product.id)">Modificar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

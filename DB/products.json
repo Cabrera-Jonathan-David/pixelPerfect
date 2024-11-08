@@ -6,7 +6,7 @@
       "brand": "HP",
       "price": 1200,
       "stock": 15,
-      "description": "Laptop gamer con procesador Intel i7 y tarjeta gráfica RTX 3060.",
+      "description": "Laptop gamer con procesador Intel i7 y tarjeta grï¿½fica RTX 3060.",
       "category": "Laptops",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -16,17 +16,17 @@
       "brand": "Razer",
       "price": 60,
       "stock": 100,
-      "description": "Mouse ergonómico con iluminación RGB y alta precisión.",
-      "category": "Periféricos",
+      "description": "Mouse ergonï¿½mico con iluminaciï¿½n RGB y alta precisiï¿½n.",
+      "category": "Perifï¿½ricos",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
     {
       "id": "3",
-      "name": "Teclado mecánico Corsair K95",
+      "name": "Teclado mecï¿½nico Corsair K95",
       "brand": "Corsair",
       "price": 180,
       "stock": 3,
-      "description": "Teclado mecánico con retroiluminación RGB y teclas programables.",
+      "description": "Teclado mecï¿½nico con retroiluminaciï¿½n RGB y teclas programables.",
       "category": "Teclados",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -36,7 +36,7 @@
       "brand": "Dell",
       "price": 600,
       "stock": 30,
-      "description": "Monitor de alta resolución con colores precisos y tecnología IPS.",
+      "description": "Monitor de alta resoluciï¿½n con colores precisos y tecnologï¿½a IPS.",
       "category": "Monitores",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -46,7 +46,7 @@
       "brand": "ASUS",
       "price": 200,
       "stock": 1,
-      "description": "Placa base compatible con procesadores AMD Ryzen y tecnología gaming.",
+      "description": "Placa base compatible con procesadores AMD Ryzen y tecnologï¿½a gaming.",
       "category": "Componentes",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -62,11 +62,11 @@
     },
     {
       "id": "7",
-      "name": "Tarjeta gráfica NVIDIA GeForce RTX 3080",
+      "name": "Tarjeta grï¿½fica NVIDIA GeForce RTX 3080",
       "brand": "NVIDIA",
       "price": 800,
       "stock": 0,
-      "description": "Tarjeta gráfica de alto rendimiento para gamers y creadores de contenido.",
+      "description": "Tarjeta grï¿½fica de alto rendimiento para gamers y creadores de contenido.",
       "category": "Componentes",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -76,8 +76,8 @@
       "brand": "Logitech",
       "price": 100,
       "stock": 70,
-      "description": "Auriculares con sonido envolvente y micrófono desmontable.",
-      "category": "Periféricos",
+      "description": "Auriculares con sonido envolvente y micrï¿½fono desmontable.",
+      "category": "Perifï¿½ricos",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
     {
@@ -106,7 +106,7 @@
       "brand": "Anker",
       "price": 40,
       "stock": 80,
-      "description": "Hub USB con 10 puertos para conectar múltiples dispositivos.",
+      "description": "Hub USB con 10 puertos para conectar mï¿½ltiples dispositivos.",
       "category": "Accesorios",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -116,8 +116,8 @@
       "brand": "Logitech",
       "price": 80,
       "stock": 60,
-      "description": "Webcam HD con enfoque automático y micrófono integrado.",
-      "category": "Periféricos",
+      "description": "Webcam HD con enfoque automï¿½tico y micrï¿½fono integrado.",
+      "category": "Perifï¿½ricos",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
     {
@@ -126,7 +126,7 @@
       "brand": "DXRacer",
       "price": 350,
       "stock": 3,
-      "description": "Silla gamer ergonómica para largas sesiones de juego.",
+      "description": "Silla gamer ergonï¿½mica para largas sesiones de juego.",
       "category": "Muebles",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -146,7 +146,7 @@
       "brand": "TP-Link",
       "price": 60,
       "stock": 45,
-      "description": "Router de doble banda con tecnología AC1750 para mejor rendimiento.",
+      "description": "Router de doble banda con tecnologï¿½a AC1750 para mejor rendimiento.",
       "category": "Redes",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -156,7 +156,7 @@
       "brand": "Seagate",
       "price": 100,
       "stock": 30,
-      "description": "Disco duro externo de 2TB, ideal para almacenamiento portátil.",
+      "description": "Disco duro externo de 2TB, ideal para almacenamiento portï¿½til.",
       "category": "Almacenamiento",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
@@ -172,12 +172,12 @@
     },
     {
       "id": "18",
-      "name": "Cámara de acción GoPro Hero 9",
+      "name": "Cï¿½mara de acciï¿½n GoPro Hero 9",
       "brand": "GoPro",
       "price": 400,
       "stock": 25,
-      "description": "Cámara de acción resistente al agua, ideal para grabar aventuras.",
-      "category": "Cámaras",
+      "description": "Cï¿½mara de acciï¿½n resistente al agua, ideal para grabar aventuras.",
+      "category": "Cï¿½maras",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     },
     {
@@ -186,18 +186,8 @@
       "brand": "Blue",
       "price": 130,
       "stock": 40,
-      "description": "Micrófono USB ideal para streaming y grabación de voz.",
-      "category": "Periféricos",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
-    },
-    {
-      "id": "20",
-      "name": "Cargador portátil Anker PowerCore",
-      "brand": "Anker",
-      "price": 50,
-      "stock": 75,
-      "description": "Cargador portátil de alta capacidad para dispositivos móviles.",
-      "category": "Accesorios",
+      "description": "Micrï¿½fono USB ideal para streaming y grabaciï¿½n de voz.",
+      "category": "Perifï¿½ricos",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
     }
   ]

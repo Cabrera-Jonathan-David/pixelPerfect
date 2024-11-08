@@ -14,6 +14,9 @@ import { CarritoComponent } from './Components/carrito/carrito.component';
 import { DetalleProductoComponent } from './Components/detalle-producto/detalle-producto.component';
 import { FormularioTarjetaComponent } from './Components/formulario-tarjeta/formulario-tarjeta.component';
 import { PrePaymentComponent } from './Components/pre-payment/pre-payment.component';
+import { CreateProductsComponent } from './Components/admin/create-products/create-products.component';
+import { ListProductsComponent } from './Components/admin/list-products/list-products.component';
+import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { PrePaymentComponent } from './Components/pre-payment/pre-payment.compon
     CarritoComponent,
     DetalleProductoComponent,
     FormularioTarjetaComponent,
-    PrePaymentComponent
+    PrePaymentComponent,
+    CreateProductsComponent,
+    ListProductsComponent,
+    UpdateProductsComponent
   ],
   imports: [
     BrowserModule,
