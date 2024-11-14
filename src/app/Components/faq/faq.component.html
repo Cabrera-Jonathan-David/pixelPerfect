@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <div *ngFor="let section of faqSections; let sectionIndex = index" class="mb-4">
+    <!-- Título de la sección -->
+    <h3 class="text-center text-light mb-4">{{ section.title }}</h3>
+
+    <!-- Accordion para cada sección -->
+    <div class="accordion" [id]="'faqAccordion' + sectionIndex">
+      <div *ngFor="let faq of section.questions; let questionIndex = index" class="accordion-item">
+        <!-- Encabezado de cada pregunta -->
+        <h2 class="accordion-header" [id]="'heading' + sectionIndex + '-' + questionIndex">
+          <button
+            class="accordion-button"
+            type="button"
+            [attr.aria-expanded]="faq.isOpen"
+            (click)="toggleAnswer(sectionIndex, questionIndex)"
+            [attr.aria-controls]="'collapse' + sectionIndex + '-' + questionIndex"
+            [ngClass]="{'text-light': !faq.isOpen, 'text-primary': faq.isOpen}"
+            style="background-color: #333; border: 1px solid #555;"
+          >
+            {{ faq.question }}
+          </button>
+        </h2>
+
+        <!-- Cuerpo de la respuesta -->
+        <div
+          [id]="'collapse' + sectionIndex + '-' + questionIndex"
+          class="accordion-collapse collapse"
+          [ngClass]="{ show: faq.isOpen }"
+          [attr.aria-labelledby]="'heading' + sectionIndex + '-' + questionIndex"
+          [attr.data-bs-parent]="'#faqAccordion' + sectionIndex"
+        >
+          <div class="accordion-body" style="background-color: #444; color: #ccc;">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

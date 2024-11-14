@@ -1,0 +1,67 @@
+/* Fondo oscuro general */
+body {
+    background: linear-gradient(135deg, #4e4e4e, #9e9e9e); /* Gradiente de gris metálico */
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Centrar el contenedor principal */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para el título de cada sección */
+  h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b2c9ff; /* Azul metalizado claro */
+  }
+  
+  /* Acordeón y botón */
+  .accordion-button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    font-size: 1.1rem;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-button:hover {
+    background-color: #444;
+  }
+  
+  /* Estado de la pregunta abierta */
+  .accordion-button:focus {
+    border-color: #0066cc;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #0066cc; /* Azul metalizado */
+    color: #fff;
+  }
+  
+  /* Estilo de la respuesta */
+  .accordion-body {
+    background-color: #444;
+    color: #ccc;
+    padding: 20px;
+  }
+  
+  /* Flechas */
+  .accordion-button::after {
+    color: #fff;
+    font-size: 1.5rem;
+    content: "\2193"; /* Flecha hacia abajo */
+  }
+  
+  .accordion-button.collapsed::after {
+    content: "\2191"; /* Flecha hacia arriba */
+  }
+  
+  /* Acento de azul metálico */
+  .text-primary {
+    color: #0066cc !important;
+  }
+  

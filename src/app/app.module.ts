@@ -17,6 +17,7 @@ import { PrePaymentComponent } from './Components/pre-payment/pre-payment.compon
 import { CreateProductsComponent } from './Components/admin/create-products/create-products.component';
 import { ListProductsComponent } from './Components/admin/list-products/list-products.component';
 import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
+import { FAQComponent } from './Components/faq/faq.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { UpdateProductsComponent } from './Components/admin/update-products/upda
     PrePaymentComponent,
     CreateProductsComponent,
     ListProductsComponent,
-    UpdateProductsComponent
+    UpdateProductsComponent,
+    FAQComponent
   ],
   imports: [
     BrowserModule,

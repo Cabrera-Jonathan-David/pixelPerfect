@@ -12,6 +12,7 @@ import { PrePaymentComponent } from './Components/pre-payment/pre-payment.compon
 import { ListProductsComponent } from './Components/admin/list-products/list-products.component';
 import { CreateProductsComponent } from './Components/admin/create-products/create-products.component';
 import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
+import { FAQComponent } from './Components/faq/faq.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'payment', component: FormularioTarjetaComponent },
   { path: 'prepayment', component: PrePaymentComponent },
+  { path: 'faq', component: FAQComponent},
 
   // admin paths
 
