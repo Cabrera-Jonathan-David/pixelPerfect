@@ -2,9 +2,9 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from '../../Services/client.service';
 import { UserService } from '../../Services/user.service';
-import { ValidationService } from '../../Services/validation.service';
 import { Client } from '../../Interface/client';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-modify-user',
@@ -19,7 +19,7 @@ export class ModifyUserComponent implements OnInit {
     private fb: FormBuilder, 
     private clientService: ClientService,
     private userService: UserService,
-    private validationService: ValidationService,
+    private authService: AuthenticationService,
     private router: Router
   ) {
     this.modifyForm = this.fb.group({
@@ -38,58 +38,70 @@ export class ModifyUserComponent implements OnInit {
 
   }
 
-  async ngOnInit(): Promise<void> {
-    const username = localStorage.getItem('username');
-    if (username) {
-        try {
-            const user = await this.userService.getUserByUsername(username);
-
-            if (user && 'id_cliente' in user) {
-                const clientData = await this.clientService.getClientById(user.id_cliente);
-                    if (clientData) {
-                      this.modifyForm.patchValue(clientData);
-                      } else {
-                          console.error('No se encontró cliente con el id proporcionado');
-                   }
-            } else {
-                console.error('El usuario no tiene un id_cliente asociado');
-            }
-        } catch (error) {
-            console.error('Error al obtener los datos del usuario o cliente:', error);
-        }
+  async ngOnInit() {
+    try {
+      const userId = this.authService.getUserIdFromToken(); 
+      if (!userId) {
+        console.error('El token no contiene un id de usuario');
+        return;
+      }
+  
+      const user = await this.userService.getUserById(userId);
+      if (!user) {
+        console.error('Usuario no encontrado');
+        return;
+      }
+      
+      const client = await this.clientService.getClientById(user.id_cliente);
+  
+      if (!client) {
+        console.error('Cliente no encontrado');
+        return;
+      }
+  
+    
+      this.modifyForm.patchValue({
+        nombre: client.nombre,
+        apellido: client.apellido,
+        codigoArea: client.codigoArea,
+        telefono: client.telefono,
+        direccion: client.direccion,
+        altura: client.altura,
+        piso: client.piso || '', 
+        codigoPostal: client.codigoPostal,
+        ciudad: client.ciudad,
+        provincia: client.provincia,
+        pais: client.pais
+      });
+    } catch (error) {
+      console.error('Error al inicializar el componente:', error);
     }
   }
-
-
+  
 
   async modifyUser(): Promise<void> {
-    const username = localStorage.getItem('username'); 
-    if (username) {
+    const userId = await this.authService.getUserIdFromToken();
+    if (userId) {
         try {
-            // Obtener el usuario por el username
-            const user = await this.userService.getUserByUsername(username);
+            const user = await this.userService.getUserById(userId);
+              if (user && user.id_cliente) {
+                  const clientData = await this.clientService.getClientById(user.id_cliente);
+                  const updatedClientData: Partial<Client> = {
+                      ...clientData, //mantiene lo que existe
+                      ...this.modifyForm.value //modifica lo nuevo
+                  };
 
-            if (user && user.id_cliente) {
-                // Obtener el cliente usando el id_cliente
-                const clientData = await this.clientService.getClientById(user.id_cliente);
-
-                
-                const updatedClientData: Partial<Client> = {
-                    ...clientData, //mantiene lo que existe
-                    ...this.modifyForm.value //modifica lo nuevo
-                };
-
-                // Actualizar el cliente
-                await this.clientService.updateClient(user.id_cliente, updatedClientData);
-                alert('Cliente actualizado con éxito');
-                this.modifyForm.reset();
-                this.router.navigate(['/home']);
-            }
+                  // Actualizar el cliente
+                  await this.clientService.updateClient(user.id_cliente, updatedClientData);
+                  alert('Cliente actualizado con éxito');
+                  this.modifyForm.reset();
+                  this.router.navigate(['/home']);
+              }
         } catch (error) {
             console.error('Error al modificar los datos del usuario:', error);
         }
     }
-}
+  }
 
 }
 

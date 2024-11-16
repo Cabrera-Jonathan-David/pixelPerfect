@@ -19,6 +19,7 @@ export class PrePaymentComponent implements OnInit {
   isLoggedIn = false;
   guestForm: FormGroup;
   isFormVisible: boolean = false;
+  redirectTo: string = '/prepayment';
 
   client: Client = {
     email: '',
@@ -68,6 +69,8 @@ export class PrePaymentComponent implements OnInit {
         if(this.isLoggedIn)
         {
           this.router.navigate(['/payment'])
+        }else{
+          this.redirectTo = this.router.url;
         }
     }
    
@@ -79,7 +82,7 @@ export class PrePaymentComponent implements OnInit {
   }
   
     goToLogin() : void {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login'], { queryParams: { redirectTo: this.redirectTo } });
     }
   
   

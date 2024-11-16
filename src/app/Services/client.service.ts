@@ -10,9 +10,9 @@ import { User } from '../Interface/user';
 })
 export class ClientService {
 
-private apiUrlClient = "http://localhost:3001/clients";
+    private apiUrlClient = "http://localhost:3001/clients";
 
-  constructor(
+    constructor(
       private http: HttpClient,
       private userService: UserService
     ) { }
@@ -22,8 +22,7 @@ private apiUrlClient = "http://localhost:3001/clients";
     async validateDni(dni: string): Promise<{ exists: boolean; message: string }> {
       const users: User[] = await this.userService.getAllUsers(); 
       const clients: Client[] = (await this.http.get<Client[]>(this.apiUrlClient).toPromise()) || []; 
-      
-      // Obtener todos los DNIs asociados a los usuarios
+
       const dniExists = users.some(user => {
         const client = clients.find(client => client.id === user.id_cliente); 
         return client && client.dni === dni; 
@@ -53,40 +52,37 @@ private apiUrlClient = "http://localhost:3001/clients";
       return { exists: false, message: '' };
     }
 
+    //OBTENER UN CLIENTE POR ID
+    async getClientById(id: string): Promise<Client | null> {
+      const response = await this.http.get<Client>(this.apiUrlClient + '/' + id).toPromise();
+      return response || null;
+    }
+
+    // OBTENER CLIENTE POR DNI
+    async getClientByDni(dni: string): Promise<Client | null> {
+      const response = await firstValueFrom(this.http.get<Client[]>(`${this.apiUrlClient}?dni=${dni}`));
+
+      if (Array.isArray(response) && response.length > 0) {
+        return response[0]; 
+      }
+
+      return null;
+    }
 
 
 
-//OBTENER UN CLIENTE POR ID
-async getClientById(id: string): Promise<Client | null> {
-  const response = await this.http.get<Client>(this.apiUrlClient + '/' + id).toPromise();
-  return response || null;
-}
+    //METODO PARA ACTUALIZAR UN CLIENTE
+    async updateClient(id: string, updatedData: Partial<Client>): Promise<void> {
+      try {
+        await this.http.put(this.apiUrlClient + '/' + id, updatedData).toPromise();
+      } catch (error) {
+        console.error('Error al actualizar el cliente:', error);
+        throw error;
+      }
+    }
 
-// OBTENER CLIENTE POR DNI
-async getClientByDni(dni: string): Promise<Client | null> {
-  const response = await firstValueFrom(this.http.get<Client[]>(`${this.apiUrlClient}?dni=${dni}`));
-
-  if (Array.isArray(response) && response.length > 0) {
-    return response[0]; 
-  }
-
-  return null;
-}
-
-
-
-//METODO PARA ACTUALIZAR UN CLIENTE
-async updateClient(id: string, updatedData: Partial<Client>): Promise<void> {
-  try {
-    await this.http.put(this.apiUrlClient + '/' + id, updatedData).toPromise();
-  } catch (error) {
-    console.error('Error al actualizar el cliente:', error);
-    throw error;
-  }
-}
-
-//METODO PARA CREAR UN CLIENTE
-async createClient(clienteData: any): Promise<any> {
-  return await this.http.post(this.apiUrlClient, clienteData).toPromise();
-}
+    //METODO PARA CREAR UN CLIENTE
+    async createClient(clienteData: any): Promise<any> {
+      return await this.http.post(this.apiUrlClient, clienteData).toPromise();
+    }
 }

@@ -3,4 +3,5 @@ export interface User {
     username: string;
     password: string;
     id_cliente: string;
+    rol?: 'admin' | 'client';
   }

@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit {
       ciudad: ['', Validators.required],
       provincia: ['', Validators.required],
       pais: ['Argentina', Validators.required],
+      rol: ['client'],
     }, { validators: this.passwordMatchValidator });
   }
 
@@ -52,8 +53,6 @@ export class RegisterComponent implements OnInit {
   passwordMatchValidator(form: FormGroup) {
     return form.get('password')?.value === form.get('confirmPassword')?.value ? null : { passwordMismatch: true };
   }
-
-
 
   async registerUser() {
       if (this.registerForm.valid) {
@@ -66,7 +65,8 @@ export class RegisterComponent implements OnInit {
           const userData = {
             username: clienteData.username,
             password: clienteData.password,
-            id_cliente: cliente.id
+            id_cliente: cliente.id,
+            rol: clienteData.rol
           };
 
           await this.userService.createUser(userData);

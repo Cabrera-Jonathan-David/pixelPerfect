@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../Services/user.service';
-import { Router } from '@angular/router';
 import { AuthenticationService } from '../../Services/authentication.service';
 import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,13 +12,15 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loginError: boolean = false;
+  redirectUrl: string | null = null;
+
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router,
     private authService: AuthenticationService,
-    private location: Location
+    private location: Location,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
 
   ) { 
       this.loginForm = this.fb.group({
@@ -29,11 +30,9 @@ export class LoginComponent implements OnInit {
 
     }
 
-   
-  
-
   ngOnInit(): void {
-    
+    const url = this.activatedRoute.snapshot.queryParams['redirectTo'] || '/';
+    this.redirectUrl = url;
   }
 
   goBack(): void {
@@ -45,13 +44,17 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       const{username, password} = this.loginForm.value;
         try{
-            const token = await this.userService.login(username, password);
+            const token = await this.authService.authenticateUser(username, password);
             if(token){
               localStorage.setItem('token', token)
-              this.authService.login();
+              this.authService.setAuthenticated();
               this.loginError = false;
-              /*this.router.navigate(['/home']);*/
-              this.goBack();
+              
+              if (this.redirectUrl) {
+                this.router.navigateByUrl(this.redirectUrl);
+              } else {
+                this.router.navigate(['/home']);
+              }
             }else{
               this.loginError = true;
               console.error('Credenciales Incorrectas')

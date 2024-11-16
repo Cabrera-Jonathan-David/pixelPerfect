@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from '../../Services/tarjeta.service';
 import { CartItem } from '../../Interface/cartitem';
@@ -7,13 +7,14 @@ import { ProductService } from '../../Services/product.service';
 import { PaymentRegister } from '../../Interface/payment-register';
 import { Router } from '@angular/router';
 import { UserService } from '../../Services/user.service'; 
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-formulario-tarjeta',
   templateUrl: './formulario-tarjeta.component.html',
   styleUrls: ['./formulario-tarjeta.component.css']
 })
-export class FormularioTarjetaComponent {
+export class FormularioTarjetaComponent implements OnInit {
   tarjetaForm: FormGroup;
   mensajeExito: string = '';
   showModal: boolean = false; 
@@ -26,7 +27,8 @@ export class FormularioTarjetaComponent {
     private tarjetaService: TarjetaService,
     private paymentHistoryService: PaymentHistoryService,
     private productService: ProductService,
-    private userService: UserService 
+    private userService: UserService ,
+    private authService: AuthenticationService
   ) {
     this.tarjetaForm = this.fb.group({
       nombreTitular: ['', Validators.required],
@@ -35,26 +37,22 @@ export class FormularioTarjetaComponent {
       cvv: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
     });
 
-    // Obtener userId desde el token
-    this.obtenerUserIdDesdeToken();
   }
 
-  private obtenerUserIdDesdeToken(): void {
-    const token = localStorage.getItem('token');
-    if (token) {
-      try {
-        const decodedToken = JSON.parse(atob(token));
-        const userId = decodedToken.id; // Obtener el id del usuario
-        if (userId) {
-          this.userService.getUserByUsername(decodedToken.username).then(user => {
-            if (user) {
-              this.userId = user.id_cliente; // Asignar el id_cliente al userId
-            }
-          });
+
+
+  private verificarOasignarUserId(): void {
+
+    this.userId = this.authService.getUserIdFromToken();
+
+    if(this.userId){
+      this.userService.getUserById(this.userId).then(user => {
+        if (user) {
+          this.userId = user.id_cliente;
         }
-      } catch (error) {
-        console.error('Error decoding token:', error);
-      }
+      }).catch(error => {
+        console.error('Error al obtener el cliente:' + error)
+      })
     }else{
       this.userId = localStorage.getItem('clientId'); 
 
@@ -63,6 +61,10 @@ export class FormularioTarjetaComponent {
       this.router.navigate(['/pre-payment']);
     }
     }
+  }
+
+  ngOnInit(): void {
+    this.verificarOasignarUserId()
   }
 
   async enviarFormulario() {
@@ -115,11 +117,12 @@ export class FormularioTarjetaComponent {
 
 
     // Enviar el objeto `PaymentRegister` al servicio
-  
     const response = await this.paymentHistoryService.registrarPago(paymentData).toPromise();
     
   }
   
+
+  // ESTILOS PARA LA CARD, SE LLAMAN EN EL HTML
   formatCardNumber(value: string): string {
     if (!value) return '';
     return value.replace(/\s/g, '').replace(/(.{4})/g, '$1-').trim().slice(0, -1);
