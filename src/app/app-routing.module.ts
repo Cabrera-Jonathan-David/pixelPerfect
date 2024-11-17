@@ -26,15 +26,15 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent, canActivate: [notAdminAuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [notAdminAuthGuard] },
-  { path: 'home', component: HomeComponent },
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [notAdminAuthGuard]  },
+  { path: '', component: HomeComponent, canActivate: [notAdminAuthGuard]  },
   { path: 'modify-user', component: ModifyUserComponent, canActivate: [userAuthGuard] },
-  { path: 'producto', component: ProductComponent },
-  { path: 'product/:id', component: DetalleProductoComponent }, 
+  { path: 'producto', component: ProductComponent , canActivate: [notAdminAuthGuard] },
+  { path: 'product/:id', component: DetalleProductoComponent, canActivate: [notAdminAuthGuard]  }, 
   { path: 'carrito', component: CarritoComponent , canActivate: [notAdminAuthGuard]},
-  { path: 'payment', component: FormularioTarjetaComponent, canActivate: [notAdminAuthGuard, userAuthGuard, guestAuthGuard] },
+  { path: 'payment', component: FormularioTarjetaComponent, canActivate: [notAdminAuthGuard, guestAuthGuard ] },
   { path: 'prepayment', component: PrePaymentComponent, canActivate: [notAdminAuthGuard] },
-  { path: 'faq', component: FAQComponent},
+  { path: 'faq', component: FAQComponent, canActivate: [notAdminAuthGuard] },
 
   // admin paths
 

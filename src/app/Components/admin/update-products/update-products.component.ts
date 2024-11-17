@@ -52,7 +52,7 @@ export class UpdateProductsComponent implements OnInit{
     this.productService.updateProduct(this.prodId, updatedProduct).subscribe(
       (response) => {
         console.log('¡Producto actualizado exitosamente!', response);
-        this.router.navigate(['/list-products']);
+        this.router.navigate(['admin/list-products']);
       });
    }
   }

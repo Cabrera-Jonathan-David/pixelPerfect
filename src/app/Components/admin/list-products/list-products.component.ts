@@ -51,9 +51,6 @@ export class ListProductsComponent implements OnInit {
   }
 
 
-  createProduct(){
-    this.router.navigate([`admin/create-products`]);
-  }
 
 
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../../Services/authentication.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,35 +10,36 @@ import { AuthenticationService } from '../../Services/authentication.service';
 export class NavbarComponent {
   searchQuery: string = '';
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) { }
 
-  onFocus() {
-    this.searchQuery = ''; 
+  
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn(); 
   }
 
-  onBlur() {
-    if (!this.searchQuery) {
-      this.searchQuery = 'Buscar'; 
-    }
+  
+  isAdmin(): boolean {
+    const token = localStorage.getItem('token');
+    return token ? this.authService.decodeRol(token) === 'admin' : false; 
   }
 
-  search() {
-    console.log('Buscando:', this.searchQuery);
+  
+  search(): void {
+    // aca hay que poner la logica para buscar
   }
 
-  isLoggedIn(): boolean{
-    
-    return this.authService.isLoggedIn();
-  }
-
-  logout(){
+  
+  logout(): void {
     this.authService.logout();
   }
 
-
-
-
-
+  
+  redirectToAdminPage(): void {
+    this.router.navigate(['/admin/list-products']);
+  }
 
 
 

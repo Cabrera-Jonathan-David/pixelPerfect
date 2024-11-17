@@ -1,6 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Perfect Pixel</a>
+    <a
+      class="navbar-brand"
+      href="#"
+      [routerLink]="isAdmin() ? '/admin/list-products' : '/'"
+      >Perfect Pixel</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -13,34 +18,40 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
+      <ul class="navbar-nav mx-auto">
+        <!-- Menú visible solo si no es admin -->
+        <li class="nav-item" *ngIf="!isAdmin()">
           <a class="nav-link" routerLink="/productos">Productos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/carrito">Carrito</a>
-        </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isAdmin()">
           <a class="nav-link" routerLink="/faq">FAQ</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isAdmin()">
           <a class="nav-link" routerLink="/sucursales">Sucursales</a>
         </li>
+        
+        <!-- Botón 'Agregar Producto' visible solo si es admin -->
+        <li class="nav-item" *ngIf="isAdmin()">
+          <button
+            class="btn btn-outline-light ms-3"
+            [routerLink]="'/admin/create-products'"
+          >
+            Agregar Producto
+          </button>
+        </li>
       </ul>
-      <!-- Barra de búsqueda -->
-      <form class="d-flex mx-auto">
+
+      <!-- Barra de búsqueda (visible solo si no es admin) -->
+      <form *ngIf="!isAdmin()" class="d-flex mx-auto" (submit)="search()">
         <input
           class="form-control me-2"
           type="search"
           placeholder="Buscar"
           aria-label="Search"
-          (focus)="onFocus()"
-          (blur)="onBlur()"
-          [(ngModel)]="searchQuery"
-          name="search"
+          #searchInput
           style="width: 300px"
         />
-        <button class="btn btn-outline-light" type="button" (click)="search()">
+        <button class="btn btn-outline-light" type="submit">
           <i class="fas fa-search"></i>
         </button>
       </form>
@@ -52,7 +63,7 @@
         routerLink="/login"
         >Iniciar sesión</a
       >
-      <div *ngIf="isLoggedIn()" class="dropdown ms-3">
+      <div *ngIf="isLoggedIn() && !isAdmin()" class="dropdown ms-3">
         <button
           class="btn btn-outline-light dropdown-toggle"
           type="button"
@@ -79,8 +90,13 @@
         </ul>
       </div>
 
-      <!-- Ícono del carrito con vista previa -->
-      <app-carrito></app-carrito>
+      <!-- Solo visible si el usuario no es admin -->
+      <app-carrito *ngIf="!isAdmin()"></app-carrito>
+      
+      <!-- Si es admin, solo muestra el botón para cerrar sesión, alineado a la derecha -->
+      <div *ngIf="isLoggedIn() && isAdmin()" class="ms-auto">
+        <button class="btn btn-outline-light ms-3" (click)="logout()">Cerrar sesión</button>
+      </div>
     </div>
   </div>
 </nav>

@@ -37,7 +37,7 @@ export class CreateProductsComponent implements OnInit {
       this.productService.addProduct(this.productForm.value).subscribe(
         () => {
           alert("¡Producto Ingresado con éxito!");
-          this.router.navigate([`/list-products`]);
+          this.router.navigate(['/admin/list-products']);
         }
       )
     }

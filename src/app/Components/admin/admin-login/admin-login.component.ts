@@ -29,6 +29,8 @@ export class AdminLoginComponent implements OnInit{
       }
   
     ngOnInit(): void {
+      localStorage.removeItem('token');
+
     }
   
   

@@ -35,10 +35,6 @@ export class AuthenticationService {
     return localStorage.getItem('token') !== null;;
   }
 
-  // Verificación de autenticación                             
-  isAuthenticated(): boolean {
-  return localStorage.getItem('token') !== null; 
-}
 
 // Obtener el id del Usuario del token                     
 getUserIdFromToken(): string | null {
@@ -60,7 +56,6 @@ getUserIdFromToken(): string | null {
 private generateToken(user: User): string {
   return btoa(JSON.stringify({ id: user.id, rol: user.rol })); //CREA UN TOKEN CON ESOS PARAMETROS
 }
-
 
 // Autenticación del usuario
 async authenticateUser(username: string, password: string): Promise<string | null> {
