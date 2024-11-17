@@ -18,6 +18,7 @@ import { CreateProductsComponent } from './Components/admin/create-products/crea
 import { ListProductsComponent } from './Components/admin/list-products/list-products.component';
 import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
 import { FAQComponent } from './Components/faq/faq.component';
+import { AdminLoginComponent } from './Components/admin/admin-login/admin-login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { FAQComponent } from './Components/faq/faq.component';
     CreateProductsComponent,
     ListProductsComponent,
     UpdateProductsComponent,
-    FAQComponent
+    FAQComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

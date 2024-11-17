@@ -1,0 +1,31 @@
+<div class="form-container">
+    <h2>Inicio de Sesión Administrador</h2>
+    <div class="container bg-dark text-white p-4 mt-5 rounded">
+      
+      <form [formGroup]="loginAdminForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Nombre de Administrador:</label>
+          <input type="text" class="form-control" id="username" formControlName="username" >
+          <div *ngIf="loginAdminForm.get('username')?.invalid && loginAdminForm.get('username')?.touched" class="text-danger" >
+            <span *ngIf="loginAdminForm.get('username')?.errors?.['required']">El Username es obligatorio.</span>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" id="password" formControlName="password" >
+          <div *ngIf="loginAdminForm.get('password')?.invalid && loginAdminForm.get('password')?.touched" class="text-danger" >
+            <span *ngIf="loginAdminForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</span>
+          </div>
+        </div>
+  
+        <div *ngIf="loginError" class="text-danger">
+          Usuario y/o contraseña incorrectos.
+        </div>
+  
+    
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+  
+    </div>
+  </div>

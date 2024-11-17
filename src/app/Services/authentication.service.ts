@@ -66,10 +66,10 @@ private generateToken(user: User): string {
 async authenticateUser(username: string, password: string): Promise<string | null> {
   try {
     const user = await this.userService.getUserByUsername(username);
-    if (user && user.password === password) {
-        const token = this.generateToken(user); // Genera un token de usuario
-        localStorage.setItem('token', token); // Guarda el token en localStorage
-        return token; // Retorna el token para uso adicional si es necesario
+    if (user && user.password === password && user.rol === 'client') {
+        const token = this.generateToken(user); 
+        localStorage.setItem('token', token); 
+        return token; 
     }
     return null;
   } catch (error) {
@@ -77,6 +77,50 @@ async authenticateUser(username: string, password: string): Promise<string | nul
     return null;
   }
 }
+
+// Autenticación del administrador
+async authenticateAdmin(username: string, password: string): Promise<string | null> {
+  try {
+    const user = await this.userService.getUserByUsername(username);
+    if (user && user.password === password && user.rol === 'admin') {
+      const token = this.generateToken(user); 
+      localStorage.setItem('token', token); 
+      return token; 
+    }
+    return null;
+  } catch (error) {
+    console.error("Error during admin login:", error);
+    return null;
+  }
+}
+
+decodeRol(token: string): string | null {
+  if (token) {
+    try {
+      const payload = JSON.parse(atob(token)); 
+      return payload.rol || null; // Extrae el `rol`
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null;
+    }
+  }
+  console.error('Token not found in localStorage');
+  return null;
+}
+
+async isClientRegistered(clientId: string): Promise<boolean> {
+  try {
+    const users = await this.http.get<any[]>(`${this.apiUsersUrl}?clientId=${clientId}`).toPromise();
+    return Array.isArray(users) && users.length > 0;
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    return false; 
+  }
+}
+
+
+
+
 
 
 

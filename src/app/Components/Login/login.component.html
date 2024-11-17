@@ -5,12 +5,18 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="username" class="form-label">Nombre de Usuario:</label>
-        <input type="text" class="form-control" id="username" formControlName="username" required>
+        <input type="text" class="form-control" id="username" formControlName="username">
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger" >
+          <span *ngIf="loginForm.get('username')?.errors?.['required']">El Username es obligatorio.</span>
+        </div>
       </div>
       
       <div class="mb-3">
         <label for="password" class="form-label">Contraseña:</label>
-        <input type="password" class="form-control" id="password" formControlName="password" required>
+        <input type="password" class="form-control" id="password" formControlName="password">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger" >
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</span>
+        </div>
       </div>
 
       <div *ngIf="loginError" class="text-danger">

@@ -13,29 +13,35 @@ import { ListProductsComponent } from './Components/admin/list-products/list-pro
 import { CreateProductsComponent } from './Components/admin/create-products/create-products.component';
 import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
 import { FAQComponent } from './Components/faq/faq.component';
+import { AdminLoginComponent } from './Components/admin/admin-login/admin-login.component';
+import { adminAuthGuard } from './auth/admin-auth.guard';
+import { notAdminAuthGuard } from './auth/not-admin-auth.guard';
+import { userAuthGuard } from './auth/user-auth.guard';
+import { guestAuthGuard } from './auth/guest-auth.guard';
 
 
 const routes: Routes = [
 
   // users paths
 
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent, canActivate: [notAdminAuthGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [notAdminAuthGuard] },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
-  { path: 'modify-user', component: ModifyUserComponent },
+  { path: 'modify-user', component: ModifyUserComponent, canActivate: [userAuthGuard] },
   { path: 'producto', component: ProductComponent },
   { path: 'product/:id', component: DetalleProductoComponent }, 
-  { path: 'carrito', component: CarritoComponent },
-  { path: 'payment', component: FormularioTarjetaComponent },
-  { path: 'prepayment', component: PrePaymentComponent },
+  { path: 'carrito', component: CarritoComponent , canActivate: [notAdminAuthGuard]},
+  { path: 'payment', component: FormularioTarjetaComponent, canActivate: [notAdminAuthGuard, userAuthGuard, guestAuthGuard] },
+  { path: 'prepayment', component: PrePaymentComponent, canActivate: [notAdminAuthGuard] },
   { path: 'faq', component: FAQComponent},
 
   // admin paths
 
-  { path: 'admin/create-products', component: CreateProductsComponent },
-  { path: 'admin/list-products', component: ListProductsComponent },
-  { path: 'admin/update-products/:id', component: UpdateProductsComponent },
+  { path: 'admin/create-products', component: CreateProductsComponent, canActivate: [adminAuthGuard] },
+  { path: 'admin/list-products', component: ListProductsComponent, canActivate: [adminAuthGuard] },
+  { path: 'admin/update-products/:id', component: UpdateProductsComponent, canActivate: [adminAuthGuard] },
+  { path: 'admin-login', component: AdminLoginComponent},
 
 
 
