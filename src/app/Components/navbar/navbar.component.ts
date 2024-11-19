@@ -9,6 +9,8 @@ import {  Router } from '@angular/router';
 })
 export class NavbarComponent {
   searchQuery: string = '';
+  
+
 
   constructor(
     private authService: AuthenticationService,

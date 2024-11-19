@@ -19,4 +19,8 @@ export class TarjetaService {
     const { numeroTarjeta, fechaExpiracion, cvv } = datos;
     return this.http.get<Tarjeta[]>(`${this.apiUrl}?numeroTarjeta=${numeroTarjeta}&fechaExpiracion=${fechaExpiracion}&cvv=${cvv}`);
   }
+
+  actualizarSaldo(id: number, nuevoSaldo: number): Observable<void> {
+    return this.http.patch<void>(`${this.apiUrl}/${id}`, { saldo: nuevoSaldo });
+  }
 }

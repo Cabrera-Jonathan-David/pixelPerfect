@@ -15,7 +15,7 @@
       "name": "Mouse Razer DeathAdder",
       "brand": "Razer",
       "price": 60,
-      "stock": 100,
+      "stock": "98",
       "description": "Mouse ergon�mico con iluminaci�n RGB y alta precisi�n.",
       "category": "Perif�ricos",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
@@ -25,7 +25,7 @@
       "name": "Teclado mec�nico Corsair K95",
       "brand": "Corsair",
       "price": 180,
-      "stock": 3,
+      "stock": "2",
       "description": "Teclado mec�nico con retroiluminaci�n RGB y teclas programables.",
       "category": "Teclados",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
@@ -35,7 +35,7 @@
       "name": "Monitor Dell UltraSharp 27\"",
       "brand": "Dell",
       "price": 600,
-      "stock": 30,
+      "stock": "29",
       "description": "Monitor de alta resoluci�n con colores precisos y tecnolog�a IPS.",
       "category": "Monitores",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
@@ -45,7 +45,7 @@
       "name": "Placa base ASUS ROG Strix B550-F",
       "brand": "ASUS",
       "price": 200,
-      "stock": 1,
+      "stock": "0",
       "description": "Placa base compatible con procesadores AMD Ryzen y tecnolog�a gaming.",
       "category": "Componentes",
       "image_url": "https://i.redd.it/e0zzm1jrgu691.png"

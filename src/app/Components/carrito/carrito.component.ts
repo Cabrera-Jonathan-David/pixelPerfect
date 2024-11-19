@@ -14,19 +14,25 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCartItems(); 
+
+    this.cartService.reloadCarrito$.subscribe(() => {
+      this.loadCartItems();  // Recargamos los items del carrito cuando el evento es disparado
+    });
   }
 
   // Método para cargar los items del carrito desde el servicio
   loadCartItems(): void {
-    this.cartItems = this.cartService.cartItems; // Obtiene los items del servicio
+    this.cartService.loadCartItems(); 
+    this.cartItems = this.cartService.cartItems; // Actualiza la vista
   }
+  
 
-  // Aumentar la cantidad del item en el carrito
+  
   increaseQuantity(item: CartItem): void {
     const availableStock = Number(item.product.stock); 
     if (item.quantity < availableStock) {
-      item.quantity++; // Incrementa la cantidad si hay stock disponible
-      this.updateCartItem(item); // Actualiza el carrito en el servicio
+      item.quantity++; 
+      this.updateCartItem(item); 
     } else {
       alert('No se puede agregar más unidades. Stock disponible: ' + availableStock); // Mensaje de alerta
     }
@@ -59,4 +65,5 @@ export class CarritoComponent implements OnInit {
       console.error('El item no tiene un producto válido o no tiene ID.');
     }
   }
+
 }
