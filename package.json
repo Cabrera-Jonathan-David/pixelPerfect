@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-   "backend": "concurrently \"json-server --watch ./DB/users.json --port 3001\" \"json-server --watch ./DB/products.json --port 3002\" \"json-server --watch ./DB/cards.json --port 3003\" \"json-server --watch ./DB/sales.json --port 3004\""
-   },
+    "backend": "concurrently \"json-server --watch ./DB/users.json --port 3001\" \"json-server --watch ./DB/products.json --port 3002\" \"json-server --watch ./DB/cards.json --port 3003\" \"json-server --watch ./DB/sales.json --port 3004\""
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.1.0",
@@ -29,7 +29,9 @@
     "@angular/cli": "^17.1.2",
     "@angular/compiler-cli": "^17.1.0",
     "@types/jasmine": "~5.1.0",
+    "concurrently": "^9.1.0",
     "jasmine-core": "~5.1.0",
+    "json-server": "^1.0.0-beta.3",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",

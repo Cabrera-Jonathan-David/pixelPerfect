@@ -1,0 +1,29 @@
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Productos</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let sale of salesList">
+        <tr>
+            <td> {{ sale.id }} </td>
+            <td> {{ sale.userId }} </td>
+            <td> <button>Ver más</button> </td>
+            <td>
+                <select
+                [formControl]="getControl(sale.id.toString())"
+                (change)="changeStatus(sale)"
+                class="form-select">
+                    <option *ngFor="let option of getStatus(sale)" [value]="option">
+                        {{ option }}
+                    </option>
+                </select>
+            </td>
+        </tr>
+    </tbody>   
+</table>

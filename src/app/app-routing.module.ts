@@ -18,6 +18,7 @@ import { adminAuthGuard } from './auth/admin-auth.guard';
 import { notAdminAuthGuard } from './auth/not-admin-auth.guard';
 import { userAuthGuard } from './auth/user-auth.guard';
 import { guestAuthGuard } from './auth/guest-auth.guard';
+import { ListSalesComponent } from './Components/admin/list-sales/list-sales.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,7 @@ const routes: Routes = [
   { path: 'admin/list-products', component: ListProductsComponent, canActivate: [adminAuthGuard] },
   { path: 'admin/update-products/:id', component: UpdateProductsComponent, canActivate: [adminAuthGuard] },
   { path: 'admin-login', component: AdminLoginComponent},
-
+  { path: 'admin/list-sales', component: ListSalesComponent },
 
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

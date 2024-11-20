@@ -1,7 +1,7 @@
 {
   "payment-history": [
     {
-      "id": 1732031507185,
+      "id": "11",
       "products": [
         {
           "productId": "2",
@@ -25,7 +25,7 @@
         }
       ],
       "userId": "dde3",
-      "estado": "Pendiente"
+      "estado": "pendiente"
     }
   ]
 }

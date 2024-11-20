@@ -4,9 +4,9 @@ export interface PaymentProduct {
     quantity: number;
   }
   
-  export interface PaymentRegister {
-    id: number;
-    products: PaymentProduct[];
-    userId: string | null;
-    estado: string; 
-  }
+export interface PaymentRegister {
+  id: number;
+  products: PaymentProduct[];
+  userId: string | null;
+  estado: string; 
+}
