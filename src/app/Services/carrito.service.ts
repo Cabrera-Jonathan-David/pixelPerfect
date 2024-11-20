@@ -1,31 +1,20 @@
 
 import { Injectable } from '@angular/core';
-import { CartItem } from '../Interface/cartitem'; 
-import { Product } from '../Interface/products'; 
-import { Subject } from 'rxjs';
+import { CartItem } from '../Interface/cartitem'; // Asegúrate de que la ruta sea correcta
+import { Product } from '../Interface/products'; // Asegúrate de que la ruta sea correcta
+
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
   cartItems: CartItem[] = []; 
   constructor() {
-    this.loadCartItems(); 
+    this.loadCartItems(); // Carga los items del carrito desde localStorage al inicializar el servicio
   }
 
-  // Observable que los componentes pueden suscribirse
-  private reloadCarritoSubject = new Subject<void>();
-  reloadCarrito$ = this.reloadCarritoSubject.asObservable();
-  // Método para emitir el evento de recarga
-  forceReloadCarrito(): void {
-    this.clearCart();
-    this.reloadCarritoSubject.next();
-    
-  }
-
-
-  loadCartItems(): void {
-    const storedCartItems = localStorage.getItem('cartItems'); 
-    this.cartItems = storedCartItems ? JSON.parse(storedCartItems) : []; 
+  private loadCartItems(): void {
+    const storedCartItems = localStorage.getItem('cartItems'); // Obtiene los items guardados en localStorage
+    this.cartItems = storedCartItems ? JSON.parse(storedCartItems) : []; // Si hay items, los parsea; si no, inicializa como arreglo vacío
   }
 
 
@@ -40,14 +29,13 @@ export class CarritoService {
     
     if (existingItem) {
       
-      existingItem.quantity++; 
+      existingItem.quantity++; // Incrementa la cantidad si el producto ya está en el carrito
     } else {
       
-      this.cartItems.push({ product, quantity: 1 }); 
+      this.cartItems.push({ product, quantity: 1 }); // Añade el nuevo producto al carrito
     }
-  
-    this.saveCartItems();
-    console.log(this.cartItems); 
+this.saveCartItems();
+    console.log(this.cartItems); // Verifica el estado del carrito
   }
 
   getCartItem(id: string): CartItem | undefined {
@@ -55,19 +43,13 @@ export class CarritoService {
   }
 
   public saveCartItems(): void {
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems)); 
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems)); // Guarda el carrito como un string en localStorage
   }
 
   removeItem(item: CartItem): void {
-    this.cartItems = this.cartItems.filter(cartItem => cartItem !== item); 
+    this.cartItems = this.cartItems.filter(cartItem => cartItem !== item); // Filtra el item a eliminar
     this.saveCartItems(); 
   }
 
-
-  clearCart(): void {
-    this.cartItems = [];
-    localStorage.removeItem('cartItems');
-  }
-
- 
+  // Otros métodos como getCartItems, removeItem, etc.
 }

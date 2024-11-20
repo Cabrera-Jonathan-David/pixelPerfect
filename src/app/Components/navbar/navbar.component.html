@@ -29,7 +29,7 @@
         <li class="nav-item" *ngIf="!isAdmin()">
           <a class="nav-link" routerLink="/sucursales">Sucursales</a>
         </li>
-        
+
         <!-- Botón 'Agregar Producto' visible solo si es admin -->
         <li class="nav-item" *ngIf="isAdmin()">
           <button
@@ -39,27 +39,6 @@
             Agregar Producto
           </button>
         </li>
-
-        <!-- Botón 'Ver pedidos' sólo disponible para el admin -->
-
-        <li class="nav-item" *ngIf="isAdmin()">
-          <button
-          class="btn btn-outline-light ms-3"
-          [routerLink]="'/admin/list-sales'">
-          Ver Pedidos
-          </button>
-        </li>
-
-        <!-- Botón 'Ver productos' sólo pal admin -->
-
-        <li class="nav-item" *ngIf="isAdmin()">
-          <button
-          class="btn btn-outline-light ms-3"
-          [routerLink]="'/admin/list-products'">
-          Ver Productos
-          </button>
-        </li>
-
       </ul>
 
       <!-- Barra de búsqueda (visible solo si no es admin) -->
@@ -80,7 +59,7 @@
       <!-- Botón Iniciar Sesión o Usuario Logueado -->
       <a
         *ngIf="!isLoggedIn()"
-        class="btn btn-outline-light ms-3"
+        class="btn btn-outline-light me-3"
         routerLink="/login"
         >Iniciar sesión</a
       >
@@ -113,10 +92,12 @@
 
       <!-- Solo visible si el usuario no es admin -->
       <app-carrito *ngIf="!isAdmin()"></app-carrito>
-      
+
       <!-- Si es admin, solo muestra el botón para cerrar sesión, alineado a la derecha -->
       <div *ngIf="isLoggedIn() && isAdmin()" class="ms-auto">
-        <button class="btn btn-outline-light ms-3" (click)="logout()">Cerrar sesión</button>
+        <button class="btn btn-outline-light ms-3" (click)="logout()">
+          Cerrar sesión
+        </button>
       </div>
     </div>
   </div>

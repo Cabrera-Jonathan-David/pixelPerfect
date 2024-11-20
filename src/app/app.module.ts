@@ -19,7 +19,8 @@ import { ListProductsComponent } from './Components/admin/list-products/list-pro
 import { UpdateProductsComponent } from './Components/admin/update-products/update-products.component';
 import { FAQComponent } from './Components/faq/faq.component';
 import { AdminLoginComponent } from './Components/admin/admin-login/admin-login.component';
-import { ListSalesComponent } from './Components/admin/list-sales/list-sales.component';
+import { SucursalesComponent } from './Components/sucursales/sucursales.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +39,14 @@ import { ListSalesComponent } from './Components/admin/list-sales/list-sales.com
     UpdateProductsComponent,
     FAQComponent,
     AdminLoginComponent,
-    ListSalesComponent
+    SucursalesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

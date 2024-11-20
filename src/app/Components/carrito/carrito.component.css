@@ -1,0 +1,28 @@
+.dropdown-menu {
+  padding: 1rem 4rem 1rem 1rem; /* Arriba-Derecha-Abajo-Izquierda */
+}
+
+.cart-item {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cart-item img {
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.cart-item .btn {
+  white-space: nowrap;
+}
+
+.cart-item .ms-3 {
+  flex-shrink: 0;
+}
+
+.cart-item .flex-grow-1 {
+  min-width: 0; /* Previene desbordamientos */
+}
