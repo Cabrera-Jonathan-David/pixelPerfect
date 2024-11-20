@@ -17,7 +17,6 @@ import { AdminLoginComponent } from './Components/admin/admin-login/admin-login.
 import { adminAuthGuard } from './auth/admin-auth.guard';
 import { notAdminAuthGuard } from './auth/not-admin-auth.guard';
 import { userAuthGuard } from './auth/user-auth.guard';
-import { guestAuthGuard } from './auth/guest-auth.guard';
 import { ListSalesComponent } from './Components/admin/list-sales/list-sales.component';
 
 
@@ -33,7 +32,7 @@ const routes: Routes = [
   { path: 'producto', component: ProductComponent , canActivate: [notAdminAuthGuard] },
   { path: 'product/:id', component: DetalleProductoComponent, canActivate: [notAdminAuthGuard]  }, 
   { path: 'carrito', component: CarritoComponent , canActivate: [notAdminAuthGuard]},
-  { path: 'payment', component: FormularioTarjetaComponent, canActivate: [notAdminAuthGuard, guestAuthGuard ] },
+  { path: 'payment', component: FormularioTarjetaComponent, canActivate: [notAdminAuthGuard] },
   { path: 'prepayment', component: PrePaymentComponent, canActivate: [notAdminAuthGuard] },
   { path: 'faq', component: FAQComponent, canActivate: [notAdminAuthGuard] },
 
