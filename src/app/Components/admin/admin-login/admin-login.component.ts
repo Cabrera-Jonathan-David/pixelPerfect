@@ -44,7 +44,7 @@ export class AdminLoginComponent implements OnInit{
                 localStorage.setItem('token', token)
                 this.authService.setAuthenticated();
                 this.loginError = false;
-                this.router.navigate(['/admin/list-products']);
+                this.router.navigate(['/admin/list-sales']);
 
               }else{
                 this.loginError = true;

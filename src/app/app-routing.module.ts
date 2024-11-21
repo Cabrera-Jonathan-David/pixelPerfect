@@ -20,7 +20,7 @@ import { userAuthGuard } from './auth/user-auth.guard';
 import { ListSalesComponent } from './Components/admin/list-sales/list-sales.component';
 import { BranchesComponent } from './Components/branches/branches.component';
 import { DetaillsSalesComponent } from './Components/admin/detaills-sales/detaills-sales.component';
-
+import { CategoryComponent } from './Components/category/category.component';
 const routes: Routes = [
   // users paths
 
@@ -44,6 +44,11 @@ const routes: Routes = [
   {
     path: 'producto',
     component: ProductComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  {
+    path: 'category/:category', 
+    component: CategoryComponent,
     canActivate: [notAdminAuthGuard],
   },
   {
