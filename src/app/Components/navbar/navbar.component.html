@@ -38,6 +38,26 @@
             Agregar Producto
           </button>
         </li>
+
+        <!-- Botón 'Agregar Producto' visible solo si es admin -->
+        <li class="nav-item" *ngIf="isAdmin()">
+          <button
+            class="btn btn-outline-light ms-3"
+            [routerLink]="'/admin/list-products'"
+          >
+            Ver Productos
+          </button>
+        </li>
+
+        <!-- Botón 'Agregar Producto' visible solo si es admin -->
+        <li class="nav-item" *ngIf="isAdmin()">
+          <button
+            class="btn btn-outline-light ms-3"
+            [routerLink]="'/admin/list-sales'"
+          >
+            Ver Pedidos
+          </button>
+        </li>
       </ul>
 
       <!-- Barra de búsqueda (visible solo si no es admin) -->

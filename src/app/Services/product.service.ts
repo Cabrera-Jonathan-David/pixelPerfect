@@ -19,6 +19,7 @@ export class ProductService {
   getProductById(productId: string): Observable<Product> {
     return this.http.get<Product>(`${this.apiProductUrl}/${productId}`); // Asegúrate de que esta URL sea correcta
   }
+
   // POST - Crear un nuevo producto
   addProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.apiProductUrl, product);
@@ -32,5 +33,6 @@ export class ProductService {
   updateProduct(id: string, updatedProduct: Product): Observable<Product>{
     return this.http.put<Product>(`${this.apiProductUrl}/${id}`, updatedProduct);
   }
+
 
 }

@@ -21,6 +21,7 @@ import { FAQComponent } from './Components/faq/faq.component';
 import { AdminLoginComponent } from './Components/admin/admin-login/admin-login.component';
 import { ListSalesComponent } from './Components/admin/list-sales/list-sales.component';
 import { BranchesComponent } from './Components/branches/branches.component';
+import { DetaillsSalesComponent } from './Components/admin/detaills-sales/detaills-sales.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { BranchesComponent } from './Components/branches/branches.component';
     AdminLoginComponent,
     ListSalesComponent,
     BranchesComponent,
+    DetaillsSalesComponent,
   ],
   imports: [
     BrowserModule,

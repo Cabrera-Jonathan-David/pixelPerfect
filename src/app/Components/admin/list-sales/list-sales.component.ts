@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PaymentHistoryService } from '../../../Services/payment-history-service.service';
 import { PaymentRegister } from '../../../Interface/payment-register';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-sales',
@@ -14,8 +15,11 @@ export class ListSalesComponent implements OnInit{
 
 
   constructor(private paymentHistoryService: PaymentHistoryService,
-              private fb: FormBuilder
+              private fb: FormBuilder,
+              private router: Router
   ){}
+
+  
 
   loadSales(){
     this.paymentHistoryService.obtenerPagos().subscribe(
@@ -82,7 +86,9 @@ export class ListSalesComponent implements OnInit{
   }
 
 
-
+  seeDetails(id: number){
+    this.router.navigate([`admin/details-sales/${id}`]);
+  }
 
 
 

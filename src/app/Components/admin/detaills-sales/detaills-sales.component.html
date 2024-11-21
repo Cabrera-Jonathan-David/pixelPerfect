@@ -1,0 +1,19 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let saleProd of saleProdsList">
+            <td> {{ saleProd.productId }} </td>
+            <td> {{ saleProd.productName }} </td>
+            <td> {{ saleProd.price }} </td>
+            <td> {{ saleProd.quantity }} </td>
+        </tr>
+    </tbody>
+</table>

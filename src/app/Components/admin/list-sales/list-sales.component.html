@@ -13,7 +13,11 @@
         <tr>
             <td> {{ sale.id }} </td>
             <td> {{ sale.userId }} </td>
-            <td> <button>Ver más</button> </td>
+            <td>
+                <button (click)="seeDetails(sale.id)">
+                Ver más
+                </button>
+            </td>
             <td>
                 <select
                 [formControl]="getControl(sale.id.toString())"
