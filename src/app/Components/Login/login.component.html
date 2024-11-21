@@ -1,33 +1,128 @@
-<div class="form-container">
-  <h2>Iniciar Sesión</h2>
-  <div class="container bg-dark text-white p-4 mt-5 rounded">
-    
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div
+    class="form-container bg-light p-5 rounded shadow-sm"
+    style="max-width: 400px; width: 80%"
+  >
+    <h2 class="text-left mb-4" style="text-decoration: none">Iniciar Sesión</h2>
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
+      <div class="mb-4">
         <label for="username" class="form-label">Nombre de Usuario:</label>
-        <input type="text" class="form-control" id="username" formControlName="username">
-        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger" >
-          <span *ngIf="loginForm.get('username')?.errors?.['required']">El Username es obligatorio.</span>
-        </div>
-      </div>
-      
-      <div class="mb-3">
-        <label for="password" class="form-label">Contraseña:</label>
-        <input type="password" class="form-control" id="password" formControlName="password">
-        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger" >
-          <span *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</span>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="username"
+          placeholder="Introduce tu nombre de usuario"
+        />
+        <div
+          *ngIf="
+            loginForm.get('username')?.invalid &&
+            loginForm.get('username')?.touched
+          "
+          class="text-danger mt-2"
+        >
+          <span *ngIf="loginForm.get('username')?.errors?.['required']"
+            >El Username es obligatorio.</span
+          >
         </div>
       </div>
 
-      <div *ngIf="loginError" class="text-danger">
+      <div class="mb-4">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Introduce tu contraseña"
+        />
+        <div
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+          class="text-danger mt-2"
+        >
+          <span *ngIf="loginForm.get('password')?.errors?.['required']"
+            >La contraseña es obligatoria.</span
+          >
+        </div>
+      </div>
+
+      <div *ngIf="loginError" class="text-danger mb-3">
         Usuario y/o contraseña incorrectos.
       </div>
 
-  
-      <button type="submit" class="btn btn-primary">Ingresar</button>
+      <button type="submit" class="btn btn-primary w-100 py-2">Ingresar</button>
     </form>
-  
-    <p class="mt-3">¿Aún no tienes una cuenta? <a class="text-info" routerLink="/register">Créala aquí</a></p>
 
+    <p class="mt-3 text-center">
+      ¿Aún no tienes una cuenta?
+      <a class="text-info" routerLink="/register">Créala aquí</a>
+    </p>
   </div>
 </div>
+
+<section class="text-white py-4 mt-5" style="background-color: #201f1f">
+  <div class="container">
+    <div class="row">
+      <!-- Data Fiscal & Links -->
+      <div class="col-12 col-md-4 d-flex align-items-center mb-4 mb-md-0">
+        <img
+          src="https://i.imgur.com/Uxfk1XK.jpeg"
+          alt="Data Fiscal"
+          class="m-3"
+          style="max-width: 60px"
+        />
+        <div>
+          <a href="#" class="text-white">Botón de arrepentimiento</a>
+          |<br />
+          <a href="/terms" class="text-white">Términos y condiciones</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <!-- Separator Line -->
+        <div class="text-center">
+          <img
+            src="https://i.imgur.com/I6YIgX4.png"
+            alt="Great Place to Work"
+            class="mb-2"
+            style="max-width: 55px"
+          />
+          <p class="text-white">¡Trabajá con nosotros!</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-5 mb-md-0 text-center mt-3">
+        <!-- Social Media Links -->
+        <p>Seguinos en</p>
+        <div class="d-flex justify-content-center">
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-facebook fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-instagram fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-youtube fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-linkedin fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-tiktok fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-twitch fa-2x"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Separator Line between sections -->
+    <div class="border-bottom border-white mb-3"></div>
+
+    <!-- Great Place to Work & Job Offer -->
+  </div>
+</section>
