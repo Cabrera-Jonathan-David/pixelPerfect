@@ -6,9 +6,9 @@
       "brand": "HP",
       "price": 1200,
       "stock": 15,
-      "description": "Laptop gamer con procesador Intel i7 y tarjeta gr�fica RTX 3060.",
+      "description": "Laptop gamer con procesador Intel i7 y tarjeta grafica RTX 3060.",
       "category": "Laptops",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://ar-media.hptiendaenlinea.com/catalog/product/3/Y/3Y595LA-1_T1679635580.png"
     },
     {
       "id": "2",
@@ -16,19 +16,19 @@
       "brand": "Razer",
       "price": 60,
       "stock": "98",
-      "description": "Mouse ergon�mico con iluminaci�n RGB y alta precisi�n.",
-      "category": "Perif�ricos",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "description": "Mouse ergonomico con iluminacion RGB y alta precision.",
+      "category": "Perifericos",
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_686894-MLA31022953654_062019-O.webp"
     },
     {
       "id": "3",
-      "name": "Teclado mec�nico Corsair K95",
+      "name": "Teclado mecanico Corsair K95",
       "brand": "Corsair",
       "price": 180,
       "stock": "2",
       "description": "Teclado mec�nico con retroiluminaci�n RGB y teclas programables.",
       "category": "Teclados",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://www.invidcomputers.com/images/000000000041035879456410358--1-.png"
     },
     {
       "id": "4",
@@ -36,9 +36,9 @@
       "brand": "Dell",
       "price": 600,
       "stock": "29",
-      "description": "Monitor de alta resoluci�n con colores precisos y tecnolog�a IPS.",
+      "description": "Monitor de alta resolucion con colores precisos y tecnologia IPS.",
       "category": "Monitores",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_861581-MLA50137393050_052022-O.webp"
     },
     {
       "id": "5",
@@ -48,7 +48,7 @@
       "stock": "0",
       "description": "Placa base compatible con procesadores AMD Ryzen y tecnolog�a gaming.",
       "category": "Componentes",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_632671-MLA53444334562_012023-O.webp"
     },
     {
       "id": "6",
@@ -58,17 +58,17 @@
       "stock": 40,
       "description": "SSD NVMe de alto rendimiento con capacidad de 1TB.",
       "category": "Almacenamiento",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://m.media-amazon.com/images/I/81ZAirA3ZnL._AC_SL1500_.jpg"
     },
     {
       "id": "7",
-      "name": "Tarjeta gr�fica NVIDIA GeForce RTX 3080",
+      "name": "Tarjeta grafica NVIDIA GeForce RTX 3080",
       "brand": "NVIDIA",
       "price": 800,
-      "stock": 0,
+      "stock": 0, 
       "description": "Tarjeta gr�fica de alto rendimiento para gamers y creadores de contenido.",
       "category": "Componentes",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_941268-MLA44847003228_022021-O.webp"
     },
     {
       "id": "8",
@@ -77,8 +77,8 @@
       "price": 100,
       "stock": 70,
       "description": "Auriculares con sonido envolvente y micr�fono desmontable.",
-      "category": "Perif�ricos",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "category": "Perifericos",
+      "image_url": "https://spacegamer.com.ar/img/Public/1058-producto-61f1dyod6ql-6464.jpg"
     },
     {
       "id": "9",
@@ -88,7 +88,7 @@
       "stock": 25,
       "description": "Fuente de poder de 600W con eficiencia 80 PLUS.",
       "category": "Componentes",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_936090-MCO46182640775_052021-O.webp"
     },
     {
       "id": "10",
@@ -98,7 +98,7 @@
       "stock": 12,
       "description": "Laptop ultradelgada con pantalla 4K y rendimiento excepcional.",
       "category": "Laptops",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://m.media-amazon.com/images/I/716T+1iVYqL.jpg"
     },
     {
       "id": "11",
@@ -108,7 +108,7 @@
       "stock": 80,
       "description": "Hub USB con 10 puertos para conectar m�ltiples dispositivos.",
       "category": "Accesorios",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_970283-MLU73762059291_012024-O.webp"
     },
     {
       "id": "12",
@@ -117,8 +117,8 @@
       "price": 80,
       "stock": 60,
       "description": "Webcam HD con enfoque autom�tico y micr�fono integrado.",
-      "category": "Perif�ricos",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "category": "Perifericos",
+      "image_url": "https://fullh4rd.com.ar/img/productos/21/webcam-logitech-c922-pro-stream-hd--tripode-0.jpg"
     },
     {
       "id": "13",
@@ -128,7 +128,7 @@
       "stock": 3,
       "description": "Silla gamer ergon�mica para largas sesiones de juego.",
       "category": "Muebles",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_Q_NP_715470-MLU74730078254_032024-O.webp"
     },
     {
       "id": "14",
@@ -138,7 +138,7 @@
       "stock": 10,
       "description": "Monitor UltraWide para una experiencia inmersiva en juegos y trabajo.",
       "category": "Monitores",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_759394-MLA78418695708_082024-O.webp"
     },
     {
       "id": "15",
@@ -148,7 +148,7 @@
       "stock": 45,
       "description": "Router de doble banda con tecnolog�a AC1750 para mejor rendimiento.",
       "category": "Redes",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://www.3caccesorios.com/cdn/shop/files/Capturadepantalla2024-06-28165133.png?v=1719604384"
     },
     {
       "id": "16",
@@ -158,7 +158,7 @@
       "stock": 30,
       "description": "Disco duro externo de 2TB, ideal para almacenamiento port�til.",
       "category": "Almacenamiento",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://outtec.com.ar/wp-content/uploads/2021/08/STEA2000400-SEAGATE-EXPANSION-2TB-1.png"
     },
     {
       "id": "17",
@@ -168,17 +168,17 @@
       "stock": 20,
       "description": "Tarjeta de sonido para una experiencia auditiva superior.",
       "category": "Componentes",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "image_url": "https://http2.mlstatic.com/D_NQ_NP_877058-MLA44161991077_112020-O.webp"
     },
     {
       "id": "18",
-      "name": "C�mara de acci�n GoPro Hero 9",
+      "name": "Camara de accion GoPro Hero 9",
       "brand": "GoPro",
       "price": 400,
       "stock": 25,
-      "description": "C�mara de acci�n resistente al agua, ideal para grabar aventuras.",
-      "category": "C�maras",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "description": "Camara de accion resistente al agua, ideal para grabar aventuras.",
+      "category": "Camaras",
+      "image_url": "https://www.cordobadigital.net/wp-content/uploads/2021/05/Gopro-Hero-9-black.jpg"
     },
     {
       "id": "19",
@@ -186,9 +186,9 @@
       "brand": "Blue",
       "price": 130,
       "stock": 40,
-      "description": "Micr�fono USB ideal para streaming y grabaci�n de voz.",
-      "category": "Perif�ricos",
-      "image_url": "https://i.redd.it/e0zzm1jrgu691.png"
+      "description": "Microfono USB ideal para streaming y grabacion de voz.",
+      "category": "Perifericos",
+      "image_url": "https://www.megatone.net/images//Articulos/zoom2x/355/MKT0182EBX-1.jpg"
     }
   ]
 }
