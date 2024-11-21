@@ -30,7 +30,9 @@ export class NavbarComponent {
 
   
   search(): void {
-    // aca hay que poner la logica para buscar
+    if (this.searchQuery.trim()) {
+      this.router.navigate(['/search'], { queryParams: { query: this.searchQuery } });
+    }
   }
 
   

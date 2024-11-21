@@ -67,6 +67,8 @@
           type="search"
           placeholder="Buscar productos"
           aria-label="Search"
+          [(ngModel)]="searchQuery"
+          name="searchQuery"
           #searchInput
           style="width: 700px"
         />
@@ -133,7 +135,10 @@
         <a class="nav-link" routerLink="/home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/category/Perifericos">Productos</a>
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/category">Productos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/faq">FAQ</a>

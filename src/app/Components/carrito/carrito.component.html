@@ -20,7 +20,7 @@
       class="cart-item d-flex align-items-center py-3 border-bottom"
       style="max-width: 600px; margin: 0 auto"
     >
-      <!-- Imagen del producto -->
+      
       <img
         [src]="item.product.image_url"
         alt="Imagen del producto"
@@ -29,7 +29,7 @@
         height="70"
       />
 
-      <!-- Contenido del producto -->
+      
       <div class="ms-3 flex-grow-1">
         <p
           class="mb-1 fw-semibold text-truncate"
@@ -39,7 +39,7 @@
         </p>
         <p class="mb-1 text-muted">{{ item.product.price | currency }}</p>
         <div class="d-flex align-items-center">
-          <!-- Botones de cantidad -->
+          
           <button
             (click)="onClick($event); decreaseQuantity(item)"
             class="btn btn-outline-secondary btn-sm"
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <!-- Botón de eliminar -->
+      
       <div class="ms-3">
         <button
           (click)="removeItem(item)"

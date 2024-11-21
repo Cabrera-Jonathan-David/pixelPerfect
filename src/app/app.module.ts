@@ -23,6 +23,7 @@ import { ListSalesComponent } from './Components/admin/list-sales/list-sales.com
 import { BranchesComponent } from './Components/branches/branches.component';
 import { DetaillsSalesComponent } from './Components/admin/detaills-sales/detaills-sales.component';
 import { CategoryComponent } from './Components/category/category.component';
+import { SearchResultsComponent } from './Components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CategoryComponent } from './Components/category/category.component';
     BranchesComponent,
     DetaillsSalesComponent,
     CategoryComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

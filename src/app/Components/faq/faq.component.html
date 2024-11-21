@@ -49,7 +49,7 @@
     <!-- Título de la sección -->
     <h3 class="text-center text-dark mb-4">{{ section.title }}</h3>
 
-    <!-- Accordion para cada sección -->
+    
     <div class="accordion" [id]="'faqAccordion' + sectionIndex">
       <div
         *ngFor="let faq of section.questions; let questionIndex = index"
@@ -78,7 +78,7 @@
           </button>
         </h2>
 
-        <!-- Cuerpo de la respuesta -->
+       
         <div
           [id]="'collapse' + sectionIndex + '-' + questionIndex"
           class="accordion-collapse collapse"

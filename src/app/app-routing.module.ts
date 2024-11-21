@@ -21,6 +21,7 @@ import { ListSalesComponent } from './Components/admin/list-sales/list-sales.com
 import { BranchesComponent } from './Components/branches/branches.component';
 import { DetaillsSalesComponent } from './Components/admin/detaills-sales/detaills-sales.component';
 import { CategoryComponent } from './Components/category/category.component';
+import { SearchResultsComponent } from './Components/search-results/search-results.component';
 const routes: Routes = [
   // users paths
 
@@ -34,8 +35,17 @@ const routes: Routes = [
     component: RegisterComponent,
     canActivate: [notAdminAuthGuard],
   },
-  { path: 'home', component: HomeComponent, canActivate: [notAdminAuthGuard] },
-  { path: '', component: HomeComponent, canActivate: [notAdminAuthGuard] },
+  { 
+    path: 'home', 
+    component: HomeComponent, 
+    canActivate: [notAdminAuthGuard] 
+  },
+  { 
+    path: '', 
+    component: HomeComponent, 
+    canActivate: [notAdminAuthGuard] 
+  },
+  
   {
     path: 'modify-user',
     component: ModifyUserComponent,
@@ -44,6 +54,11 @@ const routes: Routes = [
   {
     path: 'producto',
     component: ProductComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  { 
+    path: 'search', 
+    component: SearchResultsComponent,
     canActivate: [notAdminAuthGuard],
   },
   {

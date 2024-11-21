@@ -20,11 +20,11 @@ export class DetalleProductoComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProduct();
-    console.log(this.cartService.cartItems); // Verifica el estado del carrito aquí
+    console.log(this.cartService.cartItems); 
   
   }
 
-  // Cargar el producto específico usando el ID de la ruta
+  
   loadProduct(): void {
     const productId = this.route.snapshot.paramMap.get('id');
     
@@ -42,7 +42,7 @@ export class DetalleProductoComponent implements OnInit {
     }
   }
 
-  // Agregar al carrito verificando el stock
+
   addToCart(): void {
     if (this.product && this.product.id) { 
       console.log('Producto a agregar:', this.product); 
