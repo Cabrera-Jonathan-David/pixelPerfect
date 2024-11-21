@@ -36,13 +36,13 @@ export class HomeComponent implements OnInit {
 
   addToCart(product: Product): void {
     if (product && product.id) {
-      const existingItem = this.cartService.getCartItem(product.id); // Obtiene el item existente
-      const availableStock = Number(product.stock); // Stock a número
+      const existingItem = this.cartService.getCartItem(product.id); 
+      const availableStock = Number(product.stock); 
       if (availableStock <= 0) {
         alert('El producto no tiene stock disponible.');
         return;
       }
-      const existingQuantity = existingItem ? existingItem.quantity : 0; // Asegúrate de que esto sea un número
+      const existingQuantity = existingItem ? existingItem.quantity : 0; 
       // Comparar cantidades
       if (!existingItem || existingQuantity < availableStock) {
         this.cartService.addProductToCart(product);

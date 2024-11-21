@@ -91,7 +91,7 @@ export class ModifyUserComponent implements OnInit {
                       ...this.modifyForm.value //modifica lo nuevo
                   };
 
-                  // Actualizar el cliente
+                  
                   await this.clientService.updateClient(user.id_cliente, updatedClientData);
                   alert('Cliente actualizado con éxito');
                   this.modifyForm.reset();

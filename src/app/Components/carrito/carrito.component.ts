@@ -16,21 +16,21 @@ export class CarritoComponent implements OnInit {
     this.loadCartItems();
   }
 
-  // Método para cargar los items del carrito desde el servicio
+  
   loadCartItems(): void {
-    this.cartItems = this.cartService.cartItems; // Obtiene los items del servicio
+    this.cartItems = this.cartService.cartItems; 
   }
 
-  // Aumentar la cantidad del item en el carrito
+ 
   increaseQuantity(item: CartItem): void {
     const availableStock = Number(item.product.stock);
     if (item.quantity < availableStock) {
-      item.quantity++; // Incrementa la cantidad si hay stock disponible
-      this.updateCartItem(item); // Actualiza el carrito en el servicio
+      item.quantity++; 
+      this.updateCartItem(item);
     } else {
       alert(
         'No se puede agregar más unidades. Stock disponible: ' + availableStock
-      ); // Mensaje de alerta
+      ); 
     }
   }
 
@@ -54,10 +54,10 @@ export class CarritoComponent implements OnInit {
     if (item.product && item.product.id) {
       const existingItem = this.cartService.getCartItem(
         item.product.id.toString()
-      ); // Busca el item en el carrito
+      ); 
       if (existingItem) {
         existingItem.quantity = item.quantity;
-        this.cartService.saveCartItems(); // Guarda el carrito actualizado en localStorage
+        this.cartService.saveCartItems(); 
       }
     } else {
       console.error('El item no tiene un producto válido o no tiene ID.');

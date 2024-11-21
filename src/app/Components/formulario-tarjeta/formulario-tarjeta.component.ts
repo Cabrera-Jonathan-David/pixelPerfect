@@ -127,7 +127,7 @@ export class FormularioTarjetaComponent implements OnInit {
          
           await this.productService.updateProduct(cartItem.product.id!, { 
             ...producto, 
-            stock: stockActualizado.toString() // Actualizar el stock
+            stock: stockActualizado.toString()
           }).toPromise();
         } else {
           throw new Error(`No hay suficiente stock para el producto ${producto.name}`);
