@@ -1,11 +1,11 @@
 .form-container {
   max-width: 400px; /* Ancho máximo del formulario */
-  margin: 0 auto; /* Centrar el formulario horizontalmente */
+  margin: 25px auto; /* Centrar el formulario horizontalmente */
   padding: 20px; /* Espaciado interno */
   border: 1px solid #ccc; /* Borde del formulario */
   border-radius: 8px; /* Bordes redondeados */
   background-color: #f8f9fa; /* Fondo claro */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 h2, h3, h4 {
@@ -24,7 +24,7 @@ h2, h3, h4 {
 .btn-register:hover {
   transform: scale(1.1);
   background-color: #0056b3;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 .text-danger{
