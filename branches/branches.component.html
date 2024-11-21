@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h2>Nuestras Sucursales - Pixel Perfect</h2>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let sucursal of sucursales">
+      <div class="card mb-3">
+        <img
+          [src]="sucursal.imagenUrl"
+          class="card-img-top"
+          alt="{{ sucursal.nombre }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ sucursal.nombre }}</h5>
+          <p class="card-text">{{ sucursal.direccion }}</p>
+          <p class="card-text">Tel: {{ sucursal.telefono }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
