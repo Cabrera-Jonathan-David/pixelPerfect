@@ -1,13 +1,65 @@
 <div class="container my-5">
-  <div *ngFor="let section of faqSections; let sectionIndex = index" class="mb-4">
+  <section class="container py-4 text-center">
+    <h3 class="display-4 fw-bold mb-3" style="color: black">¿Cómo comprar?</h3>
+    <div class="lead">
+      <p>
+        Realizar una compra en <strong>Pixel Perfect</strong> es muy simple.
+        Sigue estos pasos:
+      </p>
+    </div>
+  </section>
+
+  <div class="container text-center mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-5">
+      <div class="col">
+        <div class="d-flex flex-column align-items-center">
+          <i class="fas fa-store fa-4x text-info mb-3"></i>
+          <h5>Tienda</h5>
+          <p class="text-muted">
+            Encuentra todos los productos que necesitas en nuestra tienda.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-flex flex-column align-items-center">
+          <i class="fas fa-credit-card fa-4x text-info mb-3"></i>
+          <h5>Pagos</h5>
+          <p class="text-muted">
+            Realiza tus pagos de manera segura con tarjeta de débito o crédito.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-flex flex-column align-items-center">
+          <i class="fas fa-box fa-4x text-info mb-3"></i>
+          <h5>Envíos</h5>
+          <p class="text-muted">
+            Recibe tus productos rápidamente gracias a nuestros envíos
+            confiables.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngFor="let section of faqSections; let sectionIndex = index"
+    class="mb-4 mt-5"
+  >
     <!-- Título de la sección -->
-    <h3 class="text-center text-light mb-4">{{ section.title }}</h3>
+    <h3 class="text-center text-dark mb-4">{{ section.title }}</h3>
 
     
     <div class="accordion" [id]="'faqAccordion' + sectionIndex">
-      <div *ngFor="let faq of section.questions; let questionIndex = index" class="accordion-item">
+      <div
+        *ngFor="let faq of section.questions; let questionIndex = index"
+        class="accordion-item"
+      >
         <!-- Encabezado de cada pregunta -->
-        <h2 class="accordion-header" [id]="'heading' + sectionIndex + '-' + questionIndex">
+        <h2
+          class="accordion-header"
+          [id]="'heading' + sectionIndex + '-' + questionIndex"
+        >
           <button
             class="accordion-button"
             type="button"

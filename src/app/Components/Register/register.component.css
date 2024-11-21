@@ -1,16 +1,17 @@
 .form-container {
-  max-width: 550px; /* Ancho máximo del formulario */
-  margin: 0 auto; /* Centrar el formulario horizontalmente */
+  max-width: 850px; /* Ancho máximo del formulario */
+  margin: 50px auto; /* Centrar el formulario horizontalmente */
   padding: 20px; /* Espaciado interno */
   border: 1px solid #ccc; /* Borde del formulario */
   border-radius: 8px; /* Bordes redondeados */
   background-color: #f8f9fa; /* Fondo claro */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  
 }
 
 h2, h3, h4 {
   text-align: left;
-  text-decoration: underline;
+  text-decoration: none;
   margin-bottom: 20px;
 }
 

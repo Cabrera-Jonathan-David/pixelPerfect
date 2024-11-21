@@ -7,7 +7,7 @@ body {
   
   /* Centrar el contenedor principal */
   .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
@@ -15,7 +15,7 @@ body {
   h3 {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #b2c9ff; /* Azul metalizado claro */
+    color: #333333; /* Azul metalizado claro */
   }
   
   /* Acordeón y botón */
@@ -62,6 +62,6 @@ body {
   
   /* Acento de azul metálico */
   .text-primary {
-    color: #0066cc !important;
+    color: #ffffff !important;
   }
   

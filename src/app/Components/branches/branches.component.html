@@ -1,14 +1,14 @@
 <div class="container mt-5">
   <h2>Nuestras Sucursales - Pixel Perfect</h2>
   <div class="row">
-    <div class="col-md-6" *ngFor="let sucursal of sucursales">
-      <div class="card mb-3">
+    <div class="col-md-3" *ngFor="let sucursal of sucursales">
+      <div class="card card-custom mb-3">
         <img
           [src]="sucursal.imagenUrl"
-          class="card-img-top"
+          class="card-img-top img-fluid"
           alt="{{ sucursal.nombre }}"
         />
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{ sucursal.nombre }}</h5>
           <p class="card-text">{{ sucursal.direccion }}</p>
           <p class="card-text">Tel: {{ sucursal.telefono }}</p>
@@ -17,3 +17,66 @@
     </div>
   </div>
 </div>
+
+<section class="text-white py-4 mt-5" style="background-color: #201f1f">
+  <div class="container">
+    <div class="row">
+      <!-- Data Fiscal & Links -->
+      <div class="col-12 col-md-4 d-flex align-items-center mb-4 mb-md-0">
+        <img
+          src="https://i.imgur.com/Uxfk1XK.jpeg"
+          alt="Data Fiscal"
+          class="m-3"
+          style="max-width: 60px"
+        />
+        <div>
+          <a href="#" class="text-white">Botón de arrepentimiento</a>
+          |<br />
+          <a href="/terms" class="text-white">Términos y condiciones</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <!-- Separator Line -->
+        <div class="text-center">
+          <img
+            src="https://i.imgur.com/I6YIgX4.png"
+            alt="Great Place to Work"
+            class="mb-2"
+            style="max-width: 55px"
+          />
+          <p class="text-white">¡Trabajá con nosotros!</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-5 mb-md-0 text-center mt-3">
+        <!-- Social Media Links -->
+        <p>Seguinos en</p>
+        <div class="d-flex justify-content-center">
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-facebook fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-instagram fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-youtube fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-linkedin fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-tiktok fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-twitch fa-2x"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Separator Line between sections -->
+    <div class="border-bottom border-white mb-3"></div>
+
+    <!-- Great Place to Work & Job Offer -->
+  </div>
+</section>
