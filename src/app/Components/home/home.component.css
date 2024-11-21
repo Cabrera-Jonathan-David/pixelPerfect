@@ -29,7 +29,7 @@
   border-radius: 0.5rem;
 }
 
-.card {
+.card {150
   margin-bottom: 20px;
 }
 
@@ -140,4 +140,26 @@
 /* Estilo adicional si quieres que el texto del botón también sea más pequeño */
 .category-card .btn {
   font-size: 0.9rem; /* Ajusta el tamaño del texto del botón */
+}
+
+
+.card-category {
+  height: 150px; /* Aumenta la altura de las cards */
+  border-radius: 8px; /* Opcional: suaviza los bordes */
+  overflow: hidden;
+}
+
+.card-category h5{
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.card-category .card-body {
+  background: transparent;
+  margin-top: auto; /* Empuja el texto hacia abajo */
+}
+
+.card-category .card-title {
+  font-size: 1.2rem;
+  margin: 0;
 }
