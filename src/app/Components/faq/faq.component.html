@@ -1,21 +1,26 @@
 <div class="container my-5">
   <div *ngFor="let section of faqSections; let sectionIndex = index" class="mb-4">
-   
+    <!-- Título de la sección -->
     <h3 class="text-center text-light mb-4">{{ section.title }}</h3>
 
     
     <div class="accordion" [id]="'faqAccordion' + sectionIndex">
       <div *ngFor="let faq of section.questions; let questionIndex = index" class="accordion-item">
-       
+        <!-- Encabezado de cada pregunta -->
         <h2 class="accordion-header" [id]="'heading' + sectionIndex + '-' + questionIndex">
           <button
             class="accordion-button"
             type="button"
             [attr.aria-expanded]="faq.isOpen"
             (click)="toggleAnswer(sectionIndex, questionIndex)"
-            [attr.aria-controls]="'collapse' + sectionIndex + '-' + questionIndex"
-            [ngClass]="{'text-light': !faq.isOpen, 'text-primary': faq.isOpen}"
-            style="background-color: #333; border: 1px solid #555;"
+            [attr.aria-controls]="
+              'collapse' + sectionIndex + '-' + questionIndex
+            "
+            [ngClass]="{
+              'text-light': !faq.isOpen,
+              'text-primary': faq.isOpen
+            }"
+            style="background-color: #333; border: 1px solid #555"
           >
             {{ faq.question }}
           </button>
@@ -26,10 +31,15 @@
           [id]="'collapse' + sectionIndex + '-' + questionIndex"
           class="accordion-collapse collapse"
           [ngClass]="{ show: faq.isOpen }"
-          [attr.aria-labelledby]="'heading' + sectionIndex + '-' + questionIndex"
+          [attr.aria-labelledby]="
+            'heading' + sectionIndex + '-' + questionIndex
+          "
           [attr.data-bs-parent]="'#faqAccordion' + sectionIndex"
         >
-          <div class="accordion-body" style="background-color: #444; color: #ccc;">
+          <div
+            class="accordion-body"
+            style="background-color: #444; color: #ccc"
+          >
             {{ faq.answer }}
           </div>
         </div>
@@ -37,3 +47,66 @@
     </div>
   </div>
 </div>
+
+<section class="text-white py-4 mt-5" style="background-color: #201f1f">
+  <div class="container">
+    <div class="row">
+      <!-- Data Fiscal & Links -->
+      <div class="col-12 col-md-4 d-flex align-items-center mb-4 mb-md-0">
+        <img
+          src="https://i.imgur.com/Uxfk1XK.jpeg"
+          alt="Data Fiscal"
+          class="m-3"
+          style="max-width: 60px"
+        />
+        <div>
+          <a href="#" class="text-white">Botón de arrepentimiento</a>
+          |<br />
+          <a href="/terms" class="text-white">Términos y condiciones</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <!-- Separator Line -->
+        <div class="text-center">
+          <img
+            src="https://i.imgur.com/I6YIgX4.png"
+            alt="Great Place to Work"
+            class="mb-2"
+            style="max-width: 55px"
+          />
+          <p class="text-white">¡Trabajá con nosotros!</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-5 mb-md-0 text-center mt-3">
+        <!-- Social Media Links -->
+        <p>Seguinos en</p>
+        <div class="d-flex justify-content-center">
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-facebook fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-instagram fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-youtube fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-linkedin fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-tiktok fa-2x"></i
+          ></a>
+          <a href="#" class="text-white me-2"
+            ><i class="fab fa-twitch fa-2x"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Separator Line between sections -->
+    <div class="border-bottom border-white mb-3"></div>
+
+    <!-- Great Place to Work & Job Offer -->
+  </div>
+</section>
