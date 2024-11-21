@@ -46,8 +46,7 @@ export class HomeComponent implements OnInit {
       // Comparar cantidades
       if (!existingItem || existingQuantity < availableStock) {
         this.cartService.addProductToCart(product);
-        alert('Producto agregado al carrito!');
-      } else {
+              } else {
         alert(
           'No hay suficiente stock para agregar más unidades de este producto.'
         );
