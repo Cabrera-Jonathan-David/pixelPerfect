@@ -26,7 +26,7 @@
       "brand": "Corsair",
       "price": 180,
       "stock": "2",
-      "description": "Teclado mec�nico con retroiluminaci�n RGB y teclas programables.",
+      "description": "Teclado mecanico con retroiluminacion RGB y teclas programables.",
       "category": "Teclados",
       "image_url": "https://www.invidcomputers.com/images/000000000041035879456410358--1-.png"
     },
@@ -45,7 +45,7 @@
       "name": "Placa base ASUS ROG Strix B550-F",
       "brand": "ASUS",
       "price": 200,
-      "stock": "0",
+      "stock": "4",
       "description": "Placa base compatible con procesadores AMD Ryzen y tecnolog�a gaming.",
       "category": "Componentes",
       "image_url": "https://http2.mlstatic.com/D_NQ_NP_632671-MLA53444334562_012023-O.webp"
@@ -66,7 +66,7 @@
       "brand": "NVIDIA",
       "price": 800,
       "stock": 0, 
-      "description": "Tarjeta gr�fica de alto rendimiento para gamers y creadores de contenido.",
+      "description": "Tarjeta grafica de alto rendimiento para gamers y creadores de contenido.",
       "category": "Componentes",
       "image_url": "https://http2.mlstatic.com/D_NQ_NP_941268-MLA44847003228_022021-O.webp"
     },
@@ -76,7 +76,7 @@
       "brand": "Logitech",
       "price": 100,
       "stock": 70,
-      "description": "Auriculares con sonido envolvente y micr�fono desmontable.",
+      "description": "Auriculares con sonido envolvente y microfono desmontable.",
       "category": "Perifericos",
       "image_url": "https://spacegamer.com.ar/img/Public/1058-producto-61f1dyod6ql-6464.jpg"
     },
@@ -106,7 +106,7 @@
       "brand": "Anker",
       "price": 40,
       "stock": 80,
-      "description": "Hub USB con 10 puertos para conectar m�ltiples dispositivos.",
+      "description": "Hub USB con 10 puertos para conectar multiples dispositivos.",
       "category": "Accesorios",
       "image_url": "https://http2.mlstatic.com/D_NQ_NP_970283-MLU73762059291_012024-O.webp"
     },
@@ -116,7 +116,7 @@
       "brand": "Logitech",
       "price": 80,
       "stock": 60,
-      "description": "Webcam HD con enfoque autom�tico y micr�fono integrado.",
+      "description": "Webcam HD con enfoque automatico y microfono integrado.",
       "category": "Perifericos",
       "image_url": "https://fullh4rd.com.ar/img/productos/21/webcam-logitech-c922-pro-stream-hd--tripode-0.jpg"
     },
@@ -126,7 +126,7 @@
       "brand": "DXRacer",
       "price": 350,
       "stock": 3,
-      "description": "Silla gamer ergon�mica para largas sesiones de juego.",
+      "description": "Silla gamer ergonomica para largas sesiones de juego.",
       "category": "Muebles",
       "image_url": "https://http2.mlstatic.com/D_Q_NP_715470-MLU74730078254_032024-O.webp"
     },
@@ -146,7 +146,7 @@
       "brand": "TP-Link",
       "price": 60,
       "stock": 45,
-      "description": "Router de doble banda con tecnolog�a AC1750 para mejor rendimiento.",
+      "description": "Router de doble banda con tecnologia AC1750 para mejor rendimiento.",
       "category": "Redes",
       "image_url": "https://www.3caccesorios.com/cdn/shop/files/Capturadepantalla2024-06-28165133.png?v=1719604384"
     },
@@ -156,7 +156,7 @@
       "brand": "Seagate",
       "price": 100,
       "stock": 30,
-      "description": "Disco duro externo de 2TB, ideal para almacenamiento port�til.",
+      "description": "Disco duro externo de 2TB, ideal para almacenamiento portatil.",
       "category": "Almacenamiento",
       "image_url": "https://outtec.com.ar/wp-content/uploads/2021/08/STEA2000400-SEAGATE-EXPANSION-2TB-1.png"
     },
