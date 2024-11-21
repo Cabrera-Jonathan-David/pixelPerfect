@@ -1,8 +1,143 @@
+/* Animación para que la card se despegue hacia el usuario */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al hacer hover, la card se acerca hacia el usuario */
+.card:hover {
+  transform: translateY(-10px); /* Despega la card hacia arriba */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Botones sin color inicialmente y con color al hacer hover */
+.card .btn {
+  color: #000; /* Color inicial */
+  background-color: transparent; /* Sin color de fondo */
+  border: 2px solid transparent; /* Sin borde */
+  transition: all 0.3s ease;
+}
+
+/* Efecto de hover en los botones */
+.card .btn:hover {
+  color: #fff; /* Color del texto en el hover */
+  background-color: #007bff; /* Fondo azul al hacer hover */
+  border-color: #007bff; /* Borde azul al hacer hover */
+}
+
 .jumbotron {
-    padding: 2rem;
-    border-radius: 0.5rem;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-  }
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+/* Estilos generales */
+.custom-card {
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen con padding */
+.card-img-container {
+  padding: 2rem;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: contain;
+  padding: 20px;
+}
+
+/* Título destacado */
+.card-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Botones en la parte inferior */
+.custom-btn {
+  border: 1px solid transparent;
+  color: #6c757d; /* Sin color por defecto */
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+/* Control de márgenes */
+.mt-auto {
+  margin-top: auto;
+}
+
+.d-flex .custom-btn:first-child:hover {
+  background-color: #6c757d; /* Color distinto para Ver detalle */
+}
+
+/* Contenedor para precio y stock con flexbox */
+.card-body .price-stock-container {
+  display: flex;
+  justify-content: center; /* Centra ambos elementos */
+  gap: 15px; /* Espacio entre las columnas */
+}
+
+.card-body .price-stock-container p {
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+.card-body .price-stock-container div {
+  text-align: center; /* Centra el texto dentro de cada columna */
+  flex: 1; /* Hace que ambas columnas ocupen el mismo espacio */
+}
+
+/* Clase para el contenedor del carousel */
+.carousel-container {
+  width: 80%; /* O el tamaño que desees, como 60%, 100%, etc. */
+  margin: 0 auto; /* Centra el carousel */
+  border-radius: 15px; /* Redondea las esquinas del carousel */
+  overflow: hidden; /* Asegura que las imágenes no sobresalgan del contorno */
+}
+
+/* Redondear las imágenes dentro del carousel */
+.carousel-item img {
+  border-radius: 15px; /* Redondea las imágenes dentro del carousel */
+}
+
+/* Aumentar la altura de las imágenes */
+.category-card {
+  cursor: pointer;
+}
+
+.category-card img {
+  height: 250px; /* Ajusta la altura a lo que necesites */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción al cubrir el área */
+}
+
+/* Reducir el tamaño del texto en el título */
+.category-card .card-title {
+  font-size: 1rem; /* Ajusta el tamaño según lo que necesites */
+}
+
+/* Quitar subrayado en los enlaces */
+.category-card a {
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.category-card a:hover {
+  text-decoration: none; /* También elimina el subrayado cuando se pasa el mouse */
+}
+
+/* Estilo adicional si quieres que el texto del botón también sea más pequeño */
+.category-card .btn {
+  font-size: 0.9rem; /* Ajusta el tamaño del texto del botón */
+}
