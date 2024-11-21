@@ -54,7 +54,7 @@ export class ListSalesComponent implements OnInit{
       return ['enviado']
     }
     else {
-      sale.estado = 'confirmado';
+      sale.estado = 'pendiente';
       this.paymentHistoryService.updatePayment(sale.id, sale);
       return ['pendiente', 'confirmado', 'enviado']
     }
@@ -63,8 +63,6 @@ export class ListSalesComponent implements OnInit{
   getControl(controlName: string): FormControl{
     return this.salesForm.get(controlName) as FormControl;
   }
-
-
 
   // si un pedido está enviado, no se puede cambiar su estado
   canChangeStatus(sale: PaymentRegister): boolean{
@@ -89,10 +87,6 @@ export class ListSalesComponent implements OnInit{
   seeDetails(id: number){
     this.router.navigate([`admin/details-sales/${id}`]);
   }
-
-
-
-
 
 
   ngOnInit(): void {

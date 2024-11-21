@@ -116,12 +116,8 @@ const routes: Routes = [
     canActivate: [adminAuthGuard]
   },
 
-
-
   { path: 'admin-login', component: AdminLoginComponent },
-  { path: 'admin/list-sales', component: ListSalesComponent },
-  
-
+ 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' },
 ];
