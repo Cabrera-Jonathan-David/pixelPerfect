@@ -69,8 +69,9 @@ export class FormularioTarjetaComponent implements OnInit {
               await this.registrarPago();
               this.mensajeExito = 'Pago realizado con éxito';
                   /// LIMPIAR CARRITO
-                  //this.carritoService.clearCart();
+                  this.carritoService.clearCart();
                   this.carritoService.forceReloadCarrito();
+                  localStorage.removeItem('clientId');
               this.showModal = true; 
             } else {
               this.mensajeExito = 'Algunos productos no tienen stock suficiente';
@@ -191,6 +192,7 @@ export class FormularioTarjetaComponent implements OnInit {
       })
     }else{
       this.userId = localStorage.getItem('clientId'); 
+      
 
     if (!this.userId) {
       
