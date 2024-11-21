@@ -18,36 +18,78 @@ import { adminAuthGuard } from './auth/admin-auth.guard';
 import { notAdminAuthGuard } from './auth/not-admin-auth.guard';
 import { userAuthGuard } from './auth/user-auth.guard';
 import { ListSalesComponent } from './Components/admin/list-sales/list-sales.component';
-
+import { BranchesComponent } from './Components/branches/branches.component';
 
 const routes: Routes = [
-
   // users paths
 
-  { path: 'login', component: LoginComponent, canActivate: [notAdminAuthGuard] },
-  { path: 'register', component: RegisterComponent, canActivate: [notAdminAuthGuard] },
-  { path: 'home', component: HomeComponent, canActivate: [notAdminAuthGuard]  },
-  { path: '', component: HomeComponent, canActivate: [notAdminAuthGuard]  },
-  { path: 'modify-user', component: ModifyUserComponent, canActivate: [userAuthGuard] },
-  { path: 'producto', component: ProductComponent , canActivate: [notAdminAuthGuard] },
-  { path: 'product/:id', component: DetalleProductoComponent, canActivate: [notAdminAuthGuard]  }, 
-  { path: 'carrito', component: CarritoComponent , canActivate: [notAdminAuthGuard]},
-  { path: 'payment', component: FormularioTarjetaComponent, canActivate: [notAdminAuthGuard] },
-  { path: 'prepayment', component: PrePaymentComponent, canActivate: [notAdminAuthGuard] },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  { path: 'home', component: HomeComponent, canActivate: [notAdminAuthGuard] },
+  { path: '', component: HomeComponent, canActivate: [notAdminAuthGuard] },
+  {
+    path: 'modify-user',
+    component: ModifyUserComponent,
+    canActivate: [userAuthGuard],
+  },
+  {
+    path: 'producto',
+    component: ProductComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  {
+    path: 'product/:id',
+    component: DetalleProductoComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  {
+    path: 'carrito',
+    component: CarritoComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  {
+    path: 'payment',
+    component: FormularioTarjetaComponent,
+    canActivate: [notAdminAuthGuard],
+  },
+  {
+    path: 'prepayment',
+    component: PrePaymentComponent,
+    canActivate: [notAdminAuthGuard],
+  },
   { path: 'faq', component: FAQComponent, canActivate: [notAdminAuthGuard] },
+  { path: 'sucursales', component: BranchesComponent },
 
   // admin paths
 
-  { path: 'admin/create-products', component: CreateProductsComponent, canActivate: [adminAuthGuard] },
-  { path: 'admin/list-products', component: ListProductsComponent, canActivate: [adminAuthGuard] },
-  { path: 'admin/update-products/:id', component: UpdateProductsComponent, canActivate: [adminAuthGuard] },
-  { path: 'admin-login', component: AdminLoginComponent},
+  {
+    path: 'admin/create-products',
+    component: CreateProductsComponent,
+    canActivate: [adminAuthGuard],
+  },
+  {
+    path: 'admin/list-products',
+    component: ListProductsComponent,
+    canActivate: [adminAuthGuard],
+  },
+  {
+    path: 'admin/update-products/:id',
+    component: UpdateProductsComponent,
+    canActivate: [adminAuthGuard],
+  },
+  { path: 'admin-login', component: AdminLoginComponent },
   { path: 'admin/list-sales', component: ListSalesComponent },
 
-
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home' }
-  
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
