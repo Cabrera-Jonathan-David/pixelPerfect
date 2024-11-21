@@ -1,11 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
+<!-- Navbar principal -->
+<nav
+  class="navbar navbar-expand-lg navbar-dark fixed-top"
+  style="background-color: #201f1f; color: white"
+>
+  <div class="container">
     <a
       class="navbar-brand"
       href="#"
       [routerLink]="isAdmin() ? '/admin/list-products' : '/'"
-      >Perfect Pixel</a
     >
+      <img
+        src="assets/PIXEL_PERFECT.png"
+        alt="Perfect Pixel Logo"
+        height="65"
+      />
+    </a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -19,17 +29,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
-        <!-- Menú visible solo si no es admin -->
-        <li class="nav-item" *ngIf="!isAdmin()">
-          <a class="nav-link" routerLink="/productos">Productos</a>
-        </li>
-        <li class="nav-item" *ngIf="!isAdmin()">
-          <a class="nav-link" routerLink="/faq">FAQ</a>
-        </li>
-        <li class="nav-item" *ngIf="!isAdmin()">
-          <a class="nav-link" routerLink="/sucursales">Sucursales</a>
-        </li>
-
         <!-- Botón 'Agregar Producto' visible solo si es admin -->
         <li class="nav-item" *ngIf="isAdmin()">
           <button
@@ -46,10 +45,10 @@
         <input
           class="form-control me-2"
           type="search"
-          placeholder="Buscar"
+          placeholder="Buscar productos"
           aria-label="Search"
           #searchInput
-          style="width: 300px"
+          style="width: 700px"
         />
         <button class="btn btn-outline-light" type="submit">
           <i class="fas fa-search"></i>
@@ -100,5 +99,25 @@
         </button>
       </div>
     </div>
+  </div>
+</nav>
+
+<!-- Subnavbar con fondo blanco y margen superior -->
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
+  style="margin-top: 91px"
+>
+  <div class="container">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/productos">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sucursales">Sucursales</a>
+      </li>
+    </ul>
   </div>
 </nav>

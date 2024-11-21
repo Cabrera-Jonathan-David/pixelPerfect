@@ -3,11 +3,10 @@ import { ProductService } from '../../Services/product.service';
 import { Product } from '../../Interface/products';
 import { CarritoService } from '../../Services/carrito.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
@@ -23,18 +22,25 @@ export class HomeComponent implements OnInit {
 
   loadProducts(): void {
     this.productService.getProducts().subscribe((products) => {
-      this.products = products;
+      this.products = this.shuffleArray(products).slice(0, 6); // Mezcla y limita a 6 productos
     });
+  }
+
+  // Función para mezclar el array de productos
+  shuffleArray(array: Product[]): Product[] {
+    return array
+      .map((item) => ({ item, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ item }) => item);
   }
 
   addToCart(product: Product): void {
     if (product && product.id) {
-
       const existingItem = this.cartService.getCartItem(product.id); // Obtiene el item existente
       const availableStock = Number(product.stock); // Stock a número
       if (availableStock <= 0) {
         alert('El producto no tiene stock disponible.');
-        return; 
+        return;
       }
       const existingQuantity = existingItem ? existingItem.quantity : 0; // Asegúrate de que esto sea un número
       // Comparar cantidades
@@ -42,13 +48,12 @@ export class HomeComponent implements OnInit {
         this.cartService.addProductToCart(product);
         alert('Producto agregado al carrito!');
       } else {
-        alert('No hay suficiente stock para agregar más unidades de este producto.');
+        alert(
+          'No hay suficiente stock para agregar más unidades de este producto.'
+        );
       }
     } else {
       console.error('El producto no está disponible o no tiene un ID válido.');
     }
   }
- 
-  
 }
-
