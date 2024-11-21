@@ -1,49 +1,76 @@
 <div class="dropdown">
   <button
-    class="btn btn-outline-light dropdown-toggle"
+    class="btn btn-outline-light dropdown-toggle d-flex align-items-center"
     type="button"
     data-bs-toggle="dropdown"
     [disabled]="!cartItems.length"
   >
-    <i class="fas fa-shopping-cart"></i> Carrito
-    <span class="badge bg-light text-dark">{{ cartItems.length }}</span>
+    <i class="fas fa-shopping-cart me-2"></i>
+    Carrito
+    <span class="badge bg-light text-dark ms-2">{{ cartItems.length }}</span>
   </button>
-  <div class="dropdown-menu dropdown-menu-end p-3" *ngIf="cartItems.length">
+  <div
+    class="dropdown-menu dropdown-menu-end pl-5 shadow-sm"
+    *ngIf="cartItems.length"
+  >
+    <h6 class="dropdown-header text-center">Tu carrito</h6>
 
     <div
       *ngFor="let item of cartItems"
-      class="cart-item d-flex align-items-center"
+      class="cart-item d-flex align-items-center py-3 border-bottom"
+      style="max-width: 600px; margin: 0 auto"
     >
+      <!-- Imagen del producto -->
       <img
         [src]="item.product.image_url"
         alt="Imagen del producto"
-        class="img-thumbnail"
-        width="50"
+        class="img-thumbnail flex-shrink-0"
+        width="70"
+        height="70"
       />
-      <div class="ms-3">
-        <p>{{ item.product.name }}</p>
-        <p>{{ item.product.price }}</p>
-        <div class="quantity-controls">
+
+      <!-- Contenido del producto -->
+      <div class="ms-3 flex-grow-1">
+        <p
+          class="mb-1 fw-semibold text-truncate"
+          title="{{ item.product.name }}"
+        >
+          {{ item.product.name }}
+        </p>
+        <p class="mb-1 text-muted">{{ item.product.price | currency }}</p>
+        <div class="d-flex align-items-center">
+          <!-- Botones de cantidad -->
           <button
-            (click)="decreaseQuantity(item)"
+            (click)="onClick($event); decreaseQuantity(item)"
             class="btn btn-outline-secondary btn-sm"
+            aria-label="Disminuir cantidad"
           >
             -
           </button>
-          <span>{{ item.quantity }}</span>
+          <span class="mx-3">{{ item.quantity }}</span>
           <button
-            (click)="increaseQuantity(item)"
+            (click)="onClick($event); increaseQuantity(item)"
             class="btn btn-outline-secondary btn-sm"
+            aria-label="Aumentar cantidad"
           >
             +
           </button>
         </div>
       </div>
-      <button (click)="removeItem(item)" class="btn btn-danger ms-auto">
-        <i class="fas fa-trash"></i>
-      </button>
+
+      <!-- Botón de eliminar -->
+      <div class="ms-3">
+        <button
+          (click)="removeItem(item)"
+          class="btn btn-danger btn-sm"
+          aria-label="Eliminar producto"
+        >
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
     </div>
-    <button class="btn btn-primary mt-2 w-100" routerLink="/prepayment">
+
+    <button class="btn btn-outline-light me-3 w-100" routerLink="/prepayment">
       Continuar
     </button>
   </div>
