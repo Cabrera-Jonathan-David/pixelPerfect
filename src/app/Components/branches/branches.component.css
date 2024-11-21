@@ -1,0 +1,15 @@
+.card-custom {
+    height: 100%; /* Asegura que las cards sean uniformes */
+    display: flex;
+    flex-direction: column; /* Orienta el contenido verticalmente */
+  }
+  
+  .card-custom img {
+    height: 250px; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Recorta la imagen sin deformarla */
+  }
+  
+  .card-custom .card-body {
+    flex-grow: 1; /* Expande el contenido para ocupar el espacio disponible */
+  }
+  
