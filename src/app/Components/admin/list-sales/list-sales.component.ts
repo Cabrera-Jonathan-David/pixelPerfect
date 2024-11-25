@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PaymentHistoryService } from '../../../Services/payment-history-service.service';
 import { PaymentRegister } from '../../../Interface/payment-register';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -16,7 +16,8 @@ export class ListSalesComponent implements OnInit{
 
   constructor(private paymentHistoryService: PaymentHistoryService,
               private fb: FormBuilder,
-              private router: Router
+              private router: Router,
+              private cdr: ChangeDetectorRef
   ){}
 
   
@@ -27,22 +28,26 @@ export class ListSalesComponent implements OnInit{
 
         console.log("data:", data)
 
-        this.salesList = data;
-        this.salesForm = this.fb.group(
-          data.reduce(
-            (controls: Record<string, FormControl>, sale) => {
+        /// si existe algún estado que no sea válido, se vuelve automáticamente pendiente
+        this.salesList = data.map(sale => {
+          if (!['pendiente', 'confirmado', 'enviado'].includes(sale.estado)) {
+            sale.estado = 'pendiente';
+          }
+          return sale;
+        });
 
-            console.log(`ID: ${sale.id}, estado: ${sale.estado}`);
 
-            controls[sale.id] = new FormControl(sale.estado);
-            return controls;
-            }, {})
+        const controls = this.salesList.reduce(
+          (acc, sale) => {
+            acc[sale.id] = new FormControl(sale.estado); // Sincronizar estado inicial
+            return acc;
+          },
+          {} as Record<string, FormControl>
         );
-      })
-
-
-
-
+  
+        this.salesForm = this.fb.group(controls);
+      }
+    );
   }
 
 
@@ -50,19 +55,15 @@ export class ListSalesComponent implements OnInit{
   para evitar que pase de confirmado a enviado
   */
   getStatus(sale: PaymentRegister): string[] {
-    if(sale.estado === 'pendiente'){
-      return ['pediente', 'confirmado']
-    }
-    else if(sale.estado === 'confirmado'){
-      return ['pendiente', 'confirmado', 'enviado']
-    }
-    else if(sale.estado === 'enviado'){
-      return ['enviado']
-    }
-    else {
-      sale.estado = 'pendiente';
-      this.paymentHistoryService.updatePayment(sale.id, sale);
-      return ['pendiente', 'confirmado']
+    switch (sale.estado) {
+      case 'pendiente':
+        return ['pendiente', 'confirmado'];
+      case 'confirmado':
+        return ['pendiente', 'confirmado', 'enviado'];
+      case 'enviado':
+        return ['enviado'];
+      default:
+        return ['pendiente', 'confirmado'];
     }
   }
 
