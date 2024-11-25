@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Client } from '../Interface/client';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { UserService } from './user.service';
 import { User } from '../Interface/user';
 
@@ -51,12 +51,18 @@ export class ClientService {
   
       return { exists: false, message: '' };
     }
-
+    
     //OBTENER UN CLIENTE POR ID
     async getClientById(id: string): Promise<Client | null> {
       const response = await this.http.get<Client>(this.apiUrlClient + '/' + id).toPromise();
       return response || null;
     }
+
+  
+    getClientByIdConObservables(id: string): Observable<Client>{
+      return this.http.get<Client>(`${this.apiUrlClient}/${id}`);
+    }
+
 
     // OBTENER CLIENTE POR DNI
     async getClientByDni(dni: string): Promise<Client | null> {

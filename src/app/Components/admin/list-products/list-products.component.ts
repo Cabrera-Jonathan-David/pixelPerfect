@@ -36,7 +36,7 @@ export class ListProductsComponent implements OnInit {
   }
 
   deleteProduct(id: string){
-    if(confirm("are ya shure buddy?!")){
+    if(confirm("¿Estás seguro?")){
       this.productService.deleteProduct(id).subscribe(
         () => {
           this.productsList = this.productsList.filter(prod => prod.id !== id);

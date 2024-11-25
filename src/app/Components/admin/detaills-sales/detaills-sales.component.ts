@@ -5,6 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../Interface/products';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs';
+import { ClientService } from '../../../Services/client.service';
+import { PaymentRegister } from '../../../Interface/payment-register';
+import { Client } from '../../../Interface/client';
 
 export interface SaleProduct {
   productId:    string;
@@ -24,8 +27,11 @@ export class DetaillsSalesComponent implements OnInit{
   saleProdsList: SaleProduct[] = [];
   saleId: number | null = null;
 
+  saleClient: Client | null = null;
+
   constructor(private paymentHistoryService: PaymentHistoryService,
               private productService: ProductService,
+              private clientService:  ClientService,
               private route: ActivatedRoute
   ){}
 
@@ -69,6 +75,30 @@ export class DetaillsSalesComponent implements OnInit{
     }
   }
 
+  loadClient(){
+    if(this.saleId){
+      this.paymentHistoryService.obtenerPagoPorId(this.saleId).subscribe(
+      (data: PaymentRegister) => {
+
+        
+        if(data.userId){
+          this.clientService.getClientByIdConObservables(data.userId).subscribe(
+            {
+              next: (client: Client) => {
+                console.log('cliente:', client );
+
+                this.saleClient = client;
+              }
+            }
+            
+          )
+        }
+        
+
+
+      });
+    }
+  }
 
 
   ngOnInit(): void {
@@ -82,6 +112,7 @@ export class DetaillsSalesComponent implements OnInit{
     // verifico que saleId no sea nulo
     if(this.saleId && !isNaN(this.saleId)){
       this.loadDetaills();
+      this.loadClient();
     }
     else {
       console.error('Ha ocurrido un error inesperado!');

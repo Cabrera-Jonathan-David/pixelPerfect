@@ -24,10 +24,16 @@ export class ListSalesComponent implements OnInit{
   loadSales(){
     this.paymentHistoryService.obtenerPagos().subscribe(
       (data: PaymentRegister[]) => {
-        this.salesList = data
+
+        console.log("data:", data)
+
+        this.salesList = data;
         this.salesForm = this.fb.group(
           data.reduce(
             (controls: Record<string, FormControl>, sale) => {
+
+            console.log(`ID: ${sale.id}, estado: ${sale.estado}`);
+
             controls[sale.id] = new FormControl(sale.estado);
             return controls;
             }, {})
@@ -44,19 +50,19 @@ export class ListSalesComponent implements OnInit{
   para evitar que pase de confirmado a enviado
   */
   getStatus(sale: PaymentRegister): string[] {
-    if(sale.estado == 'pendiente'){
+    if(sale.estado === 'pendiente'){
       return ['pediente', 'confirmado']
     }
-    else if(sale.estado == 'confirmado'){
+    else if(sale.estado === 'confirmado'){
       return ['pendiente', 'confirmado', 'enviado']
     }
-    else if(sale.estado == 'enviado'){
+    else if(sale.estado === 'enviado'){
       return ['enviado']
     }
     else {
       sale.estado = 'pendiente';
       this.paymentHistoryService.updatePayment(sale.id, sale);
-      return ['pendiente', 'confirmado', 'enviado']
+      return ['pendiente', 'confirmado']
     }
   }
 

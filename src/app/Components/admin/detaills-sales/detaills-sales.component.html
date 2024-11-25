@@ -2,6 +2,39 @@
 <table>
     <thead>
         <tr>
+            <th>Nombre completo</th>    <!-- nombre + apellido -->
+            <th>Email</th>              <!-- email -->
+            <th>DNI</th>                <!-- dni -->
+            <th>Teléfono</th>           <!-- codArea + telefono -->
+            <th>Dirección</th>          <!-- direccion + altura -->
+            <th>Piso</th>               <!-- piso -->
+            <th>Código Postal</th>      <!-- codPostal -->
+            <th>Ciudad</th>             <!-- ciudad -->
+            <th>Provincia</th>          <!-- pcia -->
+            <th>País</th>               <!-- pais -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{ saleClient?.nombre }} {{ saleClient?.apellido }} </td>
+            <td> {{ saleClient?.email }} </td>
+            <td> {{ saleClient?.dni }} </td>
+            <td> {{ saleClient?.codigoArea }} {{ saleClient?.telefono }} </td>
+            <td> {{ saleClient?.direccion }} {{ saleClient?.altura }} </td>
+            <td> {{ saleClient?.piso  || 'N/A' }}  </td>
+            <td> {{ saleClient?.codigoPostal }} </td>
+            <td> {{ saleClient?.ciudad }} </td>
+            <td> {{ saleClient?.provincia }} </td>
+            <td> {{ saleClient?.pais }} </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<table>
+    <thead>
+        <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Precio</th>
