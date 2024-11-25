@@ -1,12 +1,35 @@
-<div class="container register-container mt-5 text-center">
-  <!-- Botones de acción -->
-  <button class="button" (click)="goToLogin()">Iniciar Sesión</button>
-  <button class="button" (click)="toggleForm()">Comprar como invitado</button>
+<div
+  class="container mt-5 d-flex flex-column align-items-center"
+  style="
+    width: 550px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h3 class="mb-4" style="color: #333; font-size: 22px">Comprá más rápido</h3>
+  <button
+    type="button"
+    (click)="goToLogin()"
+    class="btn btn-light border border-dark d-flex justify-content-center align-items-center"
+    style="color: #1f74fe; font-weight: 700"
+  >
+    <img
+      src="assets/FAVICON.svg"
+      alt="Favicon"
+      class="me-2"
+      style="width: 16px; height: 16px"
+    />
+    Usar mi cuenta de Pixel Perfect
+  </button>
 </div>
 
 <!-- Formulario desplegable -->
-<div *ngIf="isFormVisible" class="mt-4">
-  <h3 class="text-center mb-4">Compra como invitado</h3>
+<div class="mt-5">
+  <h3 style="font-size: 22px" class="text-center mb-4">
+    O completá tus datos para comprar como invitado
+  </h3>
 
   <form (ngSubmit)="onSubmit()" class="form-container" [formGroup]="guestForm">
     <h4 class="section-title mt-4">Información personal</h4>
@@ -339,8 +362,6 @@
       </div>
     </div>
 
-    
-
     <button
       type="submit"
       class="btn btn-primary"
@@ -350,3 +371,79 @@
     </button>
   </form>
 </div>
+
+<!-- Footer Section -->
+<section class="text-white py-4 mt-5" style="background-color: #201f1f">
+  <div class="container">
+    <div class="row">
+      <!-- Data Fiscal & Links -->
+      <div class="col-12 col-md-4 d-flex align-items-center mb-4 mb-md-0">
+        <img
+          src="https://i.imgur.com/Uxfk1XK.jpeg"
+          alt="Data Fiscal"
+          class="m-3"
+          style="max-width: 60px"
+        />
+        <div>
+          <a href="#" class="text-white">Botón de arrepentimiento</a>
+          |<br />
+          <a href="/terms" class="text-white">Términos y condiciones</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <!-- Separator Line -->
+        <div class="text-center">
+          <img
+            src="https://i.imgur.com/I6YIgX4.png"
+            alt="Great Place to Work"
+            class="mb-2"
+            style="max-width: 55px"
+          />
+          <p class="text-white">¡Trabajá con nosotros!</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-5 mb-md-0 text-center mt-3">
+        <!-- Social Media Links -->
+        <p>Seguinos en</p>
+        <div class="d-flex justify-content-center">
+          <a
+            href="https://www.facebook.com/groups/539058265792063"
+            class="text-white me-2"
+            ><i class="fab fa-facebook fa-2x"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/pixel_perfect123utn?igsh=MXZzNTRubmZxcGY2cA=="
+            class="text-white me-2"
+            ><i class="fab fa-instagram fa-2x"></i
+          ></a>
+          <a
+            href="https://youtube.com/@pixelperfect123-utn?si=GPDpu4dasvSrMY2P"
+            class="text-white me-2"
+            ><i class="fab fa-youtube fa-2x"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/pixel-perfect-18219633a/"
+            class="text-white me-2"
+            ><i class="fab fa-linkedin fa-2x"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@pixel_perfect123?_t=8racL5HVST9&_r=1"
+            class="text-white me-2"
+            ><i class="fab fa-tiktok fa-2x"></i
+          ></a>
+          <a
+            href="https://www.twitch.tv/pixelperfect123utn"
+            class="text-white me-2"
+            ><i class="fab fa-twitch fa-2x"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Separator Line between sections -->
+    <div class="border-bottom border-white mb-3"></div>
+
+    <!-- Great Place to Work & Job Offer -->
+  </div>
+</section>
