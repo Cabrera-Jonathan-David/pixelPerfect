@@ -25,7 +25,7 @@ export interface SaleProduct {
 export class DetaillsSalesComponent implements OnInit{
 
   saleProdsList: SaleProduct[] = [];
-  saleId: number | null = null;
+  
 
   saleClient: Client | null = null;
 
@@ -48,10 +48,10 @@ export class DetaillsSalesComponent implements OnInit{
   }
 
 
-  loadDetaills(){
+  loadDetaills(saleId: string){
     // para que no tire errores con nulo, le pongo esta verificación
-    if(this.saleId){
-      this.paymentHistoryService.obtenerPagoPorId(this.saleId).subscribe(
+    if(saleId){
+      this.paymentHistoryService.obtenerPagoPorId(saleId).subscribe(
         async (response) => {
 
           // POR LAS DUDAS vacío la lista
@@ -75,9 +75,9 @@ export class DetaillsSalesComponent implements OnInit{
     }
   }
 
-  loadClient(){
-    if(this.saleId){
-      this.paymentHistoryService.obtenerPagoPorId(this.saleId).subscribe(
+  loadClient(saleId: string){
+    if(saleId){
+      this.paymentHistoryService.obtenerPagoPorId(saleId).subscribe(
       (data: PaymentRegister) => {
 
         
@@ -91,28 +91,20 @@ export class DetaillsSalesComponent implements OnInit{
               }
             }
             
-          )
-        }
-        
-
-
+          )}
       });
     }
   }
 
 
   ngOnInit(): void {
-
-    // cargo el id de la ruta en una variable
-    const id = this.route.snapshot.paramMap.get('id');
-
-    // verifico que la variable no sea nula (o distinta de number) y se la cargo
-    this.saleId = id !== null ? Number(id) : null;
+    
+    const saleId = this.route.snapshot.paramMap.get('id');
 
     // verifico que saleId no sea nulo
-    if(this.saleId && !isNaN(this.saleId)){
-      this.loadDetaills();
-      this.loadClient();
+    if(saleId && saleId !== undefined){
+      this.loadDetaills(saleId);
+      this.loadClient(saleId);
     }
     else {
       console.error('Ha ocurrido un error inesperado!');

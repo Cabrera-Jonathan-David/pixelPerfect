@@ -5,7 +5,7 @@ export interface PaymentProduct {
   }
   
 export interface PaymentRegister {
-  id: number;
+  id: string;
   products: PaymentProduct[];
   userId: string | null;
   estado: string; 

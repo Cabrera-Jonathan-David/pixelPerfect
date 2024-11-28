@@ -22,12 +22,12 @@ export class PaymentHistoryService {
   }
 
   // Método para obtener un solo registro de pago por ID
-  obtenerPagoPorId(id: number): Observable<PaymentRegister> {
+  obtenerPagoPorId(id: string): Observable<PaymentRegister> {
     return this.http.get<PaymentRegister>(`${this.apiUrl}/${id}`);
   }
 
   // modifica un pedido
-  updatePayment(id: number, updatedSale: PaymentRegister): Observable<void>{
+  updatePayment(id: string, updatedSale: PaymentRegister): Observable<void>{
     return this.http.patch<void>(`${this.apiUrl}/${id}`, { estado: updatedSale.estado } );
   }
 

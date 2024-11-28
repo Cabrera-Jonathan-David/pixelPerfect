@@ -26,10 +26,10 @@ export class ListSalesComponent implements OnInit{
     this.paymentHistoryService.obtenerPagos().subscribe(
       (data: PaymentRegister[]) => {
 
-        console.log("data:", data)
+        console.log("data:", data);
 
         /// si existe algún estado que no sea válido, se vuelve automáticamente pendiente
-        this.salesList = data.map(sale => {
+        this.salesList = data.map((sale) => {
           if (!['pendiente', 'confirmado', 'enviado'].includes(sale.estado)) {
             sale.estado = 'pendiente';
           }
@@ -39,14 +39,15 @@ export class ListSalesComponent implements OnInit{
 
         const controls = this.salesList.reduce(
           (acc, sale) => {
-            acc[sale.id] = new FormControl(sale.estado); // Sincronizar estado inicial
+            acc[sale.id.toString()] = new FormControl(sale.estado); // Sincronizar estado inicial
             return acc;
           },
           {} as Record<string, FormControl>
         );
   
         this.salesForm = this.fb.group(controls);
-      }
+      },
+      (error) => { console.error('Error al cargar ventas: ', error) }
     );
   }
 
@@ -91,7 +92,7 @@ export class ListSalesComponent implements OnInit{
   }
 
 
-  seeDetails(id: number){
+  seeDetails(id: string){
     this.router.navigate([`admin/details-sales/${id}`]);
   }
 

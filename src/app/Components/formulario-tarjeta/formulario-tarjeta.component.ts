@@ -105,7 +105,7 @@ export class FormularioTarjetaComponent implements OnInit {
 
   private async registrarPago() {
     const paymentData: PaymentRegister = {
-      id: Date.now(), 
+      id: Date.now().toString(), 
       products: this.cartItems.map(cartItem => ({
         productId: cartItem.product.id!,
         price: cartItem.product.price,

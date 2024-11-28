@@ -6,7 +6,7 @@
       "numeroTarjeta": "1111222233334444",
       "fechaExpiracion": "01/25",
       "cvv": "111",
-      "saldo": 18900
+      "saldo": 1235630
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "numeroTarjeta": "2222333344445555",
       "fechaExpiracion": "02/25",
       "cvv": "222",
-      "saldo": 20000
+      "saldo": 19780
     },
     {
       "id": "3",

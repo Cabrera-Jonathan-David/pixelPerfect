@@ -5,7 +5,7 @@
       "name": "Laptop Gamer HP Pavilion",
       "brand": "HP",
       "price": 1200,
-      "stock": 15,
+      "stock": "10",
       "description": "Laptop gamer con procesador Intel i7 y tarjeta grafica RTX 3060.",
       "category": "Laptops",
       "image_url": "https://ar-media.hptiendaenlinea.com/catalog/product/3/Y/3Y595LA-1_T1679635580.png"
@@ -15,7 +15,7 @@
       "name": "Mouse Razer DeathAdder",
       "brand": "Razer",
       "price": 60,
-      "stock": "98",
+      "stock": "97",
       "description": "Mouse ergonomico con iluminacion RGB y alta precision.",
       "category": "Perifericos",
       "image_url": "https://http2.mlstatic.com/D_NQ_NP_686894-MLA31022953654_062019-O.webp"
@@ -65,7 +65,7 @@
       "name": "Tarjeta grafica NVIDIA GeForce RTX 3080",
       "brand": "NVIDIA",
       "price": 800,
-      "stock": 12, 
+      "stock": "9",
       "description": "Tarjeta grafica de alto rendimiento para gamers y creadores de contenido.",
       "category": "Componentes",
       "image_url": "https://http2.mlstatic.com/D_NQ_NP_941268-MLA44847003228_022021-O.webp"
@@ -75,7 +75,7 @@
       "name": "Auriculares Logitech G Pro",
       "brand": "Logitech",
       "price": 100,
-      "stock": 70,
+      "stock": "69",
       "description": "Auriculares con sonido envolvente y microfono desmontable.",
       "category": "Perifericos",
       "image_url": "https://spacegamer.com.ar/img/Public/1058-producto-61f1dyod6ql-6464.jpg"
@@ -95,7 +95,7 @@
       "name": "Laptop Dell XPS 15",
       "brand": "Dell",
       "price": 1500,
-      "stock": 12,
+      "stock": "11",
       "description": "Laptop ultradelgada con pantalla 4K y rendimiento excepcional.",
       "category": "Laptops",
       "image_url": "https://m.media-amazon.com/images/I/716T+1iVYqL.jpg"
@@ -105,7 +105,7 @@
       "name": "Hub USB Anker 10 puertos",
       "brand": "Anker",
       "price": 40,
-      "stock": 80,
+      "stock": "79",
       "description": "Hub USB con 10 puertos para conectar multiples dispositivos.",
       "category": "Accesorios",
       "image_url": "https://http2.mlstatic.com/D_NQ_NP_970283-MLU73762059291_012024-O.webp"
@@ -115,7 +115,7 @@
       "name": "Webcam Logitech C920",
       "brand": "Logitech",
       "price": 80,
-      "stock": 60,
+      "stock": "59",
       "description": "Webcam HD con enfoque automatico y microfono integrado.",
       "category": "Perifericos",
       "image_url": "https://fullh4rd.com.ar/img/productos/21/webcam-logitech-c922-pro-stream-hd--tripode-0.jpg"
@@ -125,7 +125,7 @@
       "name": "Silla Gamer DXRacer",
       "brand": "DXRacer",
       "price": 350,
-      "stock": 3,
+      "stock": "2",
       "description": "Silla gamer ergonomica para largas sesiones de juego.",
       "category": "Muebles",
       "image_url": "https://http2.mlstatic.com/D_Q_NP_715470-MLU74730078254_032024-O.webp"
@@ -155,7 +155,7 @@
       "name": "Disco Duro Externo Seagate 2TB",
       "brand": "Seagate",
       "price": 100,
-      "stock": 30,
+      "stock": "28",
       "description": "Disco duro externo de 2TB, ideal para almacenamiento portatil.",
       "category": "Almacenamiento",
       "image_url": "https://outtec.com.ar/wp-content/uploads/2021/08/STEA2000400-SEAGATE-EXPANSION-2TB-1.png"
@@ -185,7 +185,7 @@
       "name": "Microfono USB Blue Yeti",
       "brand": "Blue",
       "price": 130,
-      "stock": 40,
+      "stock": "18",
       "description": "Microfono USB ideal para streaming y grabacion de voz.",
       "category": "Perifericos",
       "image_url": "https://www.megatone.net/images//Articulos/zoom2x/355/MKT0182EBX-1.jpg"

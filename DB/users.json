@@ -82,6 +82,23 @@
       "provincia": "Buenos Aires",
       "pais": "Argentina",
       "rol": "client"
+    },
+    {
+      "id": "4827",
+      "email": "oto@gmail.com",
+      "nombre": "Octavio",
+      "apellido": "Schaffer",
+      "dni": "123445664",
+      "fechaNacimiento": "2005-05-30",
+      "codigoArea": "6969",
+      "telefono": "2121212121",
+      "direccion": "J J Valle 761",
+      "altura": 112,
+      "piso": "2",
+      "codigoPostal": "7600",
+      "ciudad": "Mar Del Plata",
+      "provincia": "Buenos Aires",
+      "pais": "Argentina"
     }
   ]
 }

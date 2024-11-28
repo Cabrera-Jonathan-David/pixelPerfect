@@ -1,31 +1,89 @@
 {
   "payment-history": [
     {
-      "id": "11",
+      "id": "1732572718755",
       "products": [
         {
-          "productId": "2",
-          "price": 60,
-          "quantity": 2
-        },
-        {
-          "productId": "3",
-          "price": 180,
-          "quantity": 1
-        },
-        {
-          "productId": "4",
-          "price": 600,
-          "quantity": 1
-        },
-        {
-          "productId": "5",
-          "price": 200,
+          "productId": "10",
+          "price": 1500,
           "quantity": 1
         }
       ],
-      "userId": "dde3",
-      "estado": "pendiente"
+      "userId": "1ae2",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "1732572871815",
+      "products": [
+        {
+          "productId": "12",
+          "price": 80,
+          "quantity": 1
+        },
+        {
+          "productId": "16",
+          "price": 100,
+          "quantity": 1
+        },
+        {
+          "productId": "11",
+          "price": 40,
+          "quantity": 1
+        }
+      ],
+      "userId": "1ae2",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "1732806649640",
+      "products": [
+        {
+          "productId": "13",
+          "price": 350,
+          "quantity": 1
+        }
+      ],
+      "userId": "4827",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "1732808205813",
+      "products": [
+        {
+          "productId": "7",
+          "price": 800,
+          "quantity": 3
+        },
+        {
+          "productId": "1",
+          "price": 1200,
+          "quantity": 5
+        },
+        {
+          "productId": "19",
+          "price": 130,
+          "quantity": 22
+        },
+        {
+          "productId": "2",
+          "price": 60,
+          "quantity": 1
+        }
+      ],
+      "userId": "1ae2",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "1732808530211",
+      "products": [
+        {
+          "productId": "16",
+          "price": 100,
+          "quantity": 1
+        }
+      ],
+      "userId": "1ae2",
+      "estado": "Pendiente"
     }
   ]
 }
