@@ -3,14 +3,17 @@
 <table>
     <thead>
         <tr>
+            <th>Fecha</th>
             <th>ID</th>
             <th>Cliente</th>
             <th>Información</th>
+            <th>Monto total</th>
             <th>Estado</th>
         </tr>
     </thead>
     <tbody *ngFor="let sale of salesList">
         <tr>
+            <td> {{ sale.date }} </td>
             <td> {{ sale.id }} </td>
             <td> {{ sale.userId }} </td>
             <td>
@@ -18,6 +21,7 @@
                 Ver más
                 </button>
             </td>
+            <td> {{ sale.amount }} </td>
             <td>
                 <select
                 [formControl]="getControl(sale.id.toString())"

@@ -1,19 +1,8 @@
 {
   "payment-history": [
     {
-      "id": "1732572718755",
-      "products": [
-        {
-          "productId": "10",
-          "price": 1500,
-          "quantity": 1
-        }
-      ],
-      "userId": "1ae2",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "1732572871815",
+      "id": "1733591805715",
+      "date": "2024-12-07T14:16:45.715Z",
       "products": [
         {
           "productId": "12",
@@ -21,69 +10,14 @@
           "quantity": 1
         },
         {
-          "productId": "16",
-          "price": 100,
-          "quantity": 1
-        },
-        {
-          "productId": "11",
-          "price": 40,
+          "productId": "14",
+          "price": 900,
           "quantity": 1
         }
       ],
-      "userId": "1ae2",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "1732806649640",
-      "products": [
-        {
-          "productId": "13",
-          "price": 350,
-          "quantity": 1
-        }
-      ],
-      "userId": "4827",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "1732808205813",
-      "products": [
-        {
-          "productId": "7",
-          "price": 800,
-          "quantity": 3
-        },
-        {
-          "productId": "1",
-          "price": 1200,
-          "quantity": 5
-        },
-        {
-          "productId": "19",
-          "price": 130,
-          "quantity": 22
-        },
-        {
-          "productId": "2",
-          "price": 60,
-          "quantity": 1
-        }
-      ],
-      "userId": "1ae2",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "1732808530211",
-      "products": [
-        {
-          "productId": "16",
-          "price": 100,
-          "quantity": 1
-        }
-      ],
-      "userId": "1ae2",
-      "estado": "Pendiente"
+      "userId": "0167",
+      "estado": "Pendiente",
+      "amount": 980
     }
   ]
 }

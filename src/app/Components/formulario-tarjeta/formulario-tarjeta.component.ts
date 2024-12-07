@@ -105,14 +105,16 @@ export class FormularioTarjetaComponent implements OnInit {
 
   private async registrarPago() {
     const paymentData: PaymentRegister = {
-      id: Date.now().toString(), 
+      id: Date.now().toString(),
+      date: this.setDate(),
       products: this.cartItems.map(cartItem => ({
         productId: cartItem.product.id!,
         price: cartItem.product.price,
         quantity: cartItem.quantity
       })),
       userId: this.userId!, 
-      estado: 'Pendiente'
+      estado: 'Pendiente',
+      amount: this.calcularTotalCompra()
     };
     // Enviar el objeto PaymentRegister al servicio
     const response = await this.paymentHistoryService.registrarPago(paymentData).toPromise();
@@ -201,11 +203,12 @@ export class FormularioTarjetaComponent implements OnInit {
     }
   }
 
+  ///////////CREA Y AJUSTA LA FECHA DEL PEDIDO A HORARIO ARGENTINO
+  setDate(): Date {
 
-
-
-
-
+    const curDate = new Date();
+    return new Date(curDate.getTime() - 3 * 60 * 60 * 1000);
+  }
 
 }
 

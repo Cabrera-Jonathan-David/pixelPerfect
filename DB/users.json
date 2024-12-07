@@ -99,6 +99,23 @@
       "ciudad": "Mar Del Plata",
       "provincia": "Buenos Aires",
       "pais": "Argentina"
+    },
+    {
+      "id": "0167",
+      "email": "octascha05@gmail.com",
+      "nombre": "Octavio",
+      "apellido": "Schaffer",
+      "dni": "46814619",
+      "fechaNacimiento": "2005-05-30",
+      "codigoArea": "54",
+      "telefono": "2236161600",
+      "direccion": "J J Valle",
+      "altura": 761,
+      "piso": "",
+      "codigoPostal": "7600",
+      "ciudad": "Mar Del Plata",
+      "provincia": "Buenos Aires",
+      "pais": "Argentina"
     }
   ]
 }
