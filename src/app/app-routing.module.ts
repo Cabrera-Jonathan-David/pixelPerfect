@@ -22,6 +22,7 @@ import { BranchesComponent } from './Components/branches/branches.component';
 import { DetaillsSalesComponent } from './Components/admin/detaills-sales/detaills-sales.component';
 import { CategoryComponent } from './Components/category/category.component';
 import { SearchResultsComponent } from './Components/search-results/search-results.component';
+import { PurchaseHistoryComponent } from './Components/purchase-history/purchase-history.component';
 const routes: Routes = [
   // users paths
 
@@ -49,42 +50,47 @@ const routes: Routes = [
   {
     path: 'modify-user',
     component: ModifyUserComponent,
-    canActivate: [userAuthGuard],
+    canActivate: [userAuthGuard]
+  },
+  {
+    path: 'purchase-history',
+    component: PurchaseHistoryComponent,
+    canActivate: [userAuthGuard]
   },
   {
     path: 'producto',
     component: ProductComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   { 
     path: 'search', 
     component: SearchResultsComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   {
     path: 'category/:category', 
     component: CategoryComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   {
     path: 'product/:id',
     component: DetalleProductoComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   {
     path: 'carrito',
     component: CarritoComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   {
     path: 'payment',
     component: FormularioTarjetaComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   {
     path: 'prepayment',
     component: PrePaymentComponent,
-    canActivate: [notAdminAuthGuard],
+    canActivate: [notAdminAuthGuard]
   },
   { path: 'faq', component: FAQComponent, canActivate: [notAdminAuthGuard] },
   { path: 'sucursales', component: BranchesComponent },

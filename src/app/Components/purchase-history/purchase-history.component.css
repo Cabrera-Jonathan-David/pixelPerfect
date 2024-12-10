@@ -1,0 +1,82 @@
+.purchase-history-container {
+  margin: 30px auto;
+  max-width: 900px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.purchase-history-container h1 {
+  color: #0066cc;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.purchase-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.purchase-table th,
+.purchase-table td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.purchase-table th {
+  background-color: #0066cc;
+  color: white;
+  font-weight: bold;
+}
+
+.purchase-table td {
+  background-color: #ffffff;
+}
+
+.purchase-table tr:nth-child(even) td {
+  background-color: #f2f2f2;
+}
+
+.purchase-table .purchase-status {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: black;
+  text-transform: capitalize;
+}
+
+.purchase-table .status-pending {
+  background-color: #ffc107; /* Amarillo */
+}
+
+.purchase-table .status-completed {
+  background-color: #28a745; /* Verde */
+}
+
+.purchase-table .status-cancelled {
+  background-color: #dc3545; /* Rojo */
+}
+
+.no-purchases {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.no-purchases p {
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .purchase-history-container {
+    padding: 15px;
+  }
+
+  .purchase-table th, .purchase-table td {
+    padding: 8px;
+  }
+}

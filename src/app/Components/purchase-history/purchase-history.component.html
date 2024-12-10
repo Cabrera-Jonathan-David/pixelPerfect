@@ -1,0 +1,44 @@
+<div class="purchase-history-container">
+  <h1>Historial de Compras</h1>
+
+  <table class="purchase-table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>ID de Compra</th>
+        <th>Productos</th>
+        <th>Total</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let purchase of purchaseList">
+        <td>{{ purchase.date | date: 'shortDate' }}</td>
+        <td>{{ purchase.id }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let product of purchase.products">
+              {{ product.productId }} - 
+              Precio: {{ product.price | currency }} - 
+              Cantidad: {{ product.quantity }}
+            </li>
+          </ul>
+        </td>
+        <td>{{ purchase.amount | currency }}</td>
+        <td>
+          <span class="purchase-status" [ngClass]="{
+            'status-pending': purchase.estado === 'Pendiente',
+            'status-completed': purchase.estado === 'Completado',
+            'status-cancelled': purchase.estado === 'Cancelado'
+          }">
+            {{ purchase.estado }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="purchaseList.length === 0" class="no-purchases">
+    <p>No se encontraron compras en tu historial.</p>
+  </div>
+</div>

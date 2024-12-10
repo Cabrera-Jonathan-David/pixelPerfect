@@ -31,4 +31,8 @@ export class PaymentHistoryService {
     return this.http.patch<void>(`${this.apiUrl}/${id}`, { estado: updatedSale.estado } );
   }
 
+  obtenerComprasCliente(userId: string): Observable<PaymentRegister[]> {
+    return this.http.get<PaymentRegister[]>(`${this.apiUrl}?userId=${userId}`);
+  }
+
 }

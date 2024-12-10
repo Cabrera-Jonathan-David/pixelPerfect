@@ -24,6 +24,7 @@ import { BranchesComponent } from './Components/branches/branches.component';
 import { DetaillsSalesComponent } from './Components/admin/detaills-sales/detaills-sales.component';
 import { CategoryComponent } from './Components/category/category.component';
 import { SearchResultsComponent } from './Components/search-results/search-results.component';
+import { PurchaseHistoryComponent } from './Components/purchase-history/purchase-history.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SearchResultsComponent } from './Components/search-results/search-resul
     DetaillsSalesComponent,
     CategoryComponent,
     SearchResultsComponent,
+    PurchaseHistoryComponent,
   ],
   imports: [
     BrowserModule,

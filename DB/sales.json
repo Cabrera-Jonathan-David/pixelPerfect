@@ -18,6 +18,25 @@
       "userId": "0167",
       "estado": "Pendiente",
       "amount": 980
+    },
+    {
+      "id": "1733859686958",
+      "date": "2024-12-10T16:41:26.958Z",
+      "products": [
+        {
+          "productId": "2",
+          "price": 60,
+          "quantity": 1
+        },
+        {
+          "productId": "8",
+          "price": 100,
+          "quantity": 3
+        }
+      ],
+      "userId": "1ae2",
+      "estado": "Pendiente",
+      "amount": 360
     }
   ]
 }
