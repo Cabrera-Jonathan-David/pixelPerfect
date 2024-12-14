@@ -17,7 +17,7 @@ export class CarritoService {
   reloadCarrito$ = this.reloadCarritoSubject.asObservable();
   // Método para emitir el evento de recarga
   forceReloadCarrito(): void {
-    this.clearCart();
+    this.saveCartItems(); 
     this.reloadCarritoSubject.next();
     
   }
@@ -47,7 +47,8 @@ export class CarritoService {
     }
   
     this.saveCartItems();
-    console.log(this.cartItems); 
+    this.forceReloadCarrito();
+
   }
 
   getCartItem(id: string): CartItem | undefined {
@@ -61,12 +62,14 @@ export class CarritoService {
   removeItem(item: CartItem): void {
     this.cartItems = this.cartItems.filter(cartItem => cartItem !== item); 
     this.saveCartItems(); 
+    this.reloadCarritoSubject.next(); 
   }
 
 
   clearCart(): void {
     this.cartItems = [];
     localStorage.removeItem('cartItems');
+    this.reloadCarritoSubject.next();
   }
 
  

@@ -117,7 +117,7 @@
       </div>
 
       <!-- Solo visible si el usuario no es admin -->
-      <app-carrito *ngIf="!isAdmin()"></app-carrito>
+      <app-carrito *ngIf="!isAdmin() && showCarrito"></app-carrito>
 
       <!-- Si es admin, solo muestra el botón para cerrar sesión, alineado a la derecha -->
       <div *ngIf="isLoggedIn() && isAdmin()" class="ms-auto">
