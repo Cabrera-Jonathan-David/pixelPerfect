@@ -51,13 +51,19 @@ export class FormularioTarjetaComponent implements OnInit {
       try {
         const tarjetaValida = await this.tarjetaService.validarTarjeta(this.tarjetaForm.value).toPromise();
   
-        // Verificar tarjeta valida
+        // Verificar tarjeta válida
         if (tarjetaValida && tarjetaValida.length > 0) {
-          const tarjeta = tarjetaValida[0]; 
-          
+          const tarjeta = tarjetaValida[0];
+  
+          // Verificar si el usuario está logueado y es su primera compra
+          let totalCompra = this.calcularTotalCompra();
+          const esPrimeraCompra = await this.verificarPrimeraCompra();
+          if (esPrimeraCompra) {
+            totalCompra = totalCompra * 0.85; // Aplicar descuento del 15%
+            console.log('Descuento del 15% aplicado. Total:', totalCompra);
+          }
   
           // Verificar saldo de la tarjeta
-          const totalCompra = this.calcularTotalCompra(); 
           if (tarjeta.saldo >= totalCompra) {
             const stockValido = await this.verificarStock();
   
@@ -65,14 +71,14 @@ export class FormularioTarjetaComponent implements OnInit {
               const nuevoSaldo = tarjeta.saldo - totalCompra;
               await this.actualizarSaldoTarjeta(tarjeta.id, nuevoSaldo);
               await this.actualizarStockProductos();
-              // Registrar pago
-              await this.registrarPago();
+              await this.registrarPago(totalCompra); 
               this.mensajeExito = 'Pago realizado con éxito';
-                  /// LIMPIAR CARRITO
-                  this.carritoService.clearCart();
-                  this.carritoService.forceReloadCarrito();
-                  localStorage.removeItem('clientId');
-              this.showModal = true; 
+  
+              // Limpiar carrito y redirigir
+              this.carritoService.clearCart();
+              this.carritoService.forceReloadCarrito();
+              localStorage.removeItem('clientId');
+              this.showModal = true;
             } else {
               this.mensajeExito = 'Algunos productos no tienen stock suficiente';
             }
@@ -92,6 +98,19 @@ export class FormularioTarjetaComponent implements OnInit {
   }
   
 
+  private async verificarPrimeraCompra(): Promise<boolean> {
+    const token = localStorage.getItem('token'); 
+    if (!token) return false; 
+  
+    try {
+      const compras = await this.paymentHistoryService.obtenerComprasCliente(this.userId!).toPromise();
+      return compras?.length === 0; 
+    } catch (error) {
+      console.error('Error al verificar primera compra:', error);
+      return false;
+    }
+  }
+
 
   private async verificarStock(): Promise<boolean> {
     const stockChecks = this.cartItems.map(cartItem => 
@@ -103,7 +122,7 @@ export class FormularioTarjetaComponent implements OnInit {
     );
   }
 
-  private async registrarPago() {
+  private async registrarPago(totalCompra: number) {
     const paymentData: PaymentRegister = {
       id: Date.now().toString(),
       date: this.setDate(),
@@ -112,13 +131,14 @@ export class FormularioTarjetaComponent implements OnInit {
         price: cartItem.product.price,
         quantity: cartItem.quantity
       })),
-      userId: this.userId!, 
+      userId: this.userId!,
       estado: 'Pendiente',
-      amount: this.calcularTotalCompra()
+      amount: totalCompra 
     };
+    
     // Enviar el objeto PaymentRegister al servicio
-    const response = await this.paymentHistoryService.registrarPago(paymentData).toPromise();
-   }
+    await this.paymentHistoryService.registrarPago(paymentData).toPromise();
+  }
 
    async actualizarStockProductos(): Promise<void> {
     const stockUpdates = this.cartItems.map(async (cartItem) => {
