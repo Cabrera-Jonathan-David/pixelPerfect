@@ -36,4 +36,43 @@ button {
 
 button:hover {
     background-color: #45a049; /* Color de fondo al pasar el ratón por encima del botón */
-}   
+}
+
+/* Contenedor de los radio buttons */
+.radio-group {
+    display: flex; /* Organiza los botones en fila */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    margin: 20px 0; /* Separación con otros elementos */
+}
+
+/* Estilo base para los botones (etiquetas) */
+.radio-group label {
+    display: inline-block; /* Permite que actúe como botón */
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para botones */
+}
+
+/* Cambiar fondo y añadir efecto al pasar el ratón */
+.radio-group label:hover {
+    background-color: #45a049; /* Verde más oscuro */
+    transform: scale(1.05); /* Agrandar ligeramente */
+}
+
+/* Ocultar el radio button original */
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+/* Botón seleccionado */
+.radio-group input[type="radio"]:checked + label {
+    background-color: #3e8e41; /* Fondo más oscuro para indicar selección */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para destacar el botón seleccionado */
+    font-weight: bold; /* Texto en negrita */
+    transform: scale(1.1); /* Agrandar ligeramente el botón activo */
+}

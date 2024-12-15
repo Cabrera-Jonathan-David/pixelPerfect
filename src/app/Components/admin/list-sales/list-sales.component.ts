@@ -28,6 +28,9 @@ export class ListSalesComponent implements OnInit{
 
         console.log("data:", data);
 
+        const sortedSales = this.sortSalesByDate(data, 'desc');
+
+
         /// si existe algún estado que no sea válido, se vuelve automáticamente pendiente
         this.salesList = data.map((sale) => {
           if (!['pendiente', 'confirmado', 'enviado'].includes(sale.estado)) {
@@ -94,6 +97,20 @@ export class ListSalesComponent implements OnInit{
 
   seeDetails(id: string){
     this.router.navigate([`admin/details-sales/${id}`]);
+  }
+
+
+  sortSalesByDate(sales: PaymentRegister[], order: 'asc' | 'desc' = 'desc'): PaymentRegister[] {
+    return sales.sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+  
+      return order === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+  }
+
+  sortSales(order: 'asc' | 'desc'): void {
+    this.salesList =this.sortSalesByDate(this.salesList, order);
   }
 
 

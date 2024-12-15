@@ -1,5 +1,16 @@
 
 
+
+<div class="radio-group">
+    <input type="radio" id="recent" name="sortOrder" value="desc" (change)="sortSales('desc')" checked>
+    <label for="recent">Más recientes</label>
+  
+    <input type="radio" id="oldest" name="sortOrder" value="asc" (change)="sortSales('asc')">
+    <label for="oldest">Más antiguas</label>
+  </div>
+
+
+
 <table>
     <thead>
         <tr>

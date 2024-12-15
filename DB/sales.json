@@ -37,6 +37,20 @@
       "userId": "1ae2",
       "estado": "Pendiente",
       "amount": 360
+    },
+    {
+      "id": "1734286874971",
+      "date": "2024-12-15T15:21:14.971Z",
+      "products": [
+        {
+          "productId": "16",
+          "price": 100,
+          "quantity": 1
+        }
+      ],
+      "userId": "1ae2",
+      "estado": "Pendiente",
+      "amount": 100
     }
   ]
 }

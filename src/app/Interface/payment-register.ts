@@ -6,9 +6,9 @@ export interface PaymentProduct {
 
 export interface PaymentRegister {
 id: string;
-date?: Date;
+date: Date;
 products: PaymentProduct[];
 userId: string | null;
 estado: string;
-amount?: number; 
+amount: number; 
 }
